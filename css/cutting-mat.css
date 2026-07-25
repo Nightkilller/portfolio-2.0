@@ -35,9 +35,7 @@
 .mat-nav-tabs {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  flex-wrap: wrap;
+  justify-content: space-between;
   width: 100%;
 }
 
