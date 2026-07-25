@@ -16,16 +16,16 @@ const PORTFOLIO_DATA = {
     ],
     education: [
       {
-        degree: "B.S. in Computer Science & Engineering",
-        institution: "University of California",
-        year: "2021 — 2025",
-        description: "Specialized in Artificial Intelligence, Full-Stack Software Engineering, Data Structures & Algorithms, and Computer Graphics."
+        degree: "B.Tech in Computer Science & Engineering (CSE)",
+        institution: "VIT Bhopal University",
+        year: "2024 — 2028",
+        description: "Specializing in Artificial Intelligence, Full-Stack Development, Data Structures & Algorithms, Machine Learning, Cloud Computing, and Software Engineering. Active in hackathons, open-source contributions, and real-world AI application development."
       },
       {
-        degree: "Full-Stack Software Architecture Certification",
-        institution: "Tech Academy",
-        year: "2023",
-        description: "Advanced cloud architecture, microservices, GraphQL, and modern web frameworks."
+        degree: "Professional Learning & Technical Focus",
+        institution: "Independent & Open-Source Development",
+        year: "2024 — Present",
+        description: "Focused on Full-Stack Development (React, Node.js, Express), Artificial Intelligence & Machine Learning, Flutter App Development, AWS Cloud Fundamentals, and Competitive Programming (LeetCode & Codeforces)."
       }
     ],
     tools: [
