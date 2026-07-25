@@ -84,8 +84,9 @@
   .app-sidebar {
     width: 100% !important;
     min-width: 100% !important;
-    height: auto;
-    position: relative;
+    height: auto !important;
+    max-height: none !important;
+    position: relative !important;
     padding: 36px 24px 44px 24px;
     border-right: none;
     border-top: 2px solid #e2e8f0;
@@ -95,6 +96,7 @@
     gap: 20px;
     background: #ffffff;
     margin-left: 0 !important;
+    overflow: visible !important;
   }
 
   .app-sidebar.collapsed {
@@ -165,8 +167,13 @@
 
   /* Cutting Mat Canvas on mobile/tablet */
   .cutting-mat-canvas {
+    margin-left: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
     min-height: 85vh;
     padding: 20px 16px 36px 16px;
+    overflow: visible !important;
   }
 
   /* Sticky Glassmorphism Header Bar for Mobile */

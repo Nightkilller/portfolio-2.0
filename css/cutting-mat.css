@@ -4,7 +4,8 @@
 
 .cutting-mat-canvas {
   flex-grow: 1;
-  width: 100%;
+  margin-left: var(--sidebar-width);
+  width: calc(100% - var(--sidebar-width));
   height: 100vh;
   max-height: 100vh;
   background-color: var(--bg-mat);
@@ -21,7 +22,7 @@
   overflow-y: auto;
   overflow-x: hidden;
   box-sizing: border-box;
-  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1), padding 0.35s ease;
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1), margin-left 0.35s cubic-bezier(0.4, 0, 0.2, 1), padding 0.35s ease;
 }
 
 /* Top Nav Bar */
