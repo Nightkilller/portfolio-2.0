@@ -314,6 +314,23 @@ const PORTFOLIO_DATA = {
   // Certifications & Credentials
   certifications: [
     {
+      id: "ai-workshop",
+      title: "Bring AI to Work Workshop",
+      issuer: "Google",
+      platform: "Google Workspace",
+      date: "Jun 2025",
+      gradient: "linear-gradient(135deg, #4285F4 0%, #34A853 33%, #FBBC05 66%, #EA4335 100%)",
+      accentColor: "#ffcc02",
+      icon: "🤖",
+      description: "Completed Google's Bring AI to Work Workshop, gaining practical expertise in integrating generative AI tools into professional workflows using Google Workspace products. Covered prompt engineering techniques, AI-powered document drafting in Google Docs, data analysis automation in Sheets, intelligent email triage in Gmail, and building custom AI solutions with Google's Gemini models for enterprise productivity.",
+      highlights: [
+        "Prompt Engineering & Generative AI Fundamentals",
+        "AI-Powered Document & Email Automation",
+        "Google Gemini Integration for Workspace",
+        "Enterprise AI Productivity Workflows"
+      ]
+    },
+    {
       id: "marketing-analytics",
       title: "Marketing Analytics",
       issuer: "Indian Institute of Technology, Kharagpur",
@@ -335,6 +352,27 @@ const PORTFOLIO_DATA = {
       ]
     },
     {
+      id: "cloud-computing",
+      title: "Cloud Computing",
+      issuer: "Indian Institute of Technology, Kharagpur",
+      platform: "NPTEL / Swayam",
+      date: "Jan — Apr 2025",
+      score: "70%",
+      scoreDetails: "Online Assignments: 20.56/25 | Proctored Exam: 48.98/75",
+      badge: "Elite",
+      credits: "3 or 4 Credits Recommended",
+      gradient: "linear-gradient(135deg, #0d47a1 0%, #1565c0 50%, #42a5f5 100%)",
+      accentColor: "#90caf9",
+      icon: "☁️",
+      description: "Completed a 12-week NPTEL Elite certification in Cloud Computing from IIT Kharagpur, covering the architecture and design of cloud infrastructure — virtualization, containerization, distributed storage, cloud networking, serverless computing, and multi-tenant service models (IaaS, PaaS, SaaS). Gained foundational knowledge in AWS, Azure, and GCP cloud platforms, load balancing, auto-scaling, and cloud security best practices.",
+      highlights: [
+        "Cloud Architecture & Virtualization (IaaS, PaaS, SaaS)",
+        "Containerization & Orchestration (Docker, Kubernetes)",
+        "Distributed Storage & Cloud Networking",
+        "Cloud Security, Auto-Scaling & Load Balancing"
+      ]
+    },
+    {
       id: "computer-networking",
       title: "The Bits and Bytes of Computer Networking",
       issuer: "Google",
@@ -349,23 +387,6 @@ const PORTFOLIO_DATA = {
         "DNS Resolution, DHCP & NAT Protocols",
         "Subnetting, Routing & VPN Configuration",
         "Network Troubleshooting & Diagnostics"
-      ]
-    },
-    {
-      id: "ai-workshop",
-      title: "Bring AI to Work Workshop",
-      issuer: "Google",
-      platform: "Google Workspace",
-      date: "Jun 2025",
-      gradient: "linear-gradient(135deg, #e65100 0%, #f57c00 50%, #ff9800 100%)",
-      accentColor: "#ffcc02",
-      icon: "🤖",
-      description: "Completed Google's Bring AI to Work Workshop, gaining practical expertise in integrating generative AI tools into professional workflows using Google Workspace products. Covered prompt engineering techniques, AI-powered document drafting in Google Docs, data analysis automation in Sheets, intelligent email triage in Gmail, and building custom AI solutions with Google's Gemini models for enterprise productivity.",
-      highlights: [
-        "Prompt Engineering & Generative AI Fundamentals",
-        "AI-Powered Document & Email Automation",
-        "Google Gemini Integration for Workspace",
-        "Enterprise AI Productivity Workflows"
       ]
     }
   ]
