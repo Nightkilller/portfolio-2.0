@@ -6,7 +6,7 @@ const PORTFOLIO_DATA = {
     title: "Multi-Disciplinary Developer & Creative",
     location: "Los Angeles, CA",
     tagline: "Specialized in full-stack engineering, AI applications, brand identity, and creative direction.",
-    bio: "Hey there! I'm Aditya, a multi-disciplinary creative specialized in brand design, visual identity, and creative direction.",
+    bio: "I'm Aditya Gupta, a Computer Science & Engineering student passionate about building AI-powered applications, full-stack web platforms, and scalable software. I enjoy solving real-world problems through clean code, modern technologies, and intuitive user experiences while continuously exploring AI, cloud computing, and open source.",
     email: "aditya@example.com",
     socials: [
       { name: "GitHub", url: "https://github.com/Nightkilller", icon: "code" },
@@ -29,14 +29,18 @@ const PORTFOLIO_DATA = {
       }
     ],
     tools: [
-      "Figma",
-      "Xcode",
-      "Python",
-      "GitHub",
-      "JavaScript / TypeScript",
       "React / Next.js",
       "Flutter / Dart",
-      "SwiftUI / C++"
+      "Python",
+      "C++",
+      "JavaScript / TypeScript",
+      "Node.js / Express",
+      "Git / GitHub",
+      "AWS",
+      "Firebase",
+      "MongoDB",
+      "MySQL",
+      "Figma"
     ]
   },
 
