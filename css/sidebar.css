@@ -196,11 +196,14 @@
   font-size: 0.92rem;
   font-weight: 500;
   color: var(--text-sidebar-muted);
-  transition: color 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease, text-decoration 0.2s ease;
 }
 
 .sidebar-link:hover {
-  color: var(--text-dark);
+  color: #1f4337 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 4px;
   transform: translateX(3px);
 }
 
