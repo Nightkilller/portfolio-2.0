@@ -67,6 +67,13 @@
   }
 }
 
+/* Hidden drawer elements on desktop by default */
+.mobile-drawer-toggle-btn,
+.mobile-drawer-close-btn,
+.mobile-sidebar-overlay {
+  display: none;
+}
+
 /* ===== TABLET & MOBILE SWITCH (max-width: 960px) ===== */
 @media screen and (max-width: 960px) {
   html, body {
@@ -74,33 +81,79 @@
   }
 
   .app-viewport {
-    flex-direction: column-reverse;
+    flex-direction: column;
     height: auto;
     max-height: none;
     overflow: visible;
   }
 
-  /* Sidebar transforms into vertical card on mobile/tablet */
+  /* Slide-In Left Drawer Sidebar for Mobile */
   .app-sidebar {
-    width: 100% !important;
-    min-width: 100% !important;
-    height: auto !important;
-    max-height: none !important;
-    position: relative !important;
-    padding: 36px 24px 44px 24px;
-    border-right: none;
-    border-top: 2px solid #e2e8f0;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 20px;
-    background: #ffffff;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 290px !important;
+    min-width: 290px !important;
+    max-width: 85vw !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+    z-index: 10000 !important;
+    transform: translateX(-100%) !important;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: 10px 0 40px rgba(0, 0, 0, 0.35) !important;
+    overflow-y: auto !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    padding: 32px 24px !important;
+    background: #ffffff !important;
     margin-left: 0 !important;
-    overflow: visible !important;
+    border: none !important;
   }
 
-  .app-sidebar.collapsed {
-    display: none !important;
+  .app-sidebar.mobile-open {
+    transform: translateX(0) !important;
+  }
+
+  /* Backdrop Overlay */
+  .mobile-sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .mobile-sidebar-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Drawer Close Button (Top-Right of Drawer) */
+  .mobile-drawer-close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 50%;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #0f172a;
+    cursor: pointer;
+    margin-left: auto;
+    transition: all 0.2s ease;
+  }
+
+  .mobile-drawer-close-btn:hover {
+    background: #e2e8f0;
   }
 
   .sidebar-resizer {
@@ -109,60 +162,55 @@
 
   .sidebar-top {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
     gap: 16px;
     width: 100%;
-    max-width: 480px;
+  }
+
+  .sidebar-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
   }
 
   .avatar-container {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto;
+    width: 90px;
+    height: 90px;
+    margin: 0;
     flex-shrink: 0;
     border-radius: 50%;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
   }
 
   .sidebar-bio {
-    font-size: 0.94rem;
+    font-size: 0.92rem;
     line-height: 1.55;
     color: #334155;
-    text-align: center;
+    text-align: left;
   }
 
   .sidebar-bottom {
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
     width: 100%;
-    max-width: 360px;
-    margin-top: 8px;
+    margin-top: 16px;
     align-items: stretch;
   }
 
   .sidebar-link {
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     font-weight: 600;
-    padding: 14px 20px;
+    padding: 12px 16px;
     background: #f8fafc;
     border: 1px solid #e2e8f0;
-    border-radius: 14px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     color: #0f172a;
     text-decoration: none;
     transition: all 0.2s ease;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-  }
-
-  .sidebar-link.link-book {
-    background: #0f172a;
-    color: #ffffff;
-    border-color: #0f172a;
-    font-weight: 700;
-    box-shadow: 0 4px 14px rgba(15,23,42,0.25);
   }
 
   /* Cutting Mat Canvas on mobile/tablet */
@@ -171,8 +219,8 @@
     width: 100% !important;
     height: auto !important;
     max-height: none !important;
-    min-height: 85vh;
-    padding: 20px 16px 36px 16px;
+    min-height: 100vh;
+    padding: 16px 14px 36px 14px;
     overflow: visible !important;
   }
 
@@ -181,27 +229,60 @@
     position: sticky;
     top: 0;
     z-index: 999;
-    background: rgba(13, 31, 24, 0.94);
+    background: rgba(13, 31, 24, 0.95);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    margin: -20px -16px 20px -16px;
-    padding: 12px 16px;
+    margin: -16px -14px 16px -14px;
+    padding: 10px 12px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
-    width: calc(100% + 32px);
+    width: calc(100% + 28px);
     box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* Mobile 3-Bar Hamburger Button */
+  .mobile-drawer-toggle-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    cursor: pointer;
+    flex-shrink: 0;
+    padding: 0;
+    transition: all 0.2s ease;
+  }
+
+  .mobile-drawer-toggle-btn span {
+    width: 18px;
+    height: 2px;
+    background-color: #ffffff;
+    border-radius: 2px;
+  }
+
+  .mobile-drawer-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
   }
 
   .mat-nav-tabs {
     display: flex;
-    gap: 8px;
+    gap: 6px;
     justify-content: flex-start;
     align-items: center;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    padding: 2px 4px;
+    padding: 2px 2px;
     width: 100%;
+    flex-grow: 1;
   }
 
   .mat-nav-tabs::-webkit-scrollbar {
@@ -209,19 +290,24 @@
   }
 
   .mat-tab-btn {
-    font-size: 0.84rem;
+    font-size: 0.8rem;
     font-weight: 600;
-    padding: 8px 16px;
-    border-radius: 20px;
+    padding: 7px 12px;
+    border-radius: 18px;
     white-space: nowrap;
     flex-shrink: 0;
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.8);
     background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    min-height: 38px;
-    display: flex;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    min-height: 36px;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 5px;
+  }
+
+  .mat-tab-btn .tab-icon {
+    font-size: 0.95rem;
   }
 
   .mat-tab-btn.active {

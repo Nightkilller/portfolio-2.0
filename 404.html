@@ -41,6 +41,8 @@
             <img src="public/avatar-normal.webp" alt="Aditya Gupta Avatar" class="avatar-img avatar-img-normal" fetchpriority="high" decoding="async">
             <img src="public/avatar-wink.webp" alt="Aditya Gupta Winking Avatar" class="avatar-img avatar-img-wink" decoding="async">
           </a>
+          <!-- Mobile Drawer Close Button -->
+          <button id="mobile-drawer-close" class="mobile-drawer-close-btn" aria-label="Close Sidebar">✕</button>
         </div>
 
         <!-- Bio Statement -->
@@ -79,20 +81,35 @@
     <!-- RIGHT CANVAS (DARK GREEN SELF-HEALING CUTTING GRID MAT) -->
     <main class="cutting-mat-canvas">
       
-      <!-- Top Workspace Nav Bar (Education Left, About Center, Work With Me Right) -->
+      <!-- Top Workspace Nav Bar (Home, Education, Certifications, About Me, Work With Me) -->
       <header class="mat-header">
+        <!-- Mobile 3-Bar Hamburger Drawer Toggle -->
+        <button id="mobile-drawer-toggle" class="mobile-drawer-toggle-btn" aria-label="Open Sidebar Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
         <nav class="mat-nav-tabs" aria-label="Desktop Workspace Tabs">
+          <button class="mat-tab-btn active" data-tab-target="home">
+            <span class="tab-icon">🏠</span>
+            <span class="tab-text">Home</span>
+          </button>
           <button class="mat-tab-btn" data-tab-target="education">
-            <span>Education</span>
+            <span class="tab-icon">🎓</span>
+            <span class="tab-text">Education</span>
           </button>
           <button class="mat-tab-btn" data-tab-target="certifications">
-            <span>Certifications</span>
+            <span class="tab-icon">📜</span>
+            <span class="tab-text">Certifications</span>
           </button>
           <button class="mat-tab-btn" data-tab-target="about">
-            <span>About Me</span>
+            <span class="tab-icon">👤</span>
+            <span class="tab-text">About Me</span>
           </button>
           <button class="mat-tab-btn" data-tab-target="work-with-me">
-            <span>Work With Me</span>
+            <span class="tab-icon">💼</span>
+            <span class="tab-text">Work With Me</span>
           </button>
         </nav>
       </header>
@@ -416,6 +433,9 @@
     </main>
 
   </div>
+
+  <!-- Mobile Sidebar Backdrop Overlay -->
+  <div id="mobile-sidebar-overlay" class="mobile-sidebar-overlay"></div>
 
   <!-- App Scripts -->
   <script src="js/data.js"></script>

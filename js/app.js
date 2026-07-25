@@ -49,11 +49,38 @@ function initApp() {
   renderCertificationsGrid(modalController);
   initMatColorPicker();
   initSidebarResizer();
+  initMobileDrawer();
   bindActions(modalController, router);
-  
-  // Ensure sidebar is never collapsed
+}
+
+/* Initialize Mobile Left Slide-In Drawer Sidebar */
+function initMobileDrawer() {
   const sidebar = document.getElementById('app-sidebar');
-  if (sidebar) sidebar.classList.remove('collapsed');
+  const openBtn = document.getElementById('mobile-drawer-toggle');
+  const closeBtn = document.getElementById('mobile-drawer-close');
+  const overlay = document.getElementById('mobile-sidebar-overlay');
+
+  if (!sidebar) return;
+
+  const openDrawer = () => {
+    sidebar.classList.add('mobile-open');
+    if (overlay) overlay.classList.add('active');
+  };
+
+  const closeDrawer = () => {
+    sidebar.classList.remove('mobile-open');
+    if (overlay) overlay.classList.remove('active');
+  };
+
+  if (openBtn) openBtn.addEventListener('click', openDrawer);
+  if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+  if (overlay) overlay.addEventListener('click', closeDrawer);
+
+  // Close drawer when clicking any link inside sidebar
+  const sidebarLinks = sidebar.querySelectorAll('.sidebar-link, [data-tab-target]');
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', closeDrawer);
+  });
 }
 
 /* Initialize Sidebar Resizer Drag Handle */
