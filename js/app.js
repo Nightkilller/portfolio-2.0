@@ -161,13 +161,17 @@ function renderWorkGrid(modalController) {
   const renderCardList = (list, targetEl) => {
     if (!targetEl || !list) return;
     const html = list.map(project => {
+      const previewContent = project.image
+        ? `<img src="${project.image}" alt="${project.title} Preview" style="width: 100%; height: 100%; object-fit: cover;" />`
+        : `<div style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center;">
+            <div style="font-family: var(--font-serif); font-size: 2.4rem; color: #fff; font-style: italic;">${project.title}</div>
+            <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.8); margin-top: 6px;">${project.categoryLabel}</div>
+          </div>`;
+
       return `
         <div class="work-card-item" data-project-id="${project.id}">
-          <div class="work-card-preview" style="background: ${project.gradient};">
-            <div style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center;">
-              <div style="font-family: var(--font-serif); font-size: 2.4rem; color: #fff; font-style: italic;">${project.title}</div>
-              <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.8); margin-top: 6px;">${project.categoryLabel}</div>
-            </div>
+          <div class="work-card-preview" style="background: ${project.gradient}; overflow: hidden;">
+            ${previewContent}
           </div>
           <div>
             <div class="work-card-title">${project.title}</div>

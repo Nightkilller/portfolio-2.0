@@ -82,6 +82,16 @@ class ModalController {
     const githubBtn = document.getElementById('project-detail-github');
     const demoBtn = document.getElementById('project-detail-demo');
 
+    const imgBox = document.getElementById('project-detail-image-box');
+    const img = document.getElementById('project-detail-img');
+
+    if (data.image) {
+      if (img) img.src = data.image;
+      if (imgBox) imgBox.style.display = 'block';
+    } else {
+      if (imgBox) imgBox.style.display = 'none';
+    }
+
     if (hero) hero.style.background = data.gradient;
     if (category) category.textContent = data.categoryLabel;
     if (title) title.textContent = data.title;
