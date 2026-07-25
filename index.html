@@ -192,24 +192,21 @@
         </div>
       </section>
 
-      <!-- VIEW 5: INLINE CONNECT VIEW (expands inside green mat) -->
-      <section id="mat-connect-view" class="mat-project-detail-view">
-        <button id="connect-detail-back-btn" class="project-detail-back-btn">← Back</button>
+      <!-- VIEW 5: INLINE CONNECT VIEW -->
+      <section id="mat-connect-view" class="mat-section-view">
+        <div class="desk-paper-sheet" style="position: relative;">
+          <button id="connect-detail-back-btn" class="project-detail-back-btn" style="position: absolute; top: 20px; right: 24px; left: auto; background: rgba(0, 0, 0, 0.08); color: #111111; border: 1px solid rgba(0,0,0,0.15);">← Back</button>
 
-        <div class="project-detail-hero" style="background: linear-gradient(135deg, #1f4337 0%, #163229 50%, #0d221b 100%);">
-          <div class="project-detail-hero-inner">
-            <div class="project-detail-category">GET IN TOUCH</div>
-            <h2 class="project-detail-title">Let's Connect!</h2>
-          </div>
-        </div>
+          <h2 style="font-family: var(--font-serif); font-size: 2.8rem; margin-bottom: 8px; color: #111;">Let's Connect</h2>
+          <div style="width: 60px; height: 4px; background: rgba(46, 204, 113, 0.7); border-radius: 2px; margin-bottom: 20px;"></div>
 
-        <div class="project-detail-body">
-          <p style="font-size: 1.05rem; line-height: 1.7; color: #444; margin-bottom: 28px;">
+          <p style="font-size: 1.02rem; line-height: 1.6; color: #555; margin-bottom: 28px;">
             Feel free to reach out across any platform below for collaborations, developer networking, or project inquiries:
           </p>
 
           <div class="connect-links-grid">
             <a href="https://github.com/Nightkilller" target="_blank" rel="noopener" class="connect-link-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" class="connect-brand-logo" />
               <div>
                 <div class="connect-label">GitHub</div>
                 <div class="connect-subtext">github.com/Nightkilller</div>
@@ -217,6 +214,7 @@
             </a>
 
             <a href="https://linkedin.com" target="_blank" rel="noopener" class="connect-link-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="connect-brand-logo" />
               <div>
                 <div class="connect-label">LinkedIn</div>
                 <div class="connect-subtext">linkedin.com/in/adityagupta</div>
@@ -224,6 +222,7 @@
             </a>
 
             <a href="https://leetcode.com" target="_blank" rel="noopener" class="connect-link-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/leetcode/leetcode-original.svg" alt="LeetCode" class="connect-brand-logo" />
               <div>
                 <div class="connect-label">LeetCode</div>
                 <div class="connect-subtext">leetcode.com/u/adityagupta</div>
@@ -231,6 +230,7 @@
             </a>
 
             <a href="https://instagram.com" target="_blank" rel="noopener" class="connect-link-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/instagram/instagram-original.svg" alt="Instagram" class="connect-brand-logo" />
               <div>
                 <div class="connect-label">Instagram</div>
                 <div class="connect-subtext">instagram.com</div>
@@ -238,6 +238,9 @@
             </a>
 
             <a href="mailto:adigpt08@gmail.com" class="connect-link-card" style="grid-column: 1 / -1;">
+              <div class="connect-email-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2ecc71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
               <div>
                 <div class="connect-label">Direct Email</div>
                 <div class="connect-subtext">adigpt08@gmail.com</div>
