@@ -309,5 +309,64 @@ const PORTFOLIO_DATA = {
         "Offline SQLite Encrypted Storage with Automated AWS Sync"
       ]
     }
+  ],
+
+  // Certifications & Credentials
+  certifications: [
+    {
+      id: "marketing-analytics",
+      title: "Marketing Analytics",
+      issuer: "Indian Institute of Technology, Kharagpur",
+      platform: "NPTEL / Swayam",
+      date: "Jan — Apr 2026",
+      score: "88%",
+      scoreDetails: "Online Assignments: 25/25 | Proctored Exam: 63/75",
+      badge: "Elite",
+      credits: "4 Credits Recommended",
+      gradient: "linear-gradient(135deg, #1a237e 0%, #0d47a1 50%, #1565c0 100%)",
+      accentColor: "#64b5f6",
+      icon: "📊",
+      description: "Completed a rigorous 12-week NPTEL certification in Marketing Analytics from IIT Kharagpur, covering advanced topics in consumer behavior modeling, market segmentation, regression-based demand forecasting, sentiment analysis, and data-driven marketing strategy. Achieved Elite certification with a consolidated score of 88%, demonstrating strong analytical and quantitative skills applied to real-world marketing datasets.",
+      highlights: [
+        "Consumer Behavior & Market Segmentation Models",
+        "Regression-Based Demand Forecasting",
+        "Marketing Mix Optimization & ROI Analysis",
+        "Data-Driven Campaign Strategy & A/B Testing"
+      ]
+    },
+    {
+      id: "computer-networking",
+      title: "The Bits and Bytes of Computer Networking",
+      issuer: "Google",
+      platform: "Coursera",
+      date: "Nov 2025",
+      gradient: "linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%)",
+      accentColor: "#81c784",
+      icon: "🌐",
+      description: "Completed Google's comprehensive Computer Networking course on Coursera, mastering the five-layer TCP/IP networking model, DNS resolution, DHCP, NAT, VPNs, and network troubleshooting. Gained hands-on understanding of how data moves across the internet — from binary encoding on physical layers through transport protocols to application-level HTTP communication — essential knowledge for building reliable distributed systems.",
+      highlights: [
+        "TCP/IP Five-Layer Networking Model",
+        "DNS Resolution, DHCP & NAT Protocols",
+        "Subnetting, Routing & VPN Configuration",
+        "Network Troubleshooting & Diagnostics"
+      ]
+    },
+    {
+      id: "ai-workshop",
+      title: "Bring AI to Work Workshop",
+      issuer: "Google",
+      platform: "Google Workspace",
+      date: "Jun 2025",
+      gradient: "linear-gradient(135deg, #e65100 0%, #f57c00 50%, #ff9800 100%)",
+      accentColor: "#ffcc02",
+      icon: "🤖",
+      description: "Completed Google's Bring AI to Work Workshop, gaining practical expertise in integrating generative AI tools into professional workflows using Google Workspace products. Covered prompt engineering techniques, AI-powered document drafting in Google Docs, data analysis automation in Sheets, intelligent email triage in Gmail, and building custom AI solutions with Google's Gemini models for enterprise productivity.",
+      highlights: [
+        "Prompt Engineering & Generative AI Fundamentals",
+        "AI-Powered Document & Email Automation",
+        "Google Gemini Integration for Workspace",
+        "Enterprise AI Productivity Workflows"
+      ]
+    }
   ]
 };

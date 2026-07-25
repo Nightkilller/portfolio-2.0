@@ -43,6 +43,7 @@ class PortfolioRouter {
     const aboutSection = document.getElementById('mat-about-view');
     const educationSection = document.getElementById('mat-education-view');
     const workWithMeSection = document.getElementById('mat-work-with-me-view');
+    const certificationsView = document.getElementById('mat-certifications-view');
     const polaroids = document.getElementById('polaroids-container');
 
     // Hide all view sections first
@@ -53,6 +54,7 @@ class PortfolioRouter {
     if (aboutSection) aboutSection.classList.remove('active');
     if (educationSection) educationSection.classList.remove('active');
     if (workWithMeSection) workWithMeSection.classList.remove('active');
+    if (certificationsView) certificationsView.classList.remove('active');
     if (polaroids) polaroids.style.display = 'none';
 
     if (tabId === 'home') {
@@ -70,6 +72,8 @@ class PortfolioRouter {
       if (aboutSection) aboutSection.classList.add('active');
     } else if (tabId === 'work-with-me') {
       if (workWithMeSection) workWithMeSection.classList.add('active');
+    } else if (tabId === 'certifications') {
+      if (certificationsView) certificationsView.classList.add('active');
     }
 
     // Scroll to top of mat canvas on view switch
