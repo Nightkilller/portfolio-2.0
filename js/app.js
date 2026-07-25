@@ -43,17 +43,6 @@ function renderPureDeskLogos(modalController) {
   }).join('');
 
   container.innerHTML = html;
-
-  // Bind click handlers to open details modal drawer
-  const cards = container.querySelectorAll('.pure-logo-item');
-  cards.forEach((card, index) => {
-    card.addEventListener('click', () => {
-      const item = deskItems[index];
-      if (item) {
-        modalController.openDeskPolaroidModal(item);
-      }
-    });
-  });
 }
 
 /* Render Work Showcase Grid View (Matching Image 2 /work layout) */

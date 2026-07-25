@@ -150,7 +150,7 @@
   border: none;
   border-radius: 0;
   box-shadow: none;
-  cursor: pointer;
+  cursor: default;
   z-index: 6;
   transition: transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1), filter 0.35s ease;
   user-select: none;
