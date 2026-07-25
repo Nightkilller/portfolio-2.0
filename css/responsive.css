@@ -43,80 +43,131 @@
 /* ===== TABLETS (max-width: 960px) ===== */
 @media screen and (max-width: 960px) {
   .app-viewport {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 
-  /* Sidebar collapses to horizontal top bar */
+  /* Sidebar moves to vertical footer card at bottom of mobile page */
   .app-sidebar {
     width: 100%;
     min-width: 100%;
     height: auto;
     position: relative;
-    padding: 20px 24px;
+    padding: 40px 24px 48px 24px;
     border-right: none;
-    border-bottom: 1px solid #e5e5e5;
-    flex-direction: row;
+    border-top: 2px solid #eaeaea;
+    border-bottom: none;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
     gap: 20px;
-    flex-wrap: wrap;
+    background: #ffffff;
   }
 
   .sidebar-top {
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    gap: 20px;
-    flex: 1;
+    text-align: center;
+    gap: 14px;
+    width: 100%;
+    max-width: 480px;
   }
 
   .avatar-container {
-    width: 70px;
-    height: 70px;
+    width: 76px;
+    height: 76px;
+    margin: 0 auto;
     flex-shrink: 0;
   }
 
   .sidebar-bio {
-    font-size: 0.88rem;
-    line-height: 1.45;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #444;
+    text-align: center;
   }
 
   .sidebar-bottom {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 0;
-    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 340px;
+    margin-top: 8px;
+    align-items: stretch;
   }
 
   .sidebar-link {
-    font-size: 0.85rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 12px 18px;
+    background: #f8f9fa;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #111;
+    text-decoration: none;
+    transition: all 0.2s ease;
   }
 
   .sidebar-link.link-book {
-    font-size: 0.85rem;
-    margin-bottom: 0;
+    background: #111111;
+    color: #ffffff;
+    border-color: #111111;
+    margin-bottom: 4px;
   }
 
-  /* Cutting Mat Canvas */
+  /* Cutting Mat Canvas takes top priority on mobile */
   .cutting-mat-canvas {
-    min-height: 80vh;
-    padding: 20px 16px 40px 16px;
+    min-height: 85vh;
+    padding: 24px 16px 40px 16px;
   }
 
-  /* Nav tabs */
+  /* Nav tabs: glassmorphism horizontal pill bar */
   .mat-header {
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+    width: 100%;
+    padding: 0;
   }
 
   .mat-nav-tabs {
-    gap: 4px;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: flex;
+    gap: 6px;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 30px;
+    padding: 6px 8px;
+    max-width: 100%;
+  }
+
+  .mat-nav-tabs::-webkit-scrollbar {
+    display: none;
   }
 
   .mat-tab-btn {
-    font-size: 0.9rem;
-    padding: 6px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    color: rgba(255, 255, 255, 0.85);
+    background: transparent;
+    border: none;
+  }
+
+  .mat-tab-btn.active {
+    background: #ffffff;
+    color: #111111;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
   }
 
   /* Main Title */
@@ -164,7 +215,7 @@
   }
 
   .work-card-preview {
-    height: 200px;
+    height: 220px;
   }
 
   /* Project Detail View */
@@ -243,68 +294,53 @@
 
 /* ===== MOBILE DEVICES (max-width: 640px) ===== */
 @media screen and (max-width: 640px) {
-  /* Sidebar stacks vertically on small mobiles */
+  /* Sidebar vertical footer styling for small phones */
   .app-sidebar {
-    flex-direction: column;
-    padding: 20px 20px;
-    gap: 12px;
+    padding: 32px 18px 40px 18px;
+    gap: 16px;
   }
 
   .sidebar-top {
-    flex-direction: row;
-    align-items: center;
-    gap: 14px;
+    gap: 12px;
   }
 
   .avatar-container {
-    width: 60px;
-    height: 60px;
+    width: 68px;
+    height: 68px;
   }
 
   .sidebar-bio {
-    font-size: 0.84rem;
-    line-height: 1.4;
+    font-size: 0.86rem;
+    line-height: 1.45;
   }
 
   .sidebar-bottom {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
     margin-top: 4px;
+    max-width: 100%;
   }
 
   .sidebar-link {
-    font-size: 0.82rem;
-  }
-
-  .sidebar-link.link-book {
-    font-size: 0.82rem;
+    font-size: 0.85rem;
+    padding: 11px 16px;
   }
 
   /* Cutting Mat */
   .cutting-mat-canvas {
-    padding: 16px 12px 32px 12px;
-    min-height: 70vh;
+    padding: 20px 12px 32px 12px;
+    min-height: 80vh;
   }
 
-  /* Nav tabs: smaller, horizontal scroll on very small phones */
+  /* Nav tabs pill scroll */
   .mat-nav-tabs {
-    gap: 2px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .mat-nav-tabs::-webkit-scrollbar {
-    display: none;
+    gap: 4px;
+    padding: 5px 6px;
   }
 
   .mat-tab-btn {
     font-size: 0.8rem;
-    padding: 6px 10px;
-    border-radius: 16px;
-    white-space: nowrap;
-    flex-shrink: 0;
+    padding: 7px 14px;
+    border-radius: 18px;
   }
 
   /* Main Title */
@@ -358,12 +394,16 @@
   /* Work Grid */
   .work-grid-container {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 20px;
   }
 
   .work-card-preview {
-    height: 180px;
-    border-radius: 12px;
+    height: 220px;
+    border-radius: 14px;
+  }
+
+  .work-card-title {
+    font-size: 1.1rem;
   }
 
   .work-card-title {
