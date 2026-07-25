@@ -26,21 +26,21 @@
 .mat-header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
   box-sizing: border-box;
   z-index: 10;
   position: relative;
-  padding: 0 20px;
+  padding: 0;
 }
 
 .mat-nav-tabs {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   width: 100%;
-  max-width: 850px;
-  margin: 0 auto;
+  padding-left: 48px; /* Clear fixed 3-bar toggle button cleanly */
+  box-sizing: border-box;
 }
 
 .mat-tab-btn {
