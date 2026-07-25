@@ -10,9 +10,11 @@ const PORTFOLIO_DATA = {
     email: "adigpt08@gmail.com",
     socials: [
       { name: "GitHub", url: "https://github.com/Nightkilller", icon: "code" },
-      { name: "LinkedIn", url: "https://linkedin.com", icon: "user" },
-      { name: "LeetCode", url: "https://leetcode.com", icon: "terminal" },
-      { name: "Instagram", url: "https://instagram.com", icon: "camera" }
+      { name: "LinkedIn", url: "https://www.linkedin.com/in/aditya-gupta-267b2b2ab/", icon: "user" },
+      { name: "LeetCode", url: "https://leetcode.com/u/greekyADi/", icon: "terminal" },
+      { name: "Codeforces", url: "https://codeforces.com/profile/Adityagpta17", icon: "code" },
+      { name: "Instagram", url: "https://www.instagram.com/aditya_gpta17", icon: "camera" },
+      { name: "Twitter", url: "https://twitter.com/@AdityaG15164379", icon: "twitter" }
     ],
     education: [
       {
