@@ -12,56 +12,44 @@ document.addEventListener('DOMContentLoaded', () => {
   window.modalController = modalController;
 
   // Render Desk Elements
-  renderPolaroidCards(modalController);
+  renderAppLogoCards(modalController);
   renderWorkGrid(modalController);
   renderEducationDesk();
   renderToolsDesk();
   bindActions(modalController, router);
 });
 
-/* Render Tool Cards (Figma, Photoshop, Xcode, VS Code) Scattered Around Home Desk */
-function renderPolaroidCards(modalController) {
+/* Render Clean App Logo Cards (Figma, Photoshop, Xcode, VS Code) — Pure App Logos, No Cutout Frame */
+function renderAppLogoCards(modalController) {
   const container = document.getElementById('polaroids-container');
   if (!container) return;
 
-  const positions = ['polaroid-pos-1', 'polaroid-pos-2', 'polaroid-pos-3', 'polaroid-pos-4'];
-  const polaroids = PORTFOLIO_DATA.deskPolaroids || [];
+  const positions = ['logo-pos-1', 'logo-pos-2', 'logo-pos-3', 'logo-pos-4'];
+  const deskItems = PORTFOLIO_DATA.deskPolaroids || [];
 
-  const html = polaroids.map((item, index) => {
+  const html = deskItems.map((item, index) => {
     const posClass = positions[index % positions.length];
-    const isRightPin = index % 2 === 0;
-    const pinClass = isRightPin ? 'push-pin-top-right' : 'push-pin-top-left';
 
     return `
-      <div class="polaroid-card ${posClass}" data-polaroid-id="${item.id}" style="--glow-color: ${item.glowColor || 'rgba(255,255,255,0.3)'};">
-        <!-- 3D Blue Push Pin -->
-        <svg class="push-pin ${pinClass}" viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="12" r="8" fill="#1e88e5"/>
-          <circle cx="10" cy="10" r="3" fill="#64b5f6" opacity="0.8"/>
-        </svg>
-
-        <div class="polaroid-frame">
-          <div class="polaroid-art" style="background: ${item.gradient};">
-            <!-- White Squircle Tool Icon Container -->
-            <div class="tool-squircle-icon">
-              ${item.svgIcon}
-            </div>
-            <div class="polaroid-art-title" style="margin-top: 10px; font-style: normal; font-weight: 600;">${item.title}</div>
-            <div class="polaroid-art-tag" style="border-color: ${item.accentColor};">${item.categoryLabel}</div>
-          </div>
+      <div class="app-logo-card ${posClass}" data-logo-id="${item.id}" style="--glow-color: ${item.glowColor || 'rgba(255,255,255,0.3)'};">
+        <div class="app-logo-squircle">
+          ${item.svgIcon}
         </div>
-        <div class="polaroid-caption">${item.title} — ${item.subtitle}</div>
+        <div class="app-logo-info">
+          <div class="app-logo-title">${item.title}</div>
+          <div class="app-logo-subtitle">${item.categoryLabel}</div>
+        </div>
       </div>
     `;
   }).join('');
 
   container.innerHTML = html;
 
-  // Bind click handlers to open modal drawer
-  const cards = container.querySelectorAll('.polaroid-card');
+  // Bind click handlers to open drawer
+  const cards = container.querySelectorAll('.app-logo-card');
   cards.forEach((card, index) => {
     card.addEventListener('click', () => {
-      const item = polaroids[index];
+      const item = deskItems[index];
       if (item) {
         modalController.openDeskPolaroidModal(item);
       }

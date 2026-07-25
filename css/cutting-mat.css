@@ -141,140 +141,89 @@
 }
 
 /* ==========================================================================
-   Polaroid & Squircle Tool Cards (Figma, Photoshop, Xcode, VS Code)
+   Clean App Logo Cards — Pure App Logos, No Cutout Frames
    ========================================================================== */
 
-.polaroid-card {
+.app-logo-card {
   position: absolute;
-  background-color: #ffffff;
-  padding: 12px 12px 42px 12px;
-  border-radius: 4px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 2px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 22px;
+  background: rgba(18, 22, 28, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 20px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
   cursor: pointer;
   z-index: 6;
-  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease, z-index 0.1s ease;
+  transition: transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+  user-select: none;
 }
 
-.polaroid-card:hover {
+.app-logo-card:hover {
   z-index: 15;
-  transform: translateY(-10px) scale(1.06) rotate(0deg) !important;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.65), 0 0 35px var(--glow-color, rgba(255,255,255,0.4));
+  transform: translateY(-6px) scale(1.04) !important;
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.65), 0 0 30px var(--glow-color, rgba(255, 255, 255, 0.35));
 }
 
-.polaroid-frame {
-  width: 220px;
-  height: 160px;
-  background: #121318;
-  position: relative;
-  overflow: hidden;
-  border-radius: 4px;
+.app-logo-squircle {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  background: #ffffff;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease;
 }
 
-.polaroid-art {
-  width: 100%;
-  height: 100%;
+.app-logo-card:hover .app-logo-squircle {
+  transform: scale(1.08);
+}
+
+.app-logo-info {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
-  text-align: center;
-  position: relative;
+  gap: 2px;
 }
 
-/* White Squircle Tool Container (Matching User Screenshot) */
-.tool-squircle-icon {
-  width: 60px;
-  height: 60px;
-  background: #ffffff;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
-  transition: transform 0.35s ease;
-}
-
-.polaroid-card:hover .tool-squircle-icon {
-  transform: scale(1.12) rotate(-4deg);
-}
-
-.polaroid-art-title {
-  font-family: var(--font-sans);
-  font-size: 1.2rem;
-  font-weight: 600;
+.app-logo-title {
+  font-size: 1.15rem;
+  font-weight: 700;
   color: #ffffff;
-  z-index: 2;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  letter-spacing: -0.01em;
 }
 
-.polaroid-art-tag {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.9);
-  margin-top: 4px;
-  z-index: 2;
-  padding: 2px 10px;
-  border-radius: 12px;
-  background: rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+.app-logo-subtitle {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 400;
 }
 
-.polaroid-caption {
-  position: absolute;
-  bottom: 12px;
-  left: 14px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #222222;
+/* Precise Positioning of Logo Locations around center title */
+.logo-pos-1 {
+  top: 90px;
+  left: 10%;
 }
 
-.push-pin {
-  position: absolute;
-  width: 22px;
-  height: 22px;
-  z-index: 10;
-  filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.5));
+.logo-pos-2 {
+  top: 85px;
+  right: 10%;
 }
 
-.push-pin-top-right {
-  top: -8px;
-  right: 12px;
-}
-
-.push-pin-top-left {
-  top: -8px;
-  left: 12px;
-}
-
-/* Positioning Polaroid Locations around center title */
-.polaroid-pos-1 {
-  top: 75px;
+.logo-pos-3 {
+  bottom: 100px;
   left: 12%;
-  transform: rotate(-4deg);
 }
 
-.polaroid-pos-2 {
-  top: 65px;
+.logo-pos-4 {
+  bottom: 95px;
   right: 10%;
-  transform: rotate(5deg);
-}
-
-.polaroid-pos-3 {
-  bottom: 85px;
-  left: 14%;
-  transform: rotate(-3deg);
-}
-
-.polaroid-pos-4 {
-  bottom: 75px;
-  right: 10%;
-  transform: rotate(4deg);
 }
 
 /* Work Showcase Grid View (Matching Image 2 /work layout) */
