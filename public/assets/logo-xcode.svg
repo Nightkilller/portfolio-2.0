@@ -1,33 +1,52 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
   <defs>
-    <linearGradient id="xcode-bg" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#30b8ff"/>
-      <stop offset="50%" stop-color="#1480f0"/>
-      <stop offset="100%" stop-color="#0555d4"/>
+    <!-- Xcode App Icon Gradient -->
+    <linearGradient id="xcode-bg-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38c3ff"/>
+      <stop offset="45%" stop-color="#148eff"/>
+      <stop offset="100%" stop-color="#0066eb"/>
     </linearGradient>
-    <linearGradient id="hammer-metal" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#55555e"/>
-      <stop offset="50%" stop-color="#2a2a30"/>
+    
+    <!-- Metallic Hammer Head Gradient -->
+    <linearGradient id="metal-shine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#666675"/>
+      <stop offset="35%" stop-color="#33333d"/>
+      <stop offset="70%" stop-color="#1b1b22"/>
+      <stop offset="100%" stop-color="#0a0a0d"/>
+    </linearGradient>
+
+    <!-- Handle Rubber Grip Texture -->
+    <linearGradient id="handle-grip" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a2a30"/>
       <stop offset="100%" stop-color="#111115"/>
     </linearGradient>
   </defs>
 
-  <!-- Blue Squircle Background with Grid Texture -->
-  <rect width="100" height="100" rx="22" fill="url(#xcode-bg)"/>
-  
-  <!-- Blueprint Grid Overlay -->
-  <path d="M 0 25 H 100 M 0 50 H 100 M 0 75 H 100 M 25 0 V 100 M 50 0 V 100 M 75 0 V 100" stroke="#ffffff" stroke-opacity="0.2" stroke-width="1.2"/>
+  <!-- Xcode Blueprint Squircle Canvas -->
+  <rect width="512" height="512" rx="115" fill="url(#xcode-bg-gradient)"/>
 
-  <!-- 3D Xcode Metallic Hammer -->
-  <g transform="rotate(-38 50 50)">
-    <!-- Hammer Handle -->
-    <rect x="44" y="32" width="12" height="48" rx="4" fill="url(#hammer-metal)"/>
-    <!-- Rubber Grip Lines -->
-    <line x1="44" y1="68" x2="56" y2="68" stroke="#1a1a20" stroke-width="2"/>
-    <line x1="44" y1="73" x2="56" y2="73" stroke="#1a1a20" stroke-width="2"/>
-    <!-- Hammer Head -->
-    <path d="M 28 22 C 28 20, 68 18, 74 24 C 74 30, 62 34, 52 34 L 40 34 C 32 34, 28 28, 28 22 Z" fill="url(#hammer-metal)"/>
-    <!-- Claw -->
-    <path d="M 66 22 Q 78 16 82 28 Q 74 30 66 26 Z" fill="#3a3a42"/>
+  <!-- Subtle Blueprint Grid Pattern -->
+  <path d="
+    M 0 128 H 512 M 0 256 H 512 M 0 384 H 512 
+    M 128 0 V 512 M 256 0 V 512 M 384 0 V 512" 
+    stroke="#ffffff" stroke-opacity="0.18" stroke-width="5"/>
+
+  <!-- 3D Xcode Hammer (Angled at -40 deg) -->
+  <g transform="rotate(-40 256 256)">
+    <!-- Hammer Grip Handle -->
+    <rect x="232" y="160" width="48" height="240" rx="20" fill="url(#handle-grip)"/>
+    <rect x="232" y="160" width="48" height="240" rx="20" stroke="#000000" stroke-opacity="0.4" stroke-width="4" fill="none"/>
+    
+    <!-- Rubber Ridges on Handle -->
+    <line x1="232" y1="320" x2="280" y2="320" stroke="#08080a" stroke-width="8"/>
+    <line x1="232" y1="345" x2="280" y2="345" stroke="#08080a" stroke-width="8"/>
+    <line x1="232" y1="370" x2="280" y2="370" stroke="#08080a" stroke-width="8"/>
+
+    <!-- Hammer Head (Solid Heavy Metal) -->
+    <path d="M 120 100 C 120 90, 360 80, 380 110 C 380 140, 320 160, 280 160 L 200 160 C 150 160, 120 130, 120 100 Z" fill="url(#metal-shine)"/>
+    
+    <!-- Claw Extension -->
+    <path d="M 340 105 Q 410 70 430 130 Q 380 140, 340 120 Z" fill="#24242c"/>
+    <path d="M 120 100 Q 110 95 100 105 Q 110 115 120 110 Z" fill="#777788"/>
   </g>
 </svg>
