@@ -365,6 +365,11 @@ function openCertDetailModal(cert) {
         </div>
         
         <div style="padding: 32px;">
+          ${cert.image ? `
+          <div style="margin-bottom: 24px; border-radius: 12px; overflow: hidden; border: 1px solid #eeeeee; box-shadow: 0 8px 24px rgba(0,0,0,0.12);">
+            <img src="${cert.image}" alt="${cert.title} Full Certificate Document" style="width: 100%; height: auto; display: block;" />
+          </div>` : ''}
+
           ${metaGrid}
           ${scoreSection}
           
