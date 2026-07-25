@@ -331,9 +331,63 @@
     box-shadow: 0 4px 14px rgba(0,0,0,0.3);
   }
 
-  /* Floating logos: hidden on touch devices */
+  /* Mobile Software Floating Logos — Properly Scaled & Framed */
   .pure-logo-item {
-    display: none !important;
+    display: flex !important;
+    width: 44px !important;
+    height: 44px !important;
+    padding: 7px !important;
+    border-radius: 12px !important;
+    z-index: 10 !important;
+  }
+
+  .pure-logo-item .clearbit-logo-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+
+  .logo-pos-1 {
+    top: 15% !important;
+    left: 4% !important;
+    transform: rotate(-6deg) !important;
+  }
+
+  .logo-pos-2 {
+    top: 15% !important;
+    right: 4% !important;
+    transform: rotate(8deg) !important;
+  }
+
+  .logo-pos-3 {
+    top: 36% !important;
+    left: 3% !important;
+    transform: rotate(5deg) !important;
+  }
+
+  .logo-pos-4 {
+    top: 36% !important;
+    right: 3% !important;
+    transform: rotate(-8deg) !important;
+  }
+
+  .logo-pos-5 {
+    bottom: 12% !important;
+    left: 6% !important;
+    transform: rotate(4deg) !important;
+  }
+
+  .logo-pos-6 {
+    bottom: 12% !important;
+    right: 6% !important;
+    transform: rotate(-5deg) !important;
+  }
+
+  .logo-pos-7 {
+    bottom: 4% !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) rotate(-6deg) !important;
   }
 
   /* Section Views */
