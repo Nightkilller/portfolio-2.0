@@ -218,6 +218,15 @@
   flex-shrink: 0;
 }
 
+.connect-brand-logo-box {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
 .connect-email-icon-box {
   width: 38px;
   height: 38px;
