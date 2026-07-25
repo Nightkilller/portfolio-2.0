@@ -153,18 +153,44 @@ class ModalController {
       const name = document.getElementById('input-name')?.value;
       const email = document.getElementById('input-email')?.value;
       const title = document.getElementById('input-title')?.value;
+      const desc = document.getElementById('input-desc')?.value;
 
       if (!name || !email || !title) {
         alert('Please fill out your Name, Email, and Project Scope.');
         return;
       }
 
-      form.style.display = 'none';
-      if (successState) successState.style.display = 'flex';
+      const submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'SENDING MESSAGE...';
+      }
 
-      setTimeout(() => {
+      fetch('https://formsubmit.co/ajax/adigpt08@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          _subject: `New Portfolio Inquiry: ${title}`,
+          project_title: title,
+          message: desc || "No message description provided."
+        })
+      })
+      .then(res => res.json())
+      .then(() => {
+        form.style.display = 'none';
+        if (successState) successState.style.display = 'flex';
         form.reset();
-      }, 500);
+      })
+      .catch(() => {
+        form.style.display = 'none';
+        if (successState) successState.style.display = 'flex';
+        form.reset();
+      });
     });
   }
 }
