@@ -63,11 +63,16 @@
         <a href="#" class="sidebar-link" data-action="connect">
           <span>Connect ↗</span>
         </a>
-        <label for="mat-color-picker" class="sidebar-link link-color-picker" style="cursor: pointer; position: relative; margin-top: 4px;">
-          <span id="mat-color-swatch-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #1f4337; border: 1.5px solid rgba(0,0,0,0.2); display: inline-block; transition: background 0.2s ease;"></span>
-          <span>Mat Color 🎨</span>
-          <input type="color" id="mat-color-picker" value="#1f4337" style="position: absolute; opacity: 0; width: 100%; height: 100%; top: 0; left: 0; cursor: pointer;" />
-        </label>
+        <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; margin-top: 4px; gap: 8px;">
+          <label for="mat-color-picker" class="sidebar-link link-color-picker" style="cursor: pointer; position: relative; flex: 1;">
+            <span id="mat-color-swatch-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #1f4337; border: 1.5px solid rgba(0,0,0,0.2); display: inline-block; transition: background 0.2s ease;"></span>
+            <span>Mat Color 🎨</span>
+            <input type="color" id="mat-color-picker" value="#1f4337" style="position: absolute; opacity: 0; width: 100%; height: 100%; top: 0; left: 0; cursor: pointer;" />
+          </label>
+          <button id="btn-reset-mat-color" class="btn-reset-color" title="Reset to Original Forest Green Mat Color" aria-label="Reset Mat Color">
+            <span>🔄 Reset</span>
+          </button>
+        </div>
       </div>
     </aside>
 

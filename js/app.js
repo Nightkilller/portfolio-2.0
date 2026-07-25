@@ -123,23 +123,37 @@ function initSidebarResizer() {
   });
 }
 
-/* Initialize Mat Color Wheel Picker */
+/* Initialize Mat Color Wheel Picker & Reset Button */
 function initMatColorPicker() {
   const colorInput = document.getElementById('mat-color-picker');
-  if (!colorInput) return;
+  const resetBtn = document.getElementById('btn-reset-mat-color');
+
+  const defaultColor = '#1f4337';
 
   // Load saved custom color or default
   const savedColor = localStorage.getItem('mat-custom-color');
   if (savedColor) {
     applyCustomMatColor(savedColor);
-    colorInput.value = savedColor;
+    if (colorInput) colorInput.value = savedColor;
   }
 
-  colorInput.addEventListener('input', (e) => {
-    const color = e.target.value;
-    applyCustomMatColor(color);
-    localStorage.setItem('mat-custom-color', color);
-  });
+  if (colorInput) {
+    colorInput.addEventListener('input', (e) => {
+      const color = e.target.value;
+      applyCustomMatColor(color);
+      localStorage.setItem('mat-custom-color', color);
+    });
+  }
+
+  if (resetBtn) {
+    resetBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      localStorage.removeItem('mat-custom-color');
+      applyCustomMatColor(defaultColor);
+      if (colorInput) colorInput.value = defaultColor;
+    });
+  }
 }
 
 function applyCustomMatColor(hexColor) {
