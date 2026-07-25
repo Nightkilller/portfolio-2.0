@@ -89,6 +89,20 @@ const PORTFOLIO_DATA = {
       description: "Explore Aditya's full open-source portfolio, software engineering projects, repository activity, and code contributions on GitHub.",
       usecase: "Open-source software projects, codebase architecture, and public repository contributions.",
       deliverables: ["Full-Stack Repositories", "Open-Source Contributions", "Algorithm Implementations", "CI/CD Workflows"]
+    },
+    {
+      id: "desk-docker",
+      title: "Docker",
+      logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
+      accentColor: "#2496ED",
+      glowColor: "rgba(36, 150, 237, 0.55)"
+    },
+    {
+      id: "desk-firebase",
+      title: "Firebase",
+      logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg",
+      accentColor: "#FFCA28",
+      glowColor: "rgba(255, 202, 40, 0.55)"
     }
   ],
 
