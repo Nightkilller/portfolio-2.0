@@ -286,14 +286,14 @@
   display: none;
   width: 100%;
   max-width: 900px;
-  margin: 32px auto 40px auto;
+  margin: 4px auto 40px auto;
   z-index: 8;
   position: relative;
 }
 
 .mat-section-view.active {
   display: block;
-  margin: 32px auto 40px auto;
+  margin: 4px auto 40px auto;
 }
 
 .desk-paper-sheet {
