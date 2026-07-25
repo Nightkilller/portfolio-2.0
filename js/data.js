@@ -240,30 +240,6 @@ const PORTFOLIO_DATA = {
         "Sell vs. Store Spoilage Optimizer",
         "Bilingual Hindi/English React Dashboard"
       ]
-    },
-    {
-      id: "echo",
-      title: "ECHO",
-      subtitle: "Glowing Agentic Voice Companion & Real-Time On-Screen Mentor for macOS.",
-      category: "ai",
-      categoryLabel: "macOS & Agentic AI",
-      image: "public/project-echo.png",
-      tags: ["SwiftUI", "AppKit", "Groq Llama-4", "Apple Speech", "ScreenCaptureKit"],
-      role: "Creator & Native macOS Engineer",
-      tools: "SwiftUI, AppKit, Apple Speech API, Groq Llama-4 Scout, Vision",
-      year: "2024",
-      gradient: "linear-gradient(135deg, #1d3557 0%, #03045e 50%, #0077b6 100%)",
-      accentColor: "#00b4d8",
-      github: "https://github.com/Nightkilller/ECHO",
-      demo: "https://github.com/Nightkilller/ECHO",
-      description: "Echo is an always-on visual AI companion living in the macOS menu bar. Triggered via global keyboard shortcut (Control + Option), Echo captures screen buffers, transcribes voice locally offline via Apple Speech framework, and flies along parabolic Bezier curves to point out UI buttons, open local directories, or execute window actions.",
-      usecase: "Real-time on-screen interactive software tutoring, visual UI pointing, offline voice transcription, and agentic macOS window automation.",
-      deliverables: [
-        "Parabolic Bezier Flight & Animation Engine",
-        "Offline Native Speech Recognition (Hindi/Hinglish/English)",
-        "Circular Magnifying Lens Screen Overlay (1.3x)",
-        "Agentic Finder & Accessibility OS Automation"
-      ]
     }
   ],
 

@@ -56,14 +56,17 @@
         <a href="#" class="sidebar-link" data-action="connect">
           <span>Connect ↗</span>
         </a>
-        <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; margin-top: 4px; gap: 8px;">
-          <label for="mat-color-picker" class="sidebar-link link-color-picker" style="cursor: pointer; position: relative; flex: 1;">
-            <span id="mat-color-swatch-dot" style="width: 14px; height: 14px; border-radius: 50%; background: #1f4337; border: 1.5px solid rgba(0,0,0,0.2); display: inline-block; transition: background 0.2s ease;"></span>
-            <span>Mat Color 🎨</span>
-            <input type="color" id="mat-color-picker" value="#1f4337" style="position: absolute; opacity: 0; width: 100%; height: 100%; top: 0; left: 0; cursor: pointer;" />
+        <div class="sidebar-color-picker-box">
+          <label for="mat-color-picker" class="sidebar-link link-color-picker" title="Click to Pick Custom Color">
+            <span id="mat-color-swatch-dot" class="color-swatch-dot"></span>
+            <span>Color</span>
+            <input type="color" id="mat-color-picker" value="#1f4337" class="color-picker-input" />
           </label>
-          <button id="btn-reset-mat-color" class="btn-reset-color" title="Reset to Original Forest Green Mat Color" aria-label="Reset Mat Color">
-            <span>🔄 Reset</span>
+          <button id="btn-reset-mat-color" class="color-picker-reset-btn" title="Reset Color to Original Forest Green" aria-label="Reset Color">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+              <path d="M3 3v5h5"/>
+            </svg>
           </button>
         </div>
       </div>
