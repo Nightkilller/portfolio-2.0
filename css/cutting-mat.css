@@ -28,9 +28,10 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  box-sizing: border-box;
+  padding: 0 56px; /* Symmetric left & right padding to fit all tabs inside viewport */
   z-index: 10;
   position: relative;
-  padding-left: 56px; /* Clear fixed 3-bar toggle button on left */
 }
 
 .mat-nav-tabs {
