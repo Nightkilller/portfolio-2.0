@@ -4,10 +4,10 @@ const PORTFOLIO_DATA = {
   profile: {
     name: "Aditya Gupta",
     title: "Multi-Disciplinary Developer & Creative",
-    location: "Los Angeles, CA",
-    tagline: "Specialized in full-stack engineering, AI applications, brand identity, and creative direction.",
+    location: "Bhopal, India",
+    tagline: "Specialized in full-stack engineering, AI applications, and scalable software.",
     bio: "I'm Aditya Gupta, a Computer Science & Engineering student passionate about building AI-powered applications, full-stack web platforms, and scalable software. I enjoy solving real-world problems through clean code, modern technologies, and intuitive user experiences while continuously exploring AI, cloud computing, and open source.",
-    email: "aditya@example.com",
+    email: "adityagupta.dev@gmail.com",
     socials: [
       { name: "GitHub", url: "https://github.com/Nightkilller", icon: "code" },
       { name: "LinkedIn", url: "https://linkedin.com", icon: "user" },
