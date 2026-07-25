@@ -267,22 +267,22 @@ function renderCertificationsGrid(modalController) {
 
   const html = certs.map(cert => {
     const badgeHtml = cert.badge
-      ? `<div style="position: absolute; top: 14px; right: 14px; background: rgba(255,255,255,0.2); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.3); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.08em;">${cert.badge}</div>`
+      ? `<div style="position: absolute; top: 14px; right: 14px; background: rgba(0,0,0,0.5); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.3); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.08em; z-index: 2;">${cert.badge}</div>`
       : '';
 
-    const scoreHtml = cert.score
-      ? `<div style="font-size: 0.85rem; color: rgba(255,255,255,0.9); margin-top: 6px; font-weight: 600;">Score: ${cert.score}</div>`
-      : '';
+    // Use actual certificate image if available, otherwise fallback to gradient
+    const previewContent = cert.image
+      ? `<img src="${cert.image}" alt="${cert.title} Certificate" style="width: 100%; height: 100%; object-fit: cover; object-position: center top;" />`
+      : `<div style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center;">
+            <div style="font-size: 2.6rem; margin-bottom: 8px;">${cert.icon}</div>
+            <div style="font-family: var(--font-serif); font-size: 1.6rem; color: #fff; font-style: italic; line-height: 1.2;">${cert.title}</div>
+          </div>`;
 
     return `
       <div class="cert-card-item" data-cert-id="${cert.id}">
-        <div class="work-card-preview" style="background: ${cert.gradient}; position: relative; cursor: pointer;">
+        <div class="work-card-preview" style="background: ${cert.gradient}; position: relative; cursor: pointer; overflow: hidden;">
           ${badgeHtml}
-          <div style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center;">
-            <div style="font-size: 2.6rem; margin-bottom: 8px;">${cert.icon}</div>
-            <div style="font-family: var(--font-serif); font-size: 1.6rem; color: #fff; font-style: italic; line-height: 1.2;">${cert.title}</div>
-            ${scoreHtml}
-          </div>
+          ${previewContent}
         </div>
         <div>
           <div class="work-card-title">${cert.title}</div>
