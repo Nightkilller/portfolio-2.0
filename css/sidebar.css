@@ -129,14 +129,20 @@
 .avatar-img-normal {
   opacity: 1;
   z-index: 1;
+  transition: opacity 0.25s ease;
 }
 
 .avatar-img-wink {
   opacity: 0;
   z-index: 2;
+  transition: opacity 0.25s ease;
 }
 
-/* Hover Interaction: Fade into Avatar Wink */
+/* Hover Interaction: Cross-fade seamlessly with zero ghosting overlap */
+.avatar-container:hover .avatar-img-normal {
+  opacity: 0;
+}
+
 .avatar-container:hover .avatar-img-wink {
   opacity: 1;
 }
