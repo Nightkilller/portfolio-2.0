@@ -229,18 +229,18 @@
     background-color: var(--bg-mat) !important;
   }
 
-  /* Sticky Glassmorphism Header Bar for Mobile */
+  /* Sticky Glassmorphism Header Bar for Mobile (Apple iOS Translucent Material) */
   .mat-header {
     position: sticky;
     top: 0;
     z-index: 999;
-    background: rgba(13, 31, 24, 0.96);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(24px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
     margin: -16px -14px 16px -14px;
     padding: 10px 12px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15);
     width: calc(100% + 28px);
     box-sizing: border-box;
     display: flex;
@@ -258,12 +258,14 @@
     gap: 4px;
     width: 36px;
     height: 36px;
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
     border-radius: 10px;
     cursor: pointer;
     flex-shrink: 0;
     padding: 0;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
     transition: all 0.2s ease;
   }
 
@@ -305,11 +307,13 @@
     font-size: 0.85rem;
     font-weight: 600;
     padding: 8px 16px !important;
-    border-radius: 12px !important;
+    border-radius: 14px !important;
     flex-shrink: 0;
-    color: rgba(255, 255, 255, 0.85);
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: rgba(255, 255, 255, 0.85) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
     min-height: 38px !important;
     min-width: 44px !important;
     display: inline-flex;
@@ -328,11 +332,13 @@
   }
 
   .mat-tab-btn.active {
-    background: #ffffff !important;
-    color: #0d1f18 !important;
+    background: rgba(255, 255, 255, 0.3) !important;
+    color: #ffffff !important;
     font-weight: 700 !important;
-    border-color: #ffffff !important;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35) !important;
+    border: 1px solid rgba(255, 255, 255, 0.6) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
     opacity: 1 !important;
   }
 

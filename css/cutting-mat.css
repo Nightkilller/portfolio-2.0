@@ -25,23 +25,31 @@
   transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1), margin-left 0.35s cubic-bezier(0.4, 0, 0.2, 1), padding 0.35s ease;
 }
 
-/* Top Nav Bar */
+/* Top Nav Bar — Authentic Apple iOS Translucent Glassmorphism Header Bar */
 .mat-header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  margin: calc(-1 * var(--canvas-padding-y)) calc(-1 * var(--canvas-padding-x)) var(--canvas-padding-y) calc(-1 * var(--canvas-padding-x));
+  padding: 12px var(--canvas-padding-x);
+  width: calc(100% + (2 * var(--canvas-padding-x)));
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  box-sizing: border-box;
-  z-index: 10;
-  position: relative;
-  padding: 0;
+  transition: all 0.3s ease;
 }
 
 .mat-nav-tabs {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(12px, 3.5vw, 64px);
+  gap: clamp(8px, 2vw, 32px);
   width: 100%;
   max-width: var(--max-content-width);
   box-sizing: border-box;
@@ -51,22 +59,34 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   font-weight: 500;
-  color: var(--text-mat-white);
-  padding: 8px 16px;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 8px 18px;
   border-radius: 20px;
-  transition: background 0.2s ease, transform 0.2s ease;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
 }
 
 .mat-tab-btn:hover {
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
   transform: translateY(-1px);
 }
 
 .mat-tab-btn.active {
-  background: rgba(255, 255, 255, 0.22);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.28) !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
 }
 
 /* Desktop/Web: Hide tab icons so only clean text is shown */
