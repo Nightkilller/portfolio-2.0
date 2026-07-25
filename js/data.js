@@ -8,6 +8,7 @@ const PORTFOLIO_DATA = {
     tagline: "Specialized in full-stack engineering, AI applications, and scalable software.",
     bio: "I'm Aditya Gupta, a Computer Science & Engineering student passionate about building AI-powered applications, full-stack web platforms, and scalable software. I enjoy solving real-world problems through clean code, modern technologies, and intuitive user experiences while continuously exploring AI, cloud computing, and open source.",
     email: "adigpt08@gmail.com",
+    resumeUrl: "public/resume.pdf",
     socials: [
       { name: "GitHub", url: "https://github.com/Nightkilller", icon: "code" },
       { name: "LinkedIn", url: "https://www.linkedin.com/in/aditya-gupta-267b2b2ab/", icon: "user" },
