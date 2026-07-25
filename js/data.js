@@ -56,16 +56,16 @@ const PORTFOLIO_DATA = {
       deliverables: ["SwiftUI iOS Applications", "Mac Desktop Utilities", "CoreML Model Integration", "App Store Publishing"]
     },
     {
-      id: "desk-photoshop",
-      title: "Photoshop",
-      logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg",
-      accentColor: "#31A8FF",
-      glowColor: "rgba(49, 168, 255, 0.55)",
-      github: "https://adobe.com/photoshop",
-      demo: "https://adobe.com/photoshop",
-      description: "Adobe Photoshop is used for advanced photo manipulation, event poster graphics, texture composition, and branding mockups.",
-      usecase: "High-resolution digital graphics, event poster series, photo retouching, and artwork compositing.",
-      deliverables: ["Event Poster Series", "Digital Graphics & Fliers", "Photo Retouching", "Packaging Mockups"]
+      id: "desk-python",
+      title: "Python",
+      logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+      accentColor: "#3776AB",
+      glowColor: "rgba(55, 118, 171, 0.55)",
+      github: "https://python.org",
+      demo: "https://python.org",
+      description: "Python is Aditya's go-to language for AI/ML pipelines, backend APIs with FastAPI, data engineering with PySpark, and automation scripting.",
+      usecase: "AI model training, REST API development, data pipeline automation, and scripting utilities.",
+      deliverables: ["FastAPI Backend Services", "ML Model Training Pipelines", "PySpark Data Processors", "Automation Scripts"]
     },
     {
       id: "desk-figma",
