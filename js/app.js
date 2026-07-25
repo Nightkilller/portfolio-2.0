@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   bindActions(modalController, router);
 });
 
-/* Render Polaroid Cards (GitHub, Xcode, LinkedIn, YouTube) Scattered Around Home Desk */
+/* Render Tool Cards (Figma, Photoshop, Xcode, VS Code) Scattered Around Home Desk */
 function renderPolaroidCards(modalController) {
   const container = document.getElementById('polaroids-container');
   if (!container) return;
@@ -42,21 +42,22 @@ function renderPolaroidCards(modalController) {
 
         <div class="polaroid-frame">
           <div class="polaroid-art" style="background: ${item.gradient};">
-            <div class="polaroid-logo-wrapper">
+            <!-- White Squircle Tool Icon Container -->
+            <div class="tool-squircle-icon">
               ${item.svgIcon}
             </div>
-            <div class="polaroid-art-title" style="margin-top: 8px;">${item.title}</div>
+            <div class="polaroid-art-title" style="margin-top: 10px; font-style: normal; font-weight: 600;">${item.title}</div>
             <div class="polaroid-art-tag" style="border-color: ${item.accentColor};">${item.categoryLabel}</div>
           </div>
         </div>
-        <div class="polaroid-caption">${item.title}</div>
+        <div class="polaroid-caption">${item.title} — ${item.subtitle}</div>
       </div>
     `;
   }).join('');
 
   container.innerHTML = html;
 
-  // Bind click handlers to open modal drawer or target link
+  // Bind click handlers to open modal drawer
   const cards = container.querySelectorAll('.polaroid-card');
   cards.forEach((card, index) => {
     card.addEventListener('click', () => {
