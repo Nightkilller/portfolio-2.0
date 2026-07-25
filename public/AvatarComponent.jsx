@@ -3,7 +3,8 @@ import Link from 'next/link';
 
 /**
  * Avatar Component for Next.js / React
- * - 64px Desktop / 52px Tablet / 44px Mobile
+ * - 140px Desktop / 100px Tablet / 80px Mobile
+ * - Tight cropped viewBox vector (filling container completely)
  * - Smooth opacity swap on hover (0.25s ease)
  * - Zero movement, zero scaling, zero distortion
  */
@@ -24,20 +25,20 @@ export function Avatar() {
         .avatar-container {
           display: block;
           position: relative;
-          width: 64px;
-          height: 64px;
+          width: 140px;
+          height: 140px;
           cursor: pointer;
         }
         @media (max-width: 960px) {
           .avatar-container {
-            width: 52px;
-            height: 52px;
+            width: 100px;
+            height: 100px;
           }
         }
         @media (max-width: 600px) {
           .avatar-container {
-            width: 44px;
-            height: 44px;
+            width: 80px;
+            height: 80px;
           }
         }
         .avatar-img {

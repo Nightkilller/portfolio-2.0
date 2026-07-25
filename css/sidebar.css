@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 48px 36px 36px 36px;
+  padding: 40px 32px 32px 32px;
   border-right: 1px solid #e5e5e5;
   z-index: 20;
   overflow-y: auto;
@@ -28,16 +28,16 @@
 
 /* ==========================================================================
    Interactive Profile Avatar Component
-   - 64px desktop, 52px tablet, 44px mobile
-   - Object-fit contain
+   - Increased size: 140px desktop, 100px tablet, 80px mobile
+   - Tight cropped viewBox vector (filling container completely)
    - Smooth opacity fade swap on hover (transition: opacity 0.25s ease)
-   - Zero movement, zero scaling, zero rotation
+   - Zero movement, zero scaling, zero distortion
    ========================================================================== */
 .avatar-container {
   display: block;
   position: relative;
-  width: 64px;
-  height: 64px;
+  width: 140px;
+  height: 140px;
   cursor: pointer;
   user-select: none;
   text-decoration: none;
@@ -87,7 +87,7 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
-  margin-top: 40px;
+  margin-top: 36px;
 }
 
 .sidebar-link {

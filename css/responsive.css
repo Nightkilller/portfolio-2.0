@@ -5,8 +5,8 @@
 /* Tablet (max-width: 960px) */
 @media screen and (max-width: 960px) {
   .avatar-container {
-    width: 52px;
-    height: 52px;
+    width: 100px;
+    height: 100px;
   }
 
   .app-viewport {
@@ -75,8 +75,8 @@
 /* Mobile Devices (max-width: 600px) */
 @media screen and (max-width: 600px) {
   .avatar-container {
-    width: 44px;
-    height: 44px;
+    width: 80px;
+    height: 80px;
   }
 
   .mat-main-title {
