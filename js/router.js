@@ -42,6 +42,7 @@ class PortfolioRouter {
     const connectView = document.getElementById('mat-connect-view');
     const aboutSection = document.getElementById('mat-about-view');
     const educationSection = document.getElementById('mat-education-view');
+    const workWithMeSection = document.getElementById('mat-work-with-me-view');
     const polaroids = document.getElementById('polaroids-container');
 
     // Hide all view sections first
@@ -51,6 +52,7 @@ class PortfolioRouter {
     if (connectView) connectView.classList.remove('active');
     if (aboutSection) aboutSection.classList.remove('active');
     if (educationSection) educationSection.classList.remove('active');
+    if (workWithMeSection) workWithMeSection.classList.remove('active');
     if (polaroids) polaroids.style.display = 'none';
 
     if (tabId === 'home') {
@@ -67,10 +69,7 @@ class PortfolioRouter {
     } else if (tabId === 'about') {
       if (aboutSection) aboutSection.classList.add('active');
     } else if (tabId === 'work-with-me') {
-      // Trigger Work With Me modal directly
-      if (window.modalController) {
-        window.modalController.openBookingModal();
-      }
+      if (workWithMeSection) workWithMeSection.classList.add('active');
     }
 
     // Scroll to top of mat canvas on view switch

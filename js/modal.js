@@ -129,14 +129,16 @@ class ModalController {
     }
   }
 
-  // Open "Work With Me" Form Modal
+  // Open "Work With Me" Form (inline mat view)
   openBookingModal() {
     const form = document.getElementById('project-booking-form');
     const successState = document.getElementById('booking-success-state');
     if (form) form.style.display = 'flex';
     if (successState) successState.style.display = 'none';
 
-    this.openModal(this.bookingModal);
+    if (window.portfolioRouter) {
+      window.portfolioRouter.switchTab('work-with-me');
+    }
   }
 
   bindBookingForm() {

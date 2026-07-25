@@ -27,6 +27,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  const workWithMeBackBtn = document.getElementById('work-with-me-back-btn');
+  if (workWithMeBackBtn) {
+    workWithMeBackBtn.addEventListener('click', () => {
+      router.switchTab('home');
+    });
+  }
+
   // Render Desk Elements
   renderPureDeskLogos(modalController);
   renderWorkGrid(modalController);
