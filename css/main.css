@@ -28,6 +28,9 @@
 
   /* Dimensions */
   --sidebar-width: 320px;
+  --max-content-width: min(92vw, 1280px);
+  --canvas-padding-y: clamp(20px, 3vh, 48px);
+  --canvas-padding-x: clamp(20px, 4vw, 64px);
 }
 
 *, *::before, *::after {
@@ -42,6 +45,7 @@ html, body {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 body {
@@ -49,6 +53,8 @@ body {
   color: var(--text-dark);
   font-family: var(--font-sans);
   overflow-x: hidden;
+  position: relative;
+  width: 100%;
 }
 
 button {
@@ -68,6 +74,8 @@ a {
 .app-viewport {
   display: flex;
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
+  max-width: 100vw;
   position: relative;
+  overflow-x: hidden;
 }
