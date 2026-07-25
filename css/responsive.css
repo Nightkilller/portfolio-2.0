@@ -77,14 +77,18 @@
 /* ===== TABLET & MOBILE SWITCH (max-width: 960px) ===== */
 @media screen and (max-width: 960px) {
   html, body {
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: var(--bg-mat) !important;
   }
 
   .app-viewport {
     flex-direction: column;
     height: auto;
     max-height: none;
+    min-height: 100vh;
     overflow: visible;
+    background-color: var(--bg-mat) !important;
   }
 
   /* Slide-In Left Drawer Sidebar for Mobile */
@@ -219,9 +223,10 @@
     width: 100% !important;
     height: auto !important;
     max-height: none !important;
-    min-height: 100vh;
+    min-height: 100vh !important;
     padding: 16px 14px 36px 14px;
     overflow: visible !important;
+    background-color: var(--bg-mat) !important;
   }
 
   /* Sticky Glassmorphism Header Bar for Mobile */
@@ -233,14 +238,14 @@
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     margin: -16px -14px 16px -14px;
-    padding: 10px 12px;
+    padding: 8px 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
     width: calc(100% + 28px);
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
   }
 
   /* Mobile 3-Bar Hamburger Button */
@@ -279,10 +284,13 @@
     align-items: center;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
     scrollbar-width: none;
     padding: 2px 2px;
     width: 100%;
     flex-grow: 1;
+    mask-image: linear-gradient(to right, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
   }
 
   .mat-nav-tabs::-webkit-scrollbar {
@@ -290,16 +298,17 @@
   }
 
   .mat-tab-btn {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 600;
-    padding: 7px 12px;
-    border-radius: 18px;
+    padding: 6px 11px;
+    border-radius: 16px;
     white-space: nowrap;
     flex-shrink: 0;
-    color: rgba(255, 255, 255, 0.8);
+    scroll-snap-align: start;
+    color: rgba(255, 255, 255, 0.85);
     background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    min-height: 36px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    min-height: 34px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -310,6 +319,8 @@
     display: inline-block !important;
     vertical-align: middle;
     flex-shrink: 0;
+    width: 14px;
+    height: 14px;
   }
 
   .mat-tab-btn.active {

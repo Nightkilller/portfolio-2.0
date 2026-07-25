@@ -30,6 +30,9 @@ class PortfolioRouter {
     tabButtons.forEach(btn => {
       if (btn.getAttribute('data-tab-target') === tabId) {
         btn.classList.add('active');
+        if (window.innerWidth <= 960 && typeof btn.scrollIntoView === 'function') {
+          btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
       } else {
         btn.classList.remove('active');
       }
