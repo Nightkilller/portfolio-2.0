@@ -57,43 +57,39 @@ class ModalController {
     document.body.style.overflow = '';
   }
 
-  // Populate & Open Project Case Study Drawer Modal
+  // Populate & Expand Project Detail inline inside the green mat
   openProjectModal(projectId) {
     const project = PORTFOLIO_DATA.projects.find(p => p.id === projectId) || PORTFOLIO_DATA.apps.find(p => p.id === projectId) || PORTFOLIO_DATA.projects[0];
     if (!project) return;
 
-    this.populateModalData(project);
-    this.openModal(this.projectModal);
+    this.populateInlineDetailData(project);
+
+    if (window.portfolioRouter) {
+      window.portfolioRouter.switchTab('project-detail');
+    }
   }
 
-  // Open Desk Polaroid Modal (GitHub, Xcode, LinkedIn, YouTube)
-  openDeskPolaroidModal(deskItem) {
-    if (!deskItem) return;
-    this.populateModalData(deskItem);
-    this.openModal(this.projectModal);
-  }
+  populateInlineDetailData(data) {
+    const hero = document.getElementById('project-detail-hero');
+    const category = document.getElementById('project-detail-category');
+    const title = document.getElementById('project-detail-title');
+    const role = document.getElementById('project-detail-role');
+    const tools = document.getElementById('project-detail-tools');
+    const year = document.getElementById('project-detail-year');
+    const description = document.getElementById('project-detail-description');
+    const usecase = document.getElementById('project-detail-usecase');
+    const deliverables = document.getElementById('project-detail-deliverables');
+    const githubBtn = document.getElementById('project-detail-github');
+    const demoBtn = document.getElementById('project-detail-demo');
 
-  populateModalData(data) {
-    const modalHero = document.getElementById('project-modal-hero');
-    const modalCategory = document.getElementById('project-modal-category');
-    const modalTitle = document.getElementById('project-modal-title');
-    const modalMetaRole = document.getElementById('project-modal-meta-role');
-    const modalMetaTools = document.getElementById('project-modal-meta-tools');
-    const modalMetaYear = document.getElementById('project-modal-meta-year');
-    const modalDescription = document.getElementById('project-modal-description');
-    const modalUsecase = document.getElementById('project-modal-usecase');
-    const modalDeliverables = document.getElementById('project-modal-deliverables');
-    const githubBtn = document.getElementById('project-github-link');
-    const demoBtn = document.getElementById('project-demo-link');
-
-    if (modalHero) modalHero.style.background = data.gradient;
-    if (modalCategory) modalCategory.textContent = data.categoryLabel;
-    if (modalTitle) modalTitle.textContent = data.title;
-    if (modalMetaRole) modalMetaRole.textContent = data.role || data.categoryLabel;
-    if (modalMetaTools) modalMetaTools.textContent = data.tools || "JavaScript, TypeScript, Python";
-    if (modalMetaYear) modalMetaYear.textContent = data.year || "2024";
-    if (modalDescription) modalDescription.textContent = data.description;
-    if (modalUsecase) modalUsecase.textContent = data.usecase || data.subtitle;
+    if (hero) hero.style.background = data.gradient;
+    if (category) category.textContent = data.categoryLabel;
+    if (title) title.textContent = data.title;
+    if (role) role.textContent = data.role || data.categoryLabel;
+    if (tools) tools.textContent = data.tools || "JavaScript, TypeScript, Python";
+    if (year) year.textContent = data.year || "2024";
+    if (description) description.textContent = data.description;
+    if (usecase) usecase.textContent = data.usecase || data.subtitle;
 
     // Action links
     if (githubBtn) {
@@ -115,8 +111,8 @@ class ModalController {
     }
 
     // Deliverables list
-    if (modalDeliverables && data.deliverables) {
-      modalDeliverables.innerHTML = data.deliverables
+    if (deliverables && data.deliverables) {
+      deliverables.innerHTML = data.deliverables
         .map(item => `
           <div class="deliverable-tag">
             <span style="color: ${data.accentColor || '#2ecc71'}; font-weight: bold;">✦</span>

@@ -38,6 +38,7 @@ class PortfolioRouter {
     // Views on the Mat
     const homeView = document.getElementById('mat-work-view');
     const workGridView = document.getElementById('mat-work-grid-view');
+    const projectDetailView = document.getElementById('mat-project-detail-view');
     const aboutSection = document.getElementById('mat-about-view');
     const educationSection = document.getElementById('mat-education-view');
     const polaroids = document.getElementById('polaroids-container');
@@ -45,6 +46,7 @@ class PortfolioRouter {
     // Hide all view sections first
     if (homeView) homeView.style.display = 'none';
     if (workGridView) workGridView.classList.remove('active');
+    if (projectDetailView) projectDetailView.classList.remove('active');
     if (aboutSection) aboutSection.classList.remove('active');
     if (educationSection) educationSection.classList.remove('active');
     if (polaroids) polaroids.style.display = 'none';
@@ -54,6 +56,8 @@ class PortfolioRouter {
       if (polaroids) polaroids.style.display = 'block';
     } else if (tabId === 'work') {
       if (workGridView) workGridView.classList.add('active');
+    } else if (tabId === 'project-detail') {
+      if (projectDetailView) projectDetailView.classList.add('active');
     } else if (tabId === 'education') {
       if (educationSection) educationSection.classList.add('active');
     } else if (tabId === 'about') {
@@ -63,6 +67,12 @@ class PortfolioRouter {
       if (window.modalController) {
         window.modalController.openBookingModal();
       }
+    }
+
+    // Scroll to top of mat canvas on view switch
+    const matCanvas = document.querySelector('.cutting-mat-canvas');
+    if (matCanvas) {
+      matCanvas.scrollTop = 0;
     }
   }
 }

@@ -112,6 +112,66 @@
         <div id="apps-grid-container" class="work-grid-container"></div>
       </section>
 
+      <!-- VIEW 2B: INLINE PROJECT DETAIL (expands inside green mat) -->
+      <section id="mat-project-detail-view" class="mat-project-detail-view">
+        <button id="project-detail-back-btn" class="project-detail-back-btn">← Back to Projects</button>
+
+        <div id="project-detail-hero" class="project-detail-hero">
+          <div class="project-detail-hero-inner">
+            <div id="project-detail-category" class="project-detail-category"></div>
+            <h2 id="project-detail-title" class="project-detail-title"></h2>
+          </div>
+        </div>
+
+        <div class="project-detail-body">
+          <!-- Action Links -->
+          <div class="project-action-links" style="margin-bottom: 28px;">
+            <a id="project-detail-github" href="#" target="_blank" rel="noopener" class="btn-project-link btn-github">
+              <span>GitHub Repository</span>
+              <span>↗</span>
+            </a>
+            <a id="project-detail-demo" href="#" target="_blank" rel="noopener" class="btn-project-link btn-demo">
+              <span>Live Demo</span>
+              <span>↗</span>
+            </a>
+          </div>
+
+          <!-- Meta Grid -->
+          <div class="project-detail-meta">
+            <div class="project-detail-meta-item">
+              <div class="meta-label">Role</div>
+              <div id="project-detail-role" class="meta-value"></div>
+            </div>
+            <div class="project-detail-meta-item">
+              <div class="meta-label">Tech Stack</div>
+              <div id="project-detail-tools" class="meta-value"></div>
+            </div>
+            <div class="project-detail-meta-item">
+              <div class="meta-label">Year</div>
+              <div id="project-detail-year" class="meta-value"></div>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div class="project-detail-section">
+            <h3 class="project-detail-section-title">Project Overview</h3>
+            <p id="project-detail-description" class="project-detail-text"></p>
+          </div>
+
+          <!-- Use Case -->
+          <div class="project-detail-section">
+            <h3 class="project-detail-section-title">Use Case & Solution</h3>
+            <p id="project-detail-usecase" class="project-detail-usecase"></p>
+          </div>
+
+          <!-- Deliverables -->
+          <div class="project-detail-section">
+            <h3 class="project-detail-section-title">Key Features & Deliverables</h3>
+            <div id="project-detail-deliverables" class="project-detail-deliverables"></div>
+          </div>
+        </div>
+      </section>
+
       <!-- VIEW 3: EDUCATION (ACADEMIC PAPER SHEET) -->
       <section id="mat-education-view" class="mat-section-view">
         <div class="desk-paper-sheet">
@@ -134,66 +194,6 @@
 
     </main>
 
-  </div>
-
-  <!-- ==========================================================================
-       CASE STUDY README DETAIL MODAL DRAWER
-       ========================================================================== -->
-  <div id="project-modal" class="modal-overlay" aria-hidden="true">
-    <div class="modal-container">
-      <button class="modal-close-btn" aria-label="Close Case Study">✕</button>
-      
-      <div id="project-modal-hero" class="project-modal-hero">
-        <div>
-          <div id="project-modal-category" class="project-modal-category"></div>
-          <h2 id="project-modal-title" class="project-modal-title"></h2>
-        </div>
-      </div>
-
-      <div class="project-modal-body">
-        <!-- Live Demo & GitHub Action Links -->
-        <div class="project-action-links">
-          <a id="project-github-link" href="#" target="_blank" rel="noopener" class="btn-project-link btn-github">
-            <span>GitHub Repository</span>
-            <span>↗</span>
-          </a>
-          <a id="project-demo-link" href="#" target="_blank" rel="noopener" class="btn-project-link btn-demo">
-            <span>Live Demo</span>
-            <span>↗</span>
-          </a>
-        </div>
-
-        <div class="project-meta-grid">
-          <div>
-            <div class="meta-item-label">Role</div>
-            <div id="project-modal-meta-role" class="meta-item-value"></div>
-          </div>
-          <div>
-            <div class="meta-item-label">Tech Stack</div>
-            <div id="project-modal-meta-tools" class="meta-item-value"></div>
-          </div>
-          <div>
-            <div class="meta-item-label">Year</div>
-            <div id="project-modal-meta-year" class="meta-item-value"></div>
-          </div>
-        </div>
-
-        <div>
-          <div class="deliverables-title">Project Overview & README</div>
-          <p id="project-modal-description" style="font-size: 1rem; line-height: 1.7; color: #444;"></p>
-        </div>
-
-        <div>
-          <div class="deliverables-title">Use Case & Solution</div>
-          <p id="project-modal-usecase" style="font-size: 0.98rem; line-height: 1.6; color: #555; background: #f8f9fa; padding: 16px; border-radius: 8px; border: 1px solid #eee;"></p>
-        </div>
-
-        <div>
-          <div class="deliverables-title">Key Features & Deliverables</div>
-          <div id="project-modal-deliverables" class="deliverables-list"></div>
-        </div>
-      </div>
-    </div>
   </div>
 
   <!-- ==========================================================================

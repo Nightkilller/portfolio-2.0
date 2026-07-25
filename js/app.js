@@ -5,11 +5,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   const router = new PortfolioRouter();
   router.init();
+  window.portfolioRouter = router;
 
   const modalController = new ModalController();
   modalController.init();
 
   window.modalController = modalController;
+
+  // Bind Back Button for Project Detail view
+  const backBtn = document.getElementById('project-detail-back-btn');
+  if (backBtn) {
+    backBtn.addEventListener('click', () => {
+      router.switchTab('work');
+    });
+  }
 
   // Render Desk Elements
   renderPureDeskLogos(modalController);
