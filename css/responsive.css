@@ -1,0 +1,85 @@
+/* ==========================================================================
+   Responsive Overrides — Tablet & Mobile Support
+   ========================================================================== */
+
+/* Tablet (max-width: 960px) */
+@media screen and (max-width: 960px) {
+  .avatar-container {
+    width: 52px;
+    height: 52px;
+  }
+
+  .app-viewport {
+    flex-direction: column;
+  }
+
+  .app-sidebar {
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+    position: relative;
+    padding: 20px;
+    border-right: none;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .sidebar-top {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .sidebar-bio {
+    font-size: 0.9rem;
+  }
+
+  .sidebar-bottom {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .cutting-mat-canvas {
+    min-height: auto;
+    padding: 20px 16px 40px 16px;
+  }
+
+  .mat-header {
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  .mat-main-title {
+    font-size: 3.2rem;
+  }
+
+  .polaroid-card {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    margin: 16px auto;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .polaroid-frame {
+    width: 100%;
+    height: 200px;
+  }
+}
+
+/* Mobile Devices (max-width: 600px) */
+@media screen and (max-width: 600px) {
+  .avatar-container {
+    width: 44px;
+    height: 44px;
+  }
+
+  .mat-main-title {
+    font-size: 2.6rem;
+  }
+}

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aditya Gupta — Portfolio</title>
+  <meta name="description" content="Aditya Gupta is a multi-disciplinary creative specialized in brand design, visual identity, event fliers, and creative direction.">
+  <meta name="theme-color" content="#ffffff">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/cutting-mat.css">
+  <link rel="stylesheet" href="css/modals.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       APP VIEWPORT (SPLIT SCREEN LAYOUT)
+       ========================================================================== -->
+  <div class="app-viewport">
+    
+    <!-- LEFT SIDEBAR (WHITE BACKGROUND) -->
+    <aside class="app-sidebar">
+      <div class="sidebar-top">
+        
+        <!-- Interactive Profile Avatar Component (Normal <-> Wink Swap on Hover) -->
+        <a href="/" class="avatar-container" data-tab-target="work" aria-label="Aditya Gupta Home">
+          <img src="public/avatar-normal.svg" alt="Aditya Gupta Avatar" class="avatar-img avatar-img-normal">
+          <img src="public/avatar-wink.svg" alt="Aditya Gupta Winking Avatar" class="avatar-img avatar-img-wink">
+        </a>
+
+        <!-- Bio Statement -->
+        <p class="sidebar-bio">
+          Hey there! I'm Aditya, a multi-disciplinary creative specialized in brand design, visual identity, and creative direction.
+        </p>
+
+        <!-- Chevron Arrow -->
+        <div class="sidebar-arrow">❯</div>
+      </div>
+
+      <!-- Sidebar Action Links -->
+      <div class="sidebar-bottom">
+        <a href="#" class="sidebar-link link-book" data-action="book-project">BOOK A PROJECT ↗</a>
+        <a href="#" class="sidebar-link" data-tab-target="work">
+          <span class="link-icon">📁</span>
+          <span>Projects ↗</span>
+        </a>
+        <a href="#" class="sidebar-link" data-tab-target="work">
+          <span class="link-icon">📁</span>
+          <span>Fliers ↗</span>
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener" class="sidebar-link">Instagram</a>
+        <a href="#" class="sidebar-link">Newsletter</a>
+      </div>
+    </aside>
+
+    <!-- RIGHT CANVAS (DARK GREEN SELF-HEALING CUTTING GRID MAT) -->
+    <main class="cutting-mat-canvas">
+      
+      <!-- Top Right Header Nav Tabs -->
+      <header class="mat-header">
+        <nav class="mat-nav-tabs" aria-label="Desktop Workspace Tabs">
+          <button class="mat-tab-btn active" data-tab-target="work">
+            <span class="tab-icon">📁</span>
+            <span>Work</span>
+          </button>
+          <button class="mat-tab-btn" data-tab-target="about">
+            <span class="tab-icon">👨🏻‍💻</span>
+            <span>About Me</span>
+          </button>
+          <button class="mat-tab-btn" data-tab-target="services">
+            <span class="tab-icon">💡</span>
+            <span>Services</span>
+          </button>
+        </nav>
+      </header>
+
+      <!-- VIEW 1: WORK (DESK WORKSPACE WITH POLAROIDS & SERIF TITLE) -->
+      <div id="mat-work-view" class="mat-center-stage" style="display: flex;">
+        <h1 class="mat-main-title">Aditya Gupta</h1>
+        
+        <!-- Hand-Drawn Oval Loop Buttons -->
+        <div class="mat-hand-buttons">
+          <button id="btn-hand-projects" class="oval-hand-btn">
+            <span>projects</span>
+            <svg viewBox="0 0 160 50">
+              <ellipse cx="80" cy="25" rx="74" ry="21"/>
+            </svg>
+          </button>
+          
+          <button id="btn-hand-fliers" class="oval-hand-btn">
+            <span>fliers</span>
+            <svg viewBox="0 0 160 50">
+              <ellipse cx="80" cy="25" rx="74" ry="21"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Scattered Polaroid Cards Container -->
+      <div id="polaroids-container"></div>
+
+      <!-- VIEW 2: ABOUT ME (PAPER DESK SHEET) -->
+      <section id="mat-about-view" class="mat-section-view">
+        <div class="desk-paper-sheet">
+          <h2 style="font-family: var(--font-serif); font-size: 2.8rem; margin-bottom: 16px;">About Aditya</h2>
+          <p style="font-size: 1.05rem; line-height: 1.7; color: #333; margin-bottom: 24px;">
+            I am a multi-disciplinary creative based in <strong>Los Angeles, CA</strong> specialized in visual identity systems, brand strategy, event fliers, and creative direction. I collaborate with brands, nightlife organizers, artists, and clothing labels to distill complex concepts into unforgettable visual narratives.
+          </p>
+          <h3 style="font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #666; margin-bottom: 12px;">Toolkit & Software</h3>
+          <div id="tools-desk-list" style="display: flex; flex-wrap: wrap; gap: 8px;"></div>
+        </div>
+      </section>
+
+      <!-- VIEW 3: SERVICES (SPECIFICATION DESK SHEET) -->
+      <section id="mat-services-view" class="mat-section-view">
+        <div class="desk-paper-sheet" style="transform: rotate(1deg);">
+          <h2 style="font-family: var(--font-serif); font-size: 2.8rem; margin-bottom: 24px;">Services & Capabilities</h2>
+          <div id="services-desk-grid"></div>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- ==========================================================================
+       CASE STUDY DETAIL MODAL DRAWER
+       ========================================================================== -->
+  <div id="project-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-container">
+      <button class="modal-close-btn" aria-label="Close Case Study">✕</button>
+      
+      <div id="project-modal-hero" class="project-modal-hero">
+        <div>
+          <div id="project-modal-category" class="project-modal-category"></div>
+          <h2 id="project-modal-title" class="project-modal-title"></h2>
+        </div>
+      </div>
+
+      <div class="project-modal-body">
+        <div class="project-meta-grid">
+          <div>
+            <div class="meta-item-label">Role</div>
+            <div id="project-modal-meta-role" class="meta-item-value"></div>
+          </div>
+          <div>
+            <div class="meta-item-label">Tools Used</div>
+            <div id="project-modal-meta-tools" class="meta-item-value"></div>
+          </div>
+          <div>
+            <div class="meta-item-label">Year</div>
+            <div id="project-modal-meta-year" class="meta-item-value"></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="deliverables-title">Project Overview</div>
+          <p id="project-modal-description" style="font-size: 1rem; line-height: 1.7; color: #444;"></p>
+        </div>
+
+        <div>
+          <div class="deliverables-title">Key Deliverables</div>
+          <div id="project-modal-deliverables" class="deliverables-list"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       BOOK A PROJECT FORM MODAL
+       ========================================================================== -->
+  <div id="booking-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-container" style="max-width: 640px;">
+      <button class="modal-close-btn" aria-label="Close Booking Modal">✕</button>
+
+      <div class="form-modal-header">
+        <h2 class="form-modal-title">Let's work together!</h2>
+        <p class="form-modal-subtitle">
+          Interested in starting a project? Fill out this brief form with your project scope and goals.
+        </p>
+      </div>
+
+      <form id="project-booking-form" class="booking-form">
+        <div class="form-group">
+          <label class="form-label" for="input-name">Your Name *</label>
+          <input type="text" id="input-name" class="form-input" placeholder="e.g. Alex Morgan" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="input-email">Email Address *</label>
+          <input type="email" id="input-email" class="form-input" placeholder="e.g. alex@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="input-instagram">Instagram Handle (Optional)</label>
+          <input type="text" id="input-instagram" class="form-input" placeholder="@yourhandle">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="input-title">Project Title / Scope *</label>
+          <input type="text" id="input-title" class="form-input" placeholder="e.g. Brand Identity Refresh" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="input-desc">Project Description</label>
+          <textarea id="input-desc" class="form-textarea" placeholder="Tell me a bit about your project goals and timeline..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit-form">SUBMIT PROJECT REQUEST →</button>
+      </form>
+
+      <div id="booking-success-state" style="display: none; padding: 48px 36px; text-align: center; flex-direction: column; align-items: center; gap: 12px;">
+        <div style="font-size: 2.5rem; color: #19372d;">✓</div>
+        <h3 style="font-family: var(--font-serif); font-size: 2rem;">Message Sent!</h3>
+        <p style="font-size: 0.95rem; color: #666;">Thanks for reaching out! Aditya will get back to you within 24-48 hours.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- App Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
