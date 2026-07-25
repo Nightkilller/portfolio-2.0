@@ -40,12 +40,13 @@ const PORTFOLIO_DATA = {
     ]
   },
 
-  // 4 Desk Floating Logos (Matching Exact User Uploaded Image Logos: Xcode, Photoshop, Figma, GitHub)
+  // 4 Desk Floating Logos — REAL official icons via Devicon CDN
+  // CDN: https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/
   deskPolaroids: [
     {
       id: "desk-xcode",
       title: "Xcode",
-      logoUrl: "public/assets/logo-xcode.svg",
+      logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/xcode/xcode-original.svg",
       accentColor: "#30b8ff",
       glowColor: "rgba(48, 184, 255, 0.55)",
       github: "https://developer.apple.com/xcode/",
@@ -57,7 +58,7 @@ const PORTFOLIO_DATA = {
     {
       id: "desk-photoshop",
       title: "Photoshop",
-      logoUrl: "public/assets/logo-photoshop.svg",
+      logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg",
       accentColor: "#31A8FF",
       glowColor: "rgba(49, 168, 255, 0.55)",
       github: "https://adobe.com/photoshop",
@@ -69,7 +70,7 @@ const PORTFOLIO_DATA = {
     {
       id: "desk-figma",
       title: "Figma",
-      logoUrl: "public/assets/logo-figma.svg",
+      logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg",
       accentColor: "#F24E1E",
       glowColor: "rgba(242, 78, 30, 0.55)",
       github: "https://figma.com",
@@ -81,7 +82,7 @@ const PORTFOLIO_DATA = {
     {
       id: "desk-github",
       title: "GitHub",
-      logoUrl: "public/assets/logo-github.svg",
+      logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
       accentColor: "#ffffff",
       glowColor: "rgba(255, 255, 255, 0.55)",
       github: "https://github.com/Nightkilller",
