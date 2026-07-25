@@ -229,23 +229,27 @@
     background-color: var(--bg-mat) !important;
   }
 
-  /* Sticky Glassmorphism Header Bar for Mobile (Apple iOS Translucent Material) */
+  /* Sticky iOS 18 Liquid Glass Floating Capsule Header Bar for Mobile */
   .mat-header {
     position: sticky;
-    top: 0;
+    top: 8px;
     z-index: 999;
-    background: rgba(255, 255, 255, 0.08) !important;
-    backdrop-filter: blur(24px) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
-    margin: -16px -14px 16px -14px;
-    padding: 10px 12px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15);
-    width: calc(100% + 28px);
+    background: rgba(255, 255, 255, 0.16) !important;
+    backdrop-filter: blur(28px) saturate(200%) !important;
+    -webkit-backdrop-filter: blur(28px) saturate(200%) !important;
+    margin: 0 8px 16px 8px !important;
+    padding: 6px 8px !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.35) !important;
+    border-radius: 9999px !important;
+    box-shadow: 
+      0 10px 30px rgba(0, 0, 0, 0.38),
+      inset 0 1.5px 0.5px rgba(255, 255, 255, 0.65),
+      inset 0 -1px 0.5px rgba(255, 255, 255, 0.2) !important;
+    width: calc(100% - 16px) !important;
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     overflow: hidden;
   }
 
@@ -255,40 +259,38 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 4px;
-    width: 36px;
-    height: 36px;
-    background: rgba(255, 255, 255, 0.15) !important;
-    border: 1px solid rgba(255, 255, 255, 0.25) !important;
-    border-radius: 10px;
+    gap: 3px;
+    width: 34px;
+    height: 34px;
+    background: rgba(255, 255, 255, 0.18) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 9999px !important;
     cursor: pointer;
     flex-shrink: 0;
     padding: 0;
-    backdrop-filter: blur(12px) !important;
-    -webkit-backdrop-filter: blur(12px) !important;
     transition: all 0.2s ease;
   }
 
   .mobile-drawer-toggle-btn span {
-    width: 18px;
+    width: 16px;
     height: 2px;
     background-color: #ffffff;
     border-radius: 2px;
   }
 
   .mobile-drawer-toggle-btn:hover {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.28);
   }
 
   .mat-nav-tabs {
     display: flex;
-    gap: 6px;
-    justify-content: flex-start;
+    gap: 4px;
+    justify-content: space-around;
     align-items: center;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    padding: 2px 8px 2px 2px;
+    padding: 0;
     width: 100%;
     flex-grow: 1;
     mask-image: none !important;
@@ -304,18 +306,14 @@
   }
 
   .mat-tab-btn {
-    font-size: 0.85rem;
-    font-weight: 600;
-    padding: 8px 16px !important;
-    border-radius: 14px !important;
+    padding: 7px 14px !important;
+    border-radius: 9999px !important;
     flex-shrink: 0;
-    color: rgba(255, 255, 255, 0.85) !important;
-    background: rgba(255, 255, 255, 0.08) !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
-    backdrop-filter: blur(12px) !important;
-    -webkit-backdrop-filter: blur(12px) !important;
-    min-height: 38px !important;
-    min-width: 44px !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    background: transparent !important;
+    border: 1px solid transparent !important;
+    min-height: 34px !important;
+    min-width: 40px !important;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -327,18 +325,16 @@
     display: block !important;
     vertical-align: middle;
     flex-shrink: 0;
-    width: 18px !important;
-    height: 18px !important;
+    width: 16px !important;
+    height: 16px !important;
   }
 
   .mat-tab-btn.active {
-    background: rgba(255, 255, 255, 0.3) !important;
-    color: #ffffff !important;
+    background: #ffffff !important;
+    color: #0d1f18 !important;
     font-weight: 700 !important;
-    border: 1px solid rgba(255, 255, 255, 0.6) !important;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
-    backdrop-filter: blur(16px) !important;
-    -webkit-backdrop-filter: blur(16px) !important;
+    border-radius: 9999px !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28) !important;
     opacity: 1 !important;
   }
 
