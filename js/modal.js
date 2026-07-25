@@ -132,8 +132,10 @@ class ModalController {
   // Open "Work With Me" Form (inline mat view)
   openBookingModal() {
     const form = document.getElementById('project-booking-form');
+    const subtitle = document.getElementById('booking-subtitle');
     const successState = document.getElementById('booking-success-state');
     if (form) form.style.display = 'flex';
+    if (subtitle) subtitle.style.display = 'block';
     if (successState) successState.style.display = 'none';
 
     if (window.portfolioRouter) {
@@ -143,6 +145,7 @@ class ModalController {
 
   bindBookingForm() {
     const form = document.getElementById('project-booking-form');
+    const subtitle = document.getElementById('booking-subtitle');
     const successState = document.getElementById('booking-success-state');
 
     if (!form) return;
@@ -183,11 +186,13 @@ class ModalController {
       .then(res => res.json())
       .then(() => {
         form.style.display = 'none';
+        if (subtitle) subtitle.style.display = 'none';
         if (successState) successState.style.display = 'flex';
         form.reset();
       })
       .catch(() => {
         form.style.display = 'none';
+        if (subtitle) subtitle.style.display = 'none';
         if (successState) successState.style.display = 'flex';
         form.reset();
       });
