@@ -47,7 +47,49 @@ function initApp() {
   renderEducationDesk();
   renderToolsDesk();
   renderCertificationsGrid(modalController);
+  initMatColorPicker();
   bindActions(modalController, router);
+}
+
+/* Initialize Mat Color Wheel Picker */
+function initMatColorPicker() {
+  const colorInput = document.getElementById('mat-color-picker');
+  if (!colorInput) return;
+
+  // Load saved custom color or default
+  const savedColor = localStorage.getItem('mat-custom-color');
+  if (savedColor) {
+    applyCustomMatColor(savedColor);
+    colorInput.value = savedColor;
+  }
+
+  colorInput.addEventListener('input', (e) => {
+    const color = e.target.value;
+    applyCustomMatColor(color);
+    localStorage.setItem('mat-custom-color', color);
+  });
+}
+
+function applyCustomMatColor(hexColor) {
+  const swatchDot = document.getElementById('mat-color-swatch-dot');
+  if (swatchDot) swatchDot.style.background = hexColor;
+
+  document.documentElement.style.setProperty('--bg-mat', hexColor);
+  document.body.style.setProperty('--bg-mat', hexColor);
+
+  // Compute darker shade for grid line background
+  const darker = adjustColorBrightness(hexColor, -25);
+  document.documentElement.style.setProperty('--bg-mat-dark', darker);
+}
+
+function adjustColorBrightness(hex, percent) {
+  let num = parseInt(hex.replace('#',''), 16);
+  if (isNaN(num)) return hex;
+  let amt = Math.round(2.55 * percent);
+  let R = (num >> 16) + amt;
+  let G = (num >> 8 & 0x00FF) + amt;
+  let B = (num & 0x0000FF) + amt;
+  return '#' + (0x1000000 + (R<255?R<0?0:R:255)*0x10000 + (G<255?G<0?0:G:255)*0x100 + (B<255?B<0?0:B:255)).toString(16).slice(1);
 }
 
 if (document.readyState === 'loading') {
