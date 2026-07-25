@@ -61,61 +61,6 @@
   width: 100%;
 }
 
-/* Permanent Fixed 3-Bar Hamburger Toggle Button */
-.permanent-sidebar-toggle {
-  position: fixed;
-  top: 18px;
-  left: 18px;
-  z-index: 10000;
-  width: 42px;
-  height: 42px;
-  background: rgba(13, 31, 24, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4.5px;
-  cursor: pointer;
-  padding: 0;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  outline: none;
-}
-
-.permanent-sidebar-toggle span {
-  width: 20px;
-  height: 2.2px;
-  background-color: #ffffff;
-  border-radius: 2px;
-  transition: all 0.25s ease;
-}
-
-.permanent-sidebar-toggle:hover {
-  background: rgba(13, 31, 24, 0.98);
-  transform: scale(1.06);
-  border-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
-}
-
-.permanent-sidebar-toggle.sidebar-open {
-  background: #ffffff;
-  border: 1px solid #cbd5e1;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-}
-
-.permanent-sidebar-toggle.sidebar-open span {
-  background-color: #0f172a;
-}
-
-.permanent-sidebar-toggle.sidebar-open:hover {
-  background: #f8fafc;
-  border-color: #94a3b8;
-}
-
 .btn-reset-color {
   background: transparent;
   border: 1px solid #cbd5e1;

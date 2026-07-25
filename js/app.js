@@ -48,43 +48,12 @@ function initApp() {
   renderToolsDesk();
   renderCertificationsGrid(modalController);
   initMatColorPicker();
-  initSidebarToggle();
   initSidebarResizer();
   bindActions(modalController, router);
-}
-
-/* Initialize Permanent Sidebar Collapse & Expand Toggle (3-Bar Hamburger) */
-function initSidebarToggle() {
+  
+  // Ensure sidebar is never collapsed
   const sidebar = document.getElementById('app-sidebar');
-  const toggleBtn = document.getElementById('permanent-sidebar-toggle');
-
-  if (!sidebar || !toggleBtn) return;
-
-  const toggleSidebar = () => {
-    const isCollapsed = sidebar.classList.toggle('collapsed');
-    if (isCollapsed) {
-      toggleBtn.classList.remove('sidebar-open');
-      toggleBtn.title = "Show Sidebar";
-      localStorage.setItem('sidebar-collapsed', 'true');
-    } else {
-      toggleBtn.classList.add('sidebar-open');
-      toggleBtn.title = "Hide Sidebar (Full Screen Mat)";
-      localStorage.setItem('sidebar-collapsed', 'false');
-    }
-  };
-
-  toggleBtn.addEventListener('click', toggleSidebar);
-
-  // Restore saved collapse state
-  if (localStorage.getItem('sidebar-collapsed') === 'true') {
-    sidebar.classList.add('collapsed');
-    toggleBtn.classList.remove('sidebar-open');
-    toggleBtn.title = "Show Sidebar";
-  } else {
-    sidebar.classList.remove('collapsed');
-    toggleBtn.classList.add('sidebar-open');
-    toggleBtn.title = "Hide Sidebar (Full Screen Mat)";
-  }
+  if (sidebar) sidebar.classList.remove('collapsed');
 }
 
 /* Initialize Sidebar Resizer Drag Handle */
