@@ -12,15 +12,15 @@ document.addEventListener('DOMContentLoaded', () => {
   window.modalController = modalController;
 
   // Render Desk Elements
-  renderAppLogoCards(modalController);
+  renderPureDeskLogos(modalController);
   renderWorkGrid(modalController);
   renderEducationDesk();
   renderToolsDesk();
   bindActions(modalController, router);
 });
 
-/* Render Clean App Logo Cards (Figma, Photoshop, Xcode, VS Code) — Pure App Logos, No Cutout Frame */
-function renderAppLogoCards(modalController) {
+/* Render Pure Clearbit API Logos — Pure Logos Only, Zero Description */
+function renderPureDeskLogos(modalController) {
   const container = document.getElementById('polaroids-container');
   if (!container) return;
 
@@ -31,22 +31,21 @@ function renderAppLogoCards(modalController) {
     const posClass = positions[index % positions.length];
 
     return `
-      <div class="app-logo-card ${posClass}" data-logo-id="${item.id}" style="--glow-color: ${item.glowColor || 'rgba(255,255,255,0.3)'};">
-        <div class="app-logo-squircle">
-          ${item.svgIcon}
-        </div>
-        <div class="app-logo-info">
-          <div class="app-logo-title">${item.title}</div>
-          <div class="app-logo-subtitle">${item.categoryLabel}</div>
-        </div>
+      <div class="pure-logo-item ${posClass}" data-logo-id="${item.id}" title="${item.title}" style="--glow-color: ${item.glowColor || 'rgba(255,255,255,0.4)'};">
+        <img 
+          src="${item.logoUrl}" 
+          alt="${item.title} Logo" 
+          class="clearbit-logo-img"
+          loading="eager"
+        />
       </div>
     `;
   }).join('');
 
   container.innerHTML = html;
 
-  // Bind click handlers to open drawer
-  const cards = container.querySelectorAll('.app-logo-card');
+  // Bind click handlers to open details modal drawer
+  const cards = container.querySelectorAll('.pure-logo-item');
   cards.forEach((card, index) => {
     card.addEventListener('click', () => {
       const item = deskItems[index];

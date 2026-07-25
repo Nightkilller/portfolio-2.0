@@ -41,19 +41,16 @@ const PORTFOLIO_DATA = {
     ]
   },
 
-  // 4 Front Page Desk Tool Cards (Figma, Photoshop, Xcode, VS Code) - Matching User Screenshot
+  // Desk Logos fetched via Clearbit Logo API (Pure logos, zero text description)
   deskPolaroids: [
     {
       id: "desk-figma",
       title: "Figma",
-      subtitle: "UI/UX & Visual Design Tool",
-      categoryLabel: "Design Tool",
-      gradient: "linear-gradient(135deg, #1e1e1e 0%, #121212 50%, #2a2a2a 100%)",
+      logoUrl: "https://logo.clearbit.com/figma.com",
       accentColor: "#F24E1E",
-      glowColor: "rgba(242, 78, 30, 0.45)",
+      glowColor: "rgba(242, 78, 30, 0.5)",
       github: "https://figma.com",
       demo: "https://figma.com",
-      svgIcon: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 38 57"><path fill="#0ACF83" d="M19 57a9.5 9.5 0 0 1-9.5-9.5c0-5.247 4.253-9.5 9.5-9.5h9.5v9.5A9.5 9.5 0 0 1 19 57z"/><path fill="#A259FF" d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5A9.5 9.5 0 0 1 0 47.5z"/><path fill="#F24E1E" d="M0 28.5A9.5 9.5 0 0 1 9.5 19H19v19H9.5A9.5 9.5 0 0 1 0 28.5z"/><path fill="#FF7262" d="M0 9.5A9.5 9.5 0 0 1 9.5 0H19v19H9.5A9.5 9.5 0 0 1 0 9.5z"/><path fill="#1ABCFE" d="M19 0h9.5a9.5 9.5 0 0 1 0 19H19V0z"/></svg>`,
       description: "Figma is Aditya's primary interface design tool for wireframing, high-fidelity UI design, component systems, and client prototypes.",
       usecase: "UI/UX component design systems, mobile app wireframes, and vector branding collateral.",
       deliverables: ["High-Fidelity UI Prototypes", "Design System Libraries", "Interactive Motion Specs", "Vector Asset Export"]
@@ -61,14 +58,11 @@ const PORTFOLIO_DATA = {
     {
       id: "desk-photoshop",
       title: "Photoshop",
-      subtitle: "Image, Poster & Graphic Editor",
-      categoryLabel: "Graphic Editor",
-      gradient: "linear-gradient(135deg, #001e36 0%, #001224 50%, #00335c 100%)",
+      logoUrl: "https://logo.clearbit.com/adobe.com",
       accentColor: "#31A8FF",
-      glowColor: "rgba(49, 168, 255, 0.45)",
+      glowColor: "rgba(49, 168, 255, 0.5)",
       github: "https://adobe.com/photoshop",
       demo: "https://adobe.com/photoshop",
-      svgIcon: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="#31A8FF"><rect width="24" height="24" rx="5" fill="#001E36"/><path d="M4.5 16.5v-9h3.5c1.4 0 2.5.8 2.5 2.2 0 1.5-1.1 2.3-2.5 2.3h-1.5v4.5h-2zm2-6.2h1.3c.6 0 1.1-.3 1.1-1 0-.6-.5-.9-1.1-.9h-1.3v1.9zm7.2 6.3c-1.3 0-2.2-.6-2.5-1.4l1.6-.7c.2.4.5.7 1 .7.4 0 .7-.2.7-.5 0-.4-.4-.5-1.1-.8-1.2-.4-2-1-2-2.1 0-1.3 1.1-2.1 2.5-2.1 1.1 0 1.9.5 2.3 1.3l-1.5.7c-.2-.4-.5-.6-.8-.6-.3 0-.6.2-.6.4 0 .3.3.5 1 .7 1.3.4 2.1 1 2.1 2.2 0 1.4-1.1 2.2-2.7 2.2z" fill="#31A8FF"/></svg>`,
       description: "Adobe Photoshop is used for advanced photo manipulation, event poster graphics, texture composition, and branding mockups.",
       usecase: "High-resolution digital graphics, event poster series, photo retouching, and artwork compositing.",
       deliverables: ["Event Poster Series", "Digital Graphics & Fliers", "Photo Retouching", "Packaging Mockups"]
@@ -76,14 +70,11 @@ const PORTFOLIO_DATA = {
     {
       id: "desk-xcode",
       title: "Xcode",
-      subtitle: "iOS & macOS Native IDE",
-      categoryLabel: "iOS & Mac IDE",
-      gradient: "linear-gradient(135deg, #007acc 0%, #005999 50%, #003e66 100%)",
+      logoUrl: "https://logo.clearbit.com/apple.com",
       accentColor: "#4cc9f0",
-      glowColor: "rgba(76, 201, 240, 0.45)",
+      glowColor: "rgba(76, 201, 240, 0.5)",
       github: "https://developer.apple.com/xcode/",
       demo: "https://developer.apple.com/xcode/",
-      svgIcon: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
       description: "Apple Xcode is the primary IDE for developing native iOS and macOS applications using Swift, SwiftUI, and CoreML APIs.",
       usecase: "Mobile iOS app engineering, macOS desktop applications, performance profiling, and App Store builds.",
       deliverables: ["SwiftUI iOS Applications", "Mac Desktop Utilities", "CoreML Model Integration", "App Store Publishing"]
@@ -91,14 +82,11 @@ const PORTFOLIO_DATA = {
     {
       id: "desk-vscode",
       title: "VS Code",
-      subtitle: "Code Editor & Full-Stack Environment",
-      categoryLabel: "Code Editor",
-      gradient: "linear-gradient(135deg, #0066b8 0%, #004b87 50%, #00335c 100%)",
+      logoUrl: "https://logo.clearbit.com/code.visualstudio.com",
       accentColor: "#007acc",
-      glowColor: "rgba(0, 122, 204, 0.45)",
+      glowColor: "rgba(0, 122, 204, 0.5)",
       github: "https://code.visualstudio.com",
       demo: "https://code.visualstudio.com",
-      svgIcon: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="#ffffff"><path d="M23.15 2.587L18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.41-3.33a.997.997 0 0 0-1.354.14L.24 7.218a.998.998 0 0 0 .11 1.408l3.6 2.92-3.6 2.92a.998.998 0 0 0-.11 1.408l1.041 1.278a.997.997 0 0 0 1.354.14l4.41-3.33 9.46 8.63c.47.43 1.15.54 1.705.29l4.94-2.377A1.5 1.5 0 0 0 24 21.656V4.304a1.5 1.5 0 0 0-.85-1.377zM18 16.5l-5.5-4.5L18 7.5v9z"/></svg>`,
       description: "Visual Studio Code is Aditya's daily driver editor for full-stack JavaScript, TypeScript, Python, Next.js, and C++ development.",
       usecase: "Full-stack web application development, debugging, Git version control, and multi-language editing.",
       deliverables: ["Next.js & React Web Apps", "Python FastAPI Backends", "Custom Extensions & Tooling", "Git Workflows"]
