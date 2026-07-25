@@ -337,12 +337,6 @@ function renderToolsDesk() {
 
 /* Bind Actions & Modal Triggers */
 function bindActions(modalController, router) {
-  // Resume Link Handler
-  const resumeBtns = document.querySelectorAll('[data-action="view-resume"]');
-  resumeBtns.forEach(btn => {
-    const resumeUrl = (PORTFOLIO_DATA.profile && PORTFOLIO_DATA.profile.resumeUrl) || 'public/resume.pdf';
-    btn.setAttribute('href', resumeUrl);
-  });
 
   // Connect Modal
   const connectBtns = document.querySelectorAll('[data-action="connect"]');
