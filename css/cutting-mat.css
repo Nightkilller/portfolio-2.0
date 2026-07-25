@@ -176,25 +176,25 @@
   filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.4));
 }
 
-/* Spread logos to corners for full-screen coverage */
+/* Position logos nicely around the title area (inward from extreme borders) */
 .logo-pos-1 {
-  top: 12%;
-  left: 8%;
+  top: 18%;
+  left: 18%;
 }
 
 .logo-pos-2 {
-  top: 12%;
-  right: 8%;
+  top: 18%;
+  right: 18%;
 }
 
 .logo-pos-3 {
-  bottom: 12%;
-  left: 10%;
+  bottom: 18%;
+  left: 20%;
 }
 
 .logo-pos-4 {
-  bottom: 12%;
-  right: 9%;
+  bottom: 18%;
+  right: 20%;
 }
 
 /* ==========================================================================
