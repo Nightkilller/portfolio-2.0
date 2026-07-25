@@ -162,11 +162,7 @@ function renderWorkGrid(modalController) {
     if (!targetEl || !list) return;
     const html = list.map(project => {
       const previewContent = project.image
-        ? `<div style="width: 100%; height: 100%; padding: 14px 16px; display: flex; align-items: center; justify-content: center;">
-            <div style="width: 100%; height: 100%; border-radius: 10px; overflow: hidden; box-shadow: 0 10px 28px rgba(0,0,0,0.45); border: 1px solid rgba(255,255,255,0.22); background: rgba(0,0,0,0.25); display: flex; align-items: center; justify-content: center;">
-              <img src="${project.image}" alt="${project.title} Preview" style="width: 100%; height: 100%; object-fit: contain;" />
-            </div>
-          </div>`
+        ? `<img src="${project.image}" alt="${project.title} Preview" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block;" />`
         : `<div style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center;">
             <div style="font-family: var(--font-serif); font-size: 2.4rem; color: #fff; font-style: italic;">${project.title}</div>
             <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.8); margin-top: 6px;">${project.categoryLabel}</div>
@@ -285,13 +281,9 @@ function renderCertificationsGrid(modalController) {
       ? `<div style="position: absolute; top: 14px; right: 14px; background: rgba(0,0,0,0.5); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.3); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.08em; z-index: 2;">${cert.badge}</div>`
       : '';
 
-    // Use actual certificate image inside floating frame if available, otherwise fallback to gradient
+    // Use actual certificate image if available, otherwise fallback to gradient
     const previewContent = cert.image
-      ? `<div style="width: 100%; height: 100%; padding: 14px 16px; display: flex; align-items: center; justify-content: center;">
-          <div style="width: 100%; height: 100%; border-radius: 10px; overflow: hidden; box-shadow: 0 10px 28px rgba(0,0,0,0.45); border: 1px solid rgba(255,255,255,0.25); background: #ffffff; display: flex; align-items: center; justify-content: center; padding: 4px;">
-            <img src="${cert.image}" alt="${cert.title} Certificate" style="width: 100%; height: 100%; object-fit: contain;" />
-          </div>
-        </div>`
+      ? `<img src="${cert.image}" alt="${cert.title} Certificate" style="width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;" />`
       : `<div style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center;">
             <div style="font-size: 2.6rem; margin-bottom: 8px;">${cert.icon}</div>
             <div style="font-family: var(--font-serif); font-size: 1.6rem; color: #fff; font-style: italic; line-height: 1.2;">${cert.title}</div>
