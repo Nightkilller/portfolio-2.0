@@ -306,8 +306,10 @@
     gap: 5px;
   }
 
-  .mat-tab-btn .tab-icon {
-    font-size: 0.95rem;
+  .tab-icon-mobile {
+    display: inline-block !important;
+    vertical-align: middle;
+    flex-shrink: 0;
   }
 
   .mat-tab-btn.active {
