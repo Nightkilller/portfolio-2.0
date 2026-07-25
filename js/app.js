@@ -34,6 +34,13 @@ function initApp() {
     });
   }
 
+  const certDetailBackBtn = document.getElementById('cert-detail-back-btn');
+  if (certDetailBackBtn) {
+    certDetailBackBtn.addEventListener('click', () => {
+      router.switchTab('certifications');
+    });
+  }
+
   // Render Desk Elements
   renderPureDeskLogos(modalController);
   renderWorkGrid(modalController);
@@ -294,116 +301,82 @@ function renderCertificationsGrid(modalController) {
 
   container.innerHTML = html;
 
-  // Bind click to open certification detail modal
+  // Bind click to open inline certification detail on green cutting mat
   const items = container.querySelectorAll('.cert-card-item');
   items.forEach(item => {
     item.addEventListener('click', () => {
       const id = item.getAttribute('data-cert-id');
       const cert = certs.find(c => c.id === id);
-      if (cert) openCertDetailModal(cert);
+      if (cert) openCertInlineDetail(cert);
     });
   });
 }
 
-/* Open Certification Detail Modal */
-function openCertDetailModal(cert) {
-  // Remove any existing cert modal
-  const existing = document.getElementById('cert-detail-modal');
-  if (existing) existing.remove();
+/* Open Inline Certification Detail (Expands inside Green Cutting Mat Canvas) */
+function openCertInlineDetail(cert) {
+  const hero = document.getElementById('cert-detail-hero');
+  const title = document.getElementById('cert-detail-title');
+  const imgBox = document.getElementById('cert-detail-image-box');
+  const img = document.getElementById('cert-detail-img');
+  const issuer = document.getElementById('cert-detail-issuer');
+  const platform = document.getElementById('cert-detail-platform');
+  const date = document.getElementById('cert-detail-date');
+  const scoreBox = document.getElementById('cert-detail-score-box');
+  const score = document.getElementById('cert-detail-score');
+  const breakdownCol = document.getElementById('cert-detail-breakdown-col');
+  const breakdown = document.getElementById('cert-detail-breakdown');
+  const creditsCol = document.getElementById('cert-detail-credits-col');
+  const credits = document.getElementById('cert-detail-credits');
+  const description = document.getElementById('cert-detail-description');
+  const highlights = document.getElementById('cert-detail-highlights');
 
-  const highlightsHtml = (cert.highlights || []).map(h => {
-    return `<div style="display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: #f8f9fa; border: 1px solid #eeeeee; border-radius: 6px; font-size: 0.88rem; color: #333;">
-      <span style="color: #2ecc71;">✓</span> ${h}
-    </div>`;
-  }).join('');
+  if (hero) hero.style.background = cert.gradient;
+  if (title) title.textContent = cert.title;
 
-  const scoreSection = cert.score
-    ? `<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; padding: 18px 22px; background: #f8f9fa; border: 1px solid #eee; border-radius: 10px; margin-bottom: 24px;">
-        <div>
-          <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #888; margin-bottom: 4px; font-weight: 600;">Score</div>
-          <div style="font-size: 1.4rem; font-weight: 700; color: #1f5c47;">${cert.score}</div>
-        </div>
-        ${cert.scoreDetails ? `<div>
-          <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #888; margin-bottom: 4px; font-weight: 600;">Breakdown</div>
-          <div style="font-size: 0.92rem; font-weight: 500; color: #333;">${cert.scoreDetails}</div>
-        </div>` : ''}
-        ${cert.credits ? `<div>
-          <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #888; margin-bottom: 4px; font-weight: 600;">Credits</div>
-          <div style="font-size: 0.92rem; font-weight: 500; color: #333;">${cert.credits}</div>
-        </div>` : ''}
-       </div>`
-    : '';
+  if (cert.image) {
+    if (img) img.src = cert.image;
+    if (imgBox) imgBox.style.display = 'block';
+  } else {
+    if (imgBox) imgBox.style.display = 'none';
+  }
 
-  const metaGrid = `
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; padding: 18px 22px; background: #f8f9fa; border: 1px solid #eee; border-radius: 10px; margin-bottom: 24px;">
-      <div>
-        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #888; margin-bottom: 4px; font-weight: 600;">Issued By</div>
-        <div style="font-size: 0.95rem; font-weight: 600; color: #111;">${cert.issuer}</div>
-      </div>
-      <div>
-        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #888; margin-bottom: 4px; font-weight: 600;">Platform</div>
-        <div style="font-size: 0.95rem; font-weight: 600; color: #111;">${cert.platform}</div>
-      </div>
-      <div>
-        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #888; margin-bottom: 4px; font-weight: 600;">Date</div>
-        <div style="font-size: 0.95rem; font-weight: 600; color: #111;">${cert.date}</div>
-      </div>
-    </div>
-  `;
+  if (issuer) issuer.textContent = cert.issuer;
+  if (platform) platform.textContent = cert.platform;
+  if (date) date.textContent = cert.date;
 
-  const modalHtml = `
-    <div id="cert-detail-modal" class="modal-overlay active" style="z-index: 1001;">
-      <div class="modal-container" style="max-width: 720px;">
-        <button class="modal-close-btn" id="cert-modal-close-btn">✕</button>
-        
-        <div style="background: ${cert.gradient}; min-height: 180px; display: flex; align-items: flex-end; padding: 28px 32px; color: #fff; position: relative;">
-          ${cert.badge ? `<div style="position: absolute; top: 16px; right: 16px; background: rgba(255,255,255,0.2); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.3); padding: 4px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;">${cert.badge}</div>` : ''}
-          <div>
-            <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.9; margin-bottom: 6px;">CERTIFICATION</div>
-            <h2 style="font-family: var(--font-serif); font-size: 2.4rem; line-height: 1.1;">${cert.title}</h2>
-          </div>
-        </div>
-        
-        <div style="padding: 32px;">
-          ${cert.image ? `
-          <div style="margin-bottom: 24px; border-radius: 12px; overflow: hidden; border: 1px solid #eeeeee; box-shadow: 0 8px 24px rgba(0,0,0,0.12);">
-            <img src="${cert.image}" alt="${cert.title} Full Certificate Document" style="width: 100%; height: auto; display: block;" />
-          </div>` : ''}
+  if (cert.score) {
+    if (scoreBox) scoreBox.style.display = 'block';
+    if (score) score.textContent = cert.score;
 
-          ${metaGrid}
-          ${scoreSection}
-          
-          <div style="margin-bottom: 24px;">
-            <h3 style="font-size: 1.1rem; font-weight: 700; color: #111; margin-bottom: 12px;">About This Certification</h3>
-            <p style="font-size: 1rem; line-height: 1.75; color: #444;">${cert.description}</p>
-          </div>
-          
-          ${highlightsHtml ? `
-          <div>
-            <h3 style="font-size: 1.1rem; font-weight: 700; color: #111; margin-bottom: 14px;">Key Skills & Topics</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px;">
-              ${highlightsHtml}
-            </div>
-          </div>` : ''}
-        </div>
-      </div>
-    </div>
-  `;
-
-  document.body.insertAdjacentHTML('beforeend', modalHtml);
-
-  // Bind close events
-  const modal = document.getElementById('cert-detail-modal');
-  const closeBtn = document.getElementById('cert-modal-close-btn');
-
-  closeBtn.addEventListener('click', () => modal.remove());
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) modal.remove();
-  });
-  document.addEventListener('keydown', function handler(e) {
-    if (e.key === 'Escape' && document.getElementById('cert-detail-modal')) {
-      modal.remove();
-      document.removeEventListener('keydown', handler);
+    if (cert.scoreDetails) {
+      if (breakdown) breakdown.textContent = cert.scoreDetails;
+      if (breakdownCol) breakdownCol.style.display = 'block';
+    } else {
+      if (breakdownCol) breakdownCol.style.display = 'none';
     }
-  });
+
+    if (cert.credits) {
+      if (credits) credits.textContent = cert.credits;
+      if (creditsCol) creditsCol.style.display = 'block';
+    } else {
+      if (creditsCol) creditsCol.style.display = 'none';
+    }
+  } else {
+    if (scoreBox) scoreBox.style.display = 'none';
+  }
+
+  if (description) description.textContent = cert.description;
+
+  if (highlights) {
+    const list = cert.highlights || [];
+    highlights.innerHTML = list.map(h => `
+      <div class="deliverable-tag">
+        <span style="color: #2ecc71;">✓</span> ${h}
+      </div>
+    `).join('');
+  }
+
+  if (window.portfolioRouter) {
+    window.portfolioRouter.switchTab('cert-detail');
+  }
 }

@@ -280,6 +280,71 @@
         <div id="certifications-grid-container" class="work-grid-container"></div>
       </section>
 
+      <!-- VIEW 6B: INLINE CERTIFICATE DETAIL (expands inside green mat) -->
+      <section id="mat-cert-detail-view" class="mat-project-detail-view">
+        <button id="cert-detail-back-btn" class="project-detail-back-btn">← Back to Certifications</button>
+
+        <div id="cert-detail-hero" class="project-detail-hero">
+          <div class="project-detail-hero-inner">
+            <div id="cert-detail-category" class="project-detail-category">CERTIFICATION</div>
+            <h2 id="cert-detail-title" class="project-detail-title"></h2>
+          </div>
+        </div>
+
+        <div class="project-detail-body">
+          <!-- Full Certificate Document Photo -->
+          <div id="cert-detail-image-box" style="margin-bottom: 28px; border-radius: 12px; overflow: hidden; border: 1px solid #eeeeee; box-shadow: 0 8px 24px rgba(0,0,0,0.12);">
+            <img id="cert-detail-img" src="" alt="Certificate Document" style="width: 100%; height: auto; display: block;" />
+          </div>
+
+          <!-- Meta Grid -->
+          <div class="project-detail-meta">
+            <div class="project-detail-meta-item">
+              <div class="meta-label">Issued By</div>
+              <div id="cert-detail-issuer" class="meta-value"></div>
+            </div>
+            <div class="project-detail-meta-item">
+              <div class="meta-label">Platform</div>
+              <div id="cert-detail-platform" class="meta-value"></div>
+            </div>
+            <div class="project-detail-meta-item">
+              <div class="meta-label">Date</div>
+              <div id="cert-detail-date" class="meta-value"></div>
+            </div>
+          </div>
+
+          <!-- Score Section if present -->
+          <div id="cert-detail-score-box" style="display: none; margin-bottom: 28px; background: #f8f9fa; border: 1px solid #eeeeee; border-radius: 12px; padding: 20px 24px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px;">
+              <div>
+                <div class="meta-label">Score</div>
+                <div id="cert-detail-score" style="font-size: 1.5rem; font-weight: 700; color: #1f5c47;"></div>
+              </div>
+              <div id="cert-detail-breakdown-col">
+                <div class="meta-label">Breakdown</div>
+                <div id="cert-detail-breakdown" style="font-size: 0.95rem; font-weight: 600; color: #111;"></div>
+              </div>
+              <div id="cert-detail-credits-col">
+                <div class="meta-label">Credits</div>
+                <div id="cert-detail-credits" style="font-size: 0.95rem; font-weight: 600; color: #111;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div class="project-detail-section">
+            <h3 class="project-detail-section-title">About This Certification</h3>
+            <p id="cert-detail-description" class="project-detail-text"></p>
+          </div>
+
+          <!-- Highlights / Skills -->
+          <div class="project-detail-section">
+            <h3 class="project-detail-section-title">Key Skills & Topics Covered</h3>
+            <div id="cert-detail-highlights" class="project-detail-deliverables"></div>
+          </div>
+        </div>
+      </section>
+
       <!-- VIEW 7: INLINE WORK WITH ME VIEW (expands inside green mat) -->
       <section id="mat-work-with-me-view" class="mat-section-view">
         <div class="desk-paper-sheet" style="position: relative;">
