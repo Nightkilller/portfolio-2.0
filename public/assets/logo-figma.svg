@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 57" width="100%" height="100%">
+  <!-- Figma Official 5-Color Shapes -->
+  <path fill="#0ACF83" d="M 19 57 A 9.5 9.5 0 0 1 9.5 47.5 A 9.5 9.5 0 0 1 19 38 H 28.5 V 47.5 A 9.5 9.5 0 0 1 19 57 Z"/>
+  <path fill="#A259FF" d="M 0 47.5 A 9.5 9.5 0 0 1 9.5 38 H 19 V 47.5 A 9.5 9.5 0 0 1 9.5 57 A 9.5 9.5 0 0 1 0 47.5 Z"/>
+  <path fill="#F24E1E" d="M 0 28.5 A 9.5 9.5 0 0 1 9.5 19 H 19 V 38 H 9.5 A 9.5 9.5 0 0 1 0 28.5 Z"/>
+  <path fill="#FF7262" d="M 0 9.5 A 9.5 9.5 0 0 1 9.5 0 H 19 V 19 H 9.5 A 9.5 9.5 0 0 1 0 9.5 Z"/>
+  <path fill="#1ABCFE" d="M 19 0 H 28.5 A 9.5 9.5 0 0 1 38 9.5 A 9.5 9.5 0 0 1 28.5 19 H 19 V 0 Z"/>
+</svg>

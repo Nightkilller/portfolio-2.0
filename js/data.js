@@ -32,47 +32,22 @@ const PORTFOLIO_DATA = {
       "Figma",
       "Adobe Photoshop",
       "Xcode",
-      "VS Code",
+      "GitHub",
       "JavaScript / TypeScript",
       "React / Next.js",
       "Python / FastAPI",
-      "C++ / Algorithms",
-      "Git / GitHub Actions"
+      "C++ / Algorithms"
     ]
   },
 
-  // Desk Logos fetched via Clearbit Logo API (Pure logos, zero text description)
+  // 4 Desk Floating Logos (Matching Exact User Uploaded Image Logos: Xcode, Photoshop, Figma, GitHub)
   deskPolaroids: [
-    {
-      id: "desk-figma",
-      title: "Figma",
-      logoUrl: "https://logo.clearbit.com/figma.com",
-      accentColor: "#F24E1E",
-      glowColor: "rgba(242, 78, 30, 0.5)",
-      github: "https://figma.com",
-      demo: "https://figma.com",
-      description: "Figma is Aditya's primary interface design tool for wireframing, high-fidelity UI design, component systems, and client prototypes.",
-      usecase: "UI/UX component design systems, mobile app wireframes, and vector branding collateral.",
-      deliverables: ["High-Fidelity UI Prototypes", "Design System Libraries", "Interactive Motion Specs", "Vector Asset Export"]
-    },
-    {
-      id: "desk-photoshop",
-      title: "Photoshop",
-      logoUrl: "https://logo.clearbit.com/adobe.com",
-      accentColor: "#31A8FF",
-      glowColor: "rgba(49, 168, 255, 0.5)",
-      github: "https://adobe.com/photoshop",
-      demo: "https://adobe.com/photoshop",
-      description: "Adobe Photoshop is used for advanced photo manipulation, event poster graphics, texture composition, and branding mockups.",
-      usecase: "High-resolution digital graphics, event poster series, photo retouching, and artwork compositing.",
-      deliverables: ["Event Poster Series", "Digital Graphics & Fliers", "Photo Retouching", "Packaging Mockups"]
-    },
     {
       id: "desk-xcode",
       title: "Xcode",
-      logoUrl: "https://logo.clearbit.com/apple.com",
-      accentColor: "#4cc9f0",
-      glowColor: "rgba(76, 201, 240, 0.5)",
+      logoUrl: "public/assets/logo-xcode.svg",
+      accentColor: "#30b8ff",
+      glowColor: "rgba(48, 184, 255, 0.55)",
       github: "https://developer.apple.com/xcode/",
       demo: "https://developer.apple.com/xcode/",
       description: "Apple Xcode is the primary IDE for developing native iOS and macOS applications using Swift, SwiftUI, and CoreML APIs.",
@@ -80,16 +55,40 @@ const PORTFOLIO_DATA = {
       deliverables: ["SwiftUI iOS Applications", "Mac Desktop Utilities", "CoreML Model Integration", "App Store Publishing"]
     },
     {
-      id: "desk-vscode",
-      title: "VS Code",
-      logoUrl: "https://logo.clearbit.com/code.visualstudio.com",
-      accentColor: "#007acc",
-      glowColor: "rgba(0, 122, 204, 0.5)",
-      github: "https://code.visualstudio.com",
-      demo: "https://code.visualstudio.com",
-      description: "Visual Studio Code is Aditya's daily driver editor for full-stack JavaScript, TypeScript, Python, Next.js, and C++ development.",
-      usecase: "Full-stack web application development, debugging, Git version control, and multi-language editing.",
-      deliverables: ["Next.js & React Web Apps", "Python FastAPI Backends", "Custom Extensions & Tooling", "Git Workflows"]
+      id: "desk-photoshop",
+      title: "Photoshop",
+      logoUrl: "public/assets/logo-photoshop.svg",
+      accentColor: "#31A8FF",
+      glowColor: "rgba(49, 168, 255, 0.55)",
+      github: "https://adobe.com/photoshop",
+      demo: "https://adobe.com/photoshop",
+      description: "Adobe Photoshop is used for advanced photo manipulation, event poster graphics, texture composition, and branding mockups.",
+      usecase: "High-resolution digital graphics, event poster series, photo retouching, and artwork compositing.",
+      deliverables: ["Event Poster Series", "Digital Graphics & Fliers", "Photo Retouching", "Packaging Mockups"]
+    },
+    {
+      id: "desk-figma",
+      title: "Figma",
+      logoUrl: "public/assets/logo-figma.svg",
+      accentColor: "#F24E1E",
+      glowColor: "rgba(242, 78, 30, 0.55)",
+      github: "https://figma.com",
+      demo: "https://figma.com",
+      description: "Figma is Aditya's primary interface design tool for wireframing, high-fidelity UI design, component systems, and client prototypes.",
+      usecase: "UI/UX component design systems, mobile app wireframes, and vector branding collateral.",
+      deliverables: ["High-Fidelity UI Prototypes", "Design System Libraries", "Interactive Motion Specs", "Vector Asset Export"]
+    },
+    {
+      id: "desk-github",
+      title: "GitHub",
+      logoUrl: "public/assets/logo-github.svg",
+      accentColor: "#ffffff",
+      glowColor: "rgba(255, 255, 255, 0.55)",
+      github: "https://github.com/Nightkilller",
+      demo: "https://github.com/Nightkilller",
+      description: "Explore Aditya's full open-source portfolio, software engineering projects, repository activity, and code contributions on GitHub.",
+      usecase: "Open-source software projects, codebase architecture, and public repository contributions.",
+      deliverables: ["Full-Stack Repositories", "Open-Source Contributions", "Algorithm Implementations", "CI/CD Workflows"]
     }
   ],
 
