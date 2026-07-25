@@ -2,15 +2,15 @@
    Main Stylesheet — Base Resets, Fonts, Variables
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=Caveat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
   /* Colors */
   --bg-sidebar: #ffffff;
-  --bg-mat: #1a3c31;
-  --bg-mat-dark: #143229;
-  --grid-line-color: rgba(255, 255, 255, 0.18);
-  --grid-line-sub: rgba(255, 255, 255, 0.08);
+  --bg-mat: #1f4337;
+  --bg-mat-dark: #163229;
+  --grid-line-color: rgba(255, 255, 255, 0.22);
+  --grid-line-sub: rgba(255, 255, 255, 0.09);
 
   --text-dark: #111111;
   --text-sidebar-muted: #666666;
@@ -24,7 +24,7 @@
   /* Fonts */
   --font-serif: 'Instrument Serif', Georgia, serif;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-hand: 'Caveat', cursive, sans-serif;
+  --font-hand: 'Architects Daughter', cursive, sans-serif;
 
   /* Dimensions */
   --sidebar-width: 320px;

@@ -4,7 +4,7 @@
 
 class PortfolioRouter {
   constructor() {
-    this.currentTab = 'work';
+    this.currentTab = 'home';
   }
 
   init() {
@@ -14,7 +14,7 @@ class PortfolioRouter {
   bindTabNavigation() {
     const tabButtons = document.querySelectorAll('[data-tab-target]');
     tabButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', (e) => {
         const targetTab = btn.getAttribute('data-tab-target');
         this.switchTab(targetTab);
       });
@@ -35,23 +35,34 @@ class PortfolioRouter {
       }
     });
 
-    // Toggle Section Views on the Mat
-    const workHero = document.getElementById('mat-work-view');
+    // Views on the Mat
+    const homeView = document.getElementById('mat-work-view');
+    const workGridView = document.getElementById('mat-work-grid-view');
     const aboutSection = document.getElementById('mat-about-view');
-    const servicesSection = document.getElementById('mat-services-view');
+    const educationSection = document.getElementById('mat-education-view');
+    const polaroids = document.getElementById('polaroids-container');
 
-    if (tabId === 'work') {
-      if (workHero) workHero.style.display = 'flex';
-      if (aboutSection) aboutSection.classList.remove('active');
-      if (servicesSection) servicesSection.classList.remove('active');
+    // Hide all view sections first
+    if (homeView) homeView.style.display = 'none';
+    if (workGridView) workGridView.classList.remove('active');
+    if (aboutSection) aboutSection.classList.remove('active');
+    if (educationSection) educationSection.classList.remove('active');
+    if (polaroids) polaroids.style.display = 'none';
+
+    if (tabId === 'home') {
+      if (homeView) homeView.style.display = 'flex';
+      if (polaroids) polaroids.style.display = 'block';
+    } else if (tabId === 'work') {
+      if (workGridView) workGridView.classList.add('active');
+    } else if (tabId === 'education') {
+      if (educationSection) educationSection.classList.add('active');
     } else if (tabId === 'about') {
-      if (workHero) workHero.style.display = 'none';
       if (aboutSection) aboutSection.classList.add('active');
-      if (servicesSection) servicesSection.classList.remove('active');
-    } else if (tabId === 'services') {
-      if (workHero) workHero.style.display = 'none';
-      if (aboutSection) aboutSection.classList.remove('active');
-      if (servicesSection) servicesSection.classList.add('active');
+    } else if (tabId === 'work-with-me') {
+      // Trigger Work With Me modal directly
+      if (window.modalController) {
+        window.modalController.openBookingModal();
+      }
     }
   }
 }
