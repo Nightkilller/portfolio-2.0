@@ -104,11 +104,11 @@ const PORTFOLIO_DATA = {
       glowColor: "rgba(36, 150, 237, 0.55)"
     },
     {
-      id: "desk-firebase",
-      title: "Firebase",
-      logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg",
-      accentColor: "#FFCA28",
-      glowColor: "rgba(255, 202, 40, 0.55)"
+      id: "desk-tensorflow",
+      title: "TensorFlow",
+      logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg",
+      accentColor: "#FF6F00",
+      glowColor: "rgba(255, 111, 0, 0.55)"
     },
     {
       id: "desk-swift",
