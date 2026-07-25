@@ -25,54 +25,53 @@
   transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1), margin-left 0.35s cubic-bezier(0.4, 0, 0.2, 1), padding 0.35s ease;
 }
 
-/* Top Nav Bar — Authentic Apple iOS 18 Liquid Glass Floating Capsule Bar */
+/* Top Nav Bar */
 .mat-header {
-  position: sticky;
-  top: 16px;
-  z-index: 999;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 32px auto;
-  padding: 8px 16px;
-  width: fit-content;
-  max-width: min(94vw, 760px);
-  background: rgba(255, 255, 255, 0.14);
-  backdrop-filter: blur(28px) saturate(200%);
-  -webkit-backdrop-filter: blur(28px) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.32);
-  border-radius: 9999px;
-  box-shadow: 
-    0 14px 40px rgba(0, 0, 0, 0.35),
-    inset 0 1.5px 0.5px rgba(255, 255, 255, 0.6),
-    inset 0 -1px 0.5px rgba(255, 255, 255, 0.2);
+  width: 100%;
   box-sizing: border-box;
-  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 10;
+  position: relative;
+  padding: 0;
+  margin: 0;
 }
 
 .mat-nav-tabs {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: clamp(12px, 3.5vw, 64px);
   width: 100%;
+  max-width: var(--max-content-width);
+  box-sizing: border-box;
 }
 
 .mat-tab-btn {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  justify-content: center;
   gap: 8px;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
-  padding: 10px 24px;
-  border-radius: 9999px;
+  color: var(--text-mat-white);
+  padding: 8px 18px;
+  border-radius: 20px;
   background: transparent;
-  border: 1px solid transparent;
-  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: none;
+  transition: background 0.2s ease, transform 0.2s ease;
   cursor: pointer;
-  white-space: nowrap;
+}
+
+.mat-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-1px);
+}
+
+.mat-tab-btn.active {
+  background: rgba(255, 255, 255, 0.22) !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25) !important;
 }
 
 .mat-tab-btn:hover {

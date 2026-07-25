@@ -229,23 +229,20 @@
     background-color: var(--bg-mat) !important;
   }
 
-  /* Sticky iOS 18 Liquid Glass Floating Capsule Header Bar for Mobile */
+  /* Sticky Glassmorphism Header Bar for Mobile */
   .mat-header {
     position: sticky;
-    top: 12px;
+    top: 0;
     z-index: 999;
-    background: rgba(255, 255, 255, 0.16) !important;
-    backdrop-filter: blur(28px) saturate(200%) !important;
-    -webkit-backdrop-filter: blur(28px) saturate(200%) !important;
-    margin: 0 12px 20px 12px !important;
-    padding: 8px 12px !important;
-    border: 1.5px solid rgba(255, 255, 255, 0.35) !important;
-    border-radius: 9999px !important;
-    box-shadow: 
-      0 12px 32px rgba(0, 0, 0, 0.38),
-      inset 0 1.5px 0.5px rgba(255, 255, 255, 0.65),
-      inset 0 -1px 0.5px rgba(255, 255, 255, 0.2) !important;
-    width: calc(100% - 24px) !important;
+    background: rgba(13, 31, 24, 0.96) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    margin: -16px -14px 16px -14px !important;
+    padding: 10px 12px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14) !important;
+    border-radius: 0 !important;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4) !important;
+    width: calc(100% + 28px) !important;
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -259,12 +256,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 3px;
-    width: 38px;
-    height: 38px;
-    background: rgba(255, 255, 255, 0.18) !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    border-radius: 9999px !important;
+    gap: 4px;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.12) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 10px !important;
     cursor: pointer;
     flex-shrink: 0;
     padding: 0;
@@ -279,18 +276,18 @@
   }
 
   .mobile-drawer-toggle-btn:hover {
-    background: rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.25);
   }
 
   .mat-nav-tabs {
     display: flex;
     gap: 6px !important;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    padding: 0;
+    padding: 2px 8px 2px 2px;
     width: 100%;
     flex-grow: 1;
     mask-image: none !important;
@@ -306,18 +303,37 @@
   }
 
   .mat-tab-btn {
-    padding: 8px 18px !important;
-    border-radius: 9999px !important;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 8px 16px !important;
+    border-radius: 12px !important;
     flex-shrink: 0;
-    color: rgba(255, 255, 255, 0.9) !important;
-    background: transparent !important;
-    border: 1px solid transparent !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
     min-height: 38px !important;
     min-width: 44px !important;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     transition: all 0.2s ease;
+    opacity: 1 !important;
+  }
+
+  .tab-icon-mobile {
+    display: block !important;
+    vertical-align: middle;
+    flex-shrink: 0;
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  .mat-tab-btn.active {
+    background: #ffffff !important;
+    color: #0d1f18 !important;
+    font-weight: 700 !important;
+    border-color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35) !important;
     opacity: 1 !important;
   }
 
