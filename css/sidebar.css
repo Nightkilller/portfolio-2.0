@@ -105,13 +105,13 @@
   cursor: pointer;
   user-select: none;
   text-decoration: none;
-  transform: rotate(-4deg);
+  transform: translateX(18px) rotate(-4deg);
   transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
   transform-origin: center center;
 }
 
 .avatar-container:hover {
-  transform: rotate(4deg) scale(1.06);
+  transform: translateX(18px) rotate(4deg) scale(1.06);
 }
 
 .avatar-img {
