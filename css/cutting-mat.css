@@ -150,18 +150,25 @@
   border: none;
   border-radius: 0;
   box-shadow: none;
-  cursor: default;
+  cursor: grab;
   z-index: 6;
-  transition: transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1), filter 0.35s ease;
+  transition: transform 0.2s ease, filter 0.35s ease;
   user-select: none;
+  touch-action: none;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.pure-logo-item.dragging {
+  cursor: grabbing !important;
+  z-index: 50 !important;
+  transition: none !important;
+  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 24px var(--glow-color, rgba(255,255,255,0.6))) !important;
+}
+
 .pure-logo-item:hover {
   z-index: 15;
-  transform: translateY(-8px) scale(1.2) !important;
   filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 20px var(--glow-color, rgba(255,255,255,0.4)));
 }
 
@@ -214,9 +221,9 @@
 }
 
 .logo-pos-7 {
-  top: 32%;
-  right: 30%;
-  transform: rotate(6deg);
+  top: 62%;
+  left: 18%;
+  transform: rotate(-10deg);
 }
 
 /* ==========================================================================

@@ -59,6 +59,77 @@ function renderPureDeskLogos(modalController) {
   }).join('');
 
   container.innerHTML = html;
+  makeLogosDraggable(container);
+}
+
+/* Make Desk Floating Logos Draggable Anywhere across the Cutting Mat Canvas */
+function makeLogosDraggable(container) {
+  const logos = container.querySelectorAll('.pure-logo-item');
+  const matCanvas = document.querySelector('.cutting-mat-canvas');
+
+  logos.forEach(logo => {
+    let isDragging = false;
+    let startX = 0;
+    let startY = 0;
+    let initialLeft = 0;
+    let initialTop = 0;
+
+    const onStart = (e) => {
+      isDragging = true;
+      logo.classList.add('dragging');
+
+      const clientX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
+      const clientY = e.type === 'touchstart' ? e.touches[0].clientY : e.clientY;
+
+      startX = clientX;
+      startY = clientY;
+
+      const rect = logo.getBoundingClientRect();
+      const parentRect = matCanvas ? matCanvas.getBoundingClientRect() : { left: 0, top: 0 };
+
+      // Convert current computed position to pixel offset relative to parent mat canvas
+      initialLeft = rect.left - parentRect.left + (matCanvas ? matCanvas.scrollLeft : 0);
+      initialTop = rect.top - parentRect.top + (matCanvas ? matCanvas.scrollTop : 0);
+
+      // Fix current position in inline px style so drag starts smoothly
+      logo.style.left = `${initialLeft}px`;
+      logo.style.top = `${initialTop}px`;
+      logo.style.right = 'auto';
+      logo.style.bottom = 'auto';
+
+      document.addEventListener('mousemove', onMove);
+      document.addEventListener('mouseup', onEnd);
+      document.addEventListener('touchmove', onMove, { passive: false });
+      document.addEventListener('touchend', onEnd);
+    };
+
+    const onMove = (e) => {
+      if (!isDragging) return;
+      if (e.cancelable) e.preventDefault();
+
+      const clientX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
+      const clientY = e.type === 'touchmove' ? e.touches[0].clientY : e.clientY;
+
+      const deltaX = clientX - startX;
+      const deltaY = clientY - startY;
+
+      logo.style.left = `${initialLeft + deltaX}px`;
+      logo.style.top = `${initialTop + deltaY}px`;
+    };
+
+    const onEnd = () => {
+      isDragging = false;
+      logo.classList.remove('dragging');
+
+      document.removeEventListener('mousemove', onMove);
+      document.removeEventListener('mouseup', onEnd);
+      document.removeEventListener('touchmove', onMove);
+      document.removeEventListener('touchend', onEnd);
+    };
+
+    logo.addEventListener('mousedown', onStart);
+    logo.addEventListener('touchstart', onStart, { passive: false });
+  });
 }
 
 /* Render Work Showcase Grid View (Projects + Apps I Created) */
