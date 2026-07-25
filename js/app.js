@@ -101,7 +101,7 @@ function renderEducationDesk() {
           <h3 style="font-size: 1.3rem; font-weight: 600; color: #111;">${edu.degree}</h3>
           <span style="font-size: 0.9rem; font-weight: 600; color: #1f5c47; background: #e8f5e9; padding: 4px 10px; border-radius: 20px;">${edu.year}</span>
         </div>
-        <div style="font-size: 1rem; font-weight: 500; color: #444; margin-bottom: 8px;">🎓 ${edu.institution}</div>
+        <div style="font-size: 1rem; font-weight: 500; color: #444; margin-bottom: 8px;">${edu.institution}</div>
         <p style="font-size: 0.92rem; color: #666; line-height: 1.6;">${edu.description}</p>
       </div>
     `;
