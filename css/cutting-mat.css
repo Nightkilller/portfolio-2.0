@@ -94,7 +94,7 @@
   pointer-events: auto;
 }
 
-/* Authentic Hand-Drawn Oval Loop Buttons (Matching Screenshot) */
+/* Authentic Hand-Drawn Oval Loop Buttons */
 .mat-hand-buttons {
   display: flex;
   flex-direction: column;
@@ -141,7 +141,7 @@
 }
 
 /* ==========================================================================
-   Polaroid Photo Cards & Push Pins
+   Polaroid Photo Cards & Push Pins — Hover Live Glowing Effects
    ========================================================================== */
 
 .polaroid-card {
@@ -155,10 +155,11 @@
   transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease, z-index 0.1s ease;
 }
 
+/* Interactive Hover & Live Glow Effect */
 .polaroid-card:hover {
   z-index: 15;
-  transform: translateY(-8px) scale(1.05) rotate(0deg) !important;
-  box-shadow: 0 28px 56px rgba(0, 0, 0, 0.6);
+  transform: translateY(-10px) scale(1.06) rotate(0deg) !important;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.65), 0 0 35px var(--glow-color, rgba(255,255,255,0.4));
 }
 
 .polaroid-frame {
@@ -185,6 +186,18 @@
   position: relative;
 }
 
+.polaroid-logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.35s ease;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
+}
+
+.polaroid-card:hover .polaroid-logo-wrapper {
+  transform: scale(1.15) rotate(-3deg);
+}
+
 .polaroid-art-title {
   font-family: var(--font-serif);
   font-size: 1.5rem;
@@ -198,18 +211,23 @@
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
   margin-top: 4px;
   z-index: 2;
+  padding: 2px 10px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .polaroid-caption {
   position: absolute;
   bottom: 12px;
   left: 14px;
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: #333333;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #222222;
 }
 
 .push-pin {
@@ -230,7 +248,7 @@
   left: 12px;
 }
 
-/* Positioning Polaroid Locations around center title */
+/* Precise Positioning of Polaroid Locations around center title */
 .polaroid-pos-1 {
   top: 75px;
   left: 12%;
@@ -255,9 +273,7 @@
   transform: rotate(4deg);
 }
 
-/* ==========================================================================
-   Work Showcase Grid View (Matching Image 2 /work layout)
-   ========================================================================== */
+/* Work Showcase Grid View (Matching Image 2 /work layout) */
 .mat-work-grid-view {
   display: none;
   width: 100%;
@@ -281,7 +297,6 @@
   flex-direction: column;
   gap: 12px;
   cursor: pointer;
-  group: true;
 }
 
 .work-card-preview {

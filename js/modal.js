@@ -62,6 +62,18 @@ class ModalController {
     const project = PORTFOLIO_DATA.projects.find(p => p.id === projectId) || PORTFOLIO_DATA.projects[0];
     if (!project) return;
 
+    this.populateModalData(project);
+    this.openModal(this.projectModal);
+  }
+
+  // Open Desk Polaroid Modal (GitHub, Xcode, LinkedIn, YouTube)
+  openDeskPolaroidModal(deskItem) {
+    if (!deskItem) return;
+    this.populateModalData(deskItem);
+    this.openModal(this.projectModal);
+  }
+
+  populateModalData(data) {
     const modalHero = document.getElementById('project-modal-hero');
     const modalCategory = document.getElementById('project-modal-category');
     const modalTitle = document.getElementById('project-modal-title');
@@ -74,19 +86,19 @@ class ModalController {
     const githubBtn = document.getElementById('project-github-link');
     const demoBtn = document.getElementById('project-demo-link');
 
-    if (modalHero) modalHero.style.background = project.gradient;
-    if (modalCategory) modalCategory.textContent = project.categoryLabel;
-    if (modalTitle) modalTitle.textContent = project.title;
-    if (modalMetaRole) modalMetaRole.textContent = project.role;
-    if (modalMetaTools) modalMetaTools.textContent = project.tools;
-    if (modalMetaYear) modalMetaYear.textContent = project.year;
-    if (modalDescription) modalDescription.textContent = project.description;
-    if (modalUsecase) modalUsecase.textContent = project.usecase || project.subtitle;
+    if (modalHero) modalHero.style.background = data.gradient;
+    if (modalCategory) modalCategory.textContent = data.categoryLabel;
+    if (modalTitle) modalTitle.textContent = data.title;
+    if (modalMetaRole) modalMetaRole.textContent = data.role || data.categoryLabel;
+    if (modalMetaTools) modalMetaTools.textContent = data.tools || "JavaScript, TypeScript, Python";
+    if (modalMetaYear) modalMetaYear.textContent = data.year || "2024";
+    if (modalDescription) modalDescription.textContent = data.description;
+    if (modalUsecase) modalUsecase.textContent = data.usecase || data.subtitle;
 
-    // GitHub & Demo links
+    // Action links
     if (githubBtn) {
-      if (project.github) {
-        githubBtn.href = project.github;
+      if (data.github) {
+        githubBtn.href = data.github;
         githubBtn.style.display = 'inline-flex';
       } else {
         githubBtn.style.display = 'none';
@@ -94,26 +106,24 @@ class ModalController {
     }
 
     if (demoBtn) {
-      if (project.demo) {
-        demoBtn.href = project.demo;
+      if (data.demo) {
+        demoBtn.href = data.demo;
         demoBtn.style.display = 'inline-flex';
       } else {
         demoBtn.style.display = 'none';
       }
     }
 
-    // Render deliverables
-    if (modalDeliverables) {
-      modalDeliverables.innerHTML = project.deliverables
+    // Deliverables list
+    if (modalDeliverables && data.deliverables) {
+      modalDeliverables.innerHTML = data.deliverables
         .map(item => `
           <div class="deliverable-tag">
-            <span style="color: ${project.accentColor}; font-weight: bold;">✦</span>
+            <span style="color: ${data.accentColor || '#2ecc71'}; font-weight: bold;">✦</span>
             <span>${item}</span>
           </div>
         `).join('');
     }
-
-    this.openModal(this.projectModal);
   }
 
   // Open Connect Profiles Modal

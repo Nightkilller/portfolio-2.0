@@ -19,20 +19,21 @@ document.addEventListener('DOMContentLoaded', () => {
   bindActions(modalController, router);
 });
 
-/* Render Polaroid Cards Scattered Around Home Desk */
+/* Render Polaroid Cards (GitHub, Xcode, LinkedIn, YouTube) Scattered Around Home Desk */
 function renderPolaroidCards(modalController) {
   const container = document.getElementById('polaroids-container');
   if (!container) return;
 
   const positions = ['polaroid-pos-1', 'polaroid-pos-2', 'polaroid-pos-3', 'polaroid-pos-4'];
+  const polaroids = PORTFOLIO_DATA.deskPolaroids || [];
 
-  const html = PORTFOLIO_DATA.projects.slice(0, 4).map((project, index) => {
+  const html = polaroids.map((item, index) => {
     const posClass = positions[index % positions.length];
     const isRightPin = index % 2 === 0;
     const pinClass = isRightPin ? 'push-pin-top-right' : 'push-pin-top-left';
 
     return `
-      <div class="polaroid-card ${posClass}" data-project-id="${project.id}">
+      <div class="polaroid-card ${posClass}" data-polaroid-id="${item.id}" style="--glow-color: ${item.glowColor || 'rgba(255,255,255,0.3)'};">
         <!-- 3D Blue Push Pin -->
         <svg class="push-pin ${pinClass}" viewBox="0 0 24 24" fill="none">
           <circle cx="12" cy="12" r="8" fill="#1e88e5"/>
@@ -40,23 +41,29 @@ function renderPolaroidCards(modalController) {
         </svg>
 
         <div class="polaroid-frame">
-          <div class="polaroid-art" style="background: ${project.gradient};">
-            <div class="polaroid-art-title">${project.title}</div>
-            <div class="polaroid-art-tag">${project.categoryLabel}</div>
+          <div class="polaroid-art" style="background: ${item.gradient};">
+            <div class="polaroid-logo-wrapper">
+              ${item.svgIcon}
+            </div>
+            <div class="polaroid-art-title" style="margin-top: 8px;">${item.title}</div>
+            <div class="polaroid-art-tag" style="border-color: ${item.accentColor};">${item.categoryLabel}</div>
           </div>
         </div>
-        <div class="polaroid-caption">${project.title}</div>
+        <div class="polaroid-caption">${item.title}</div>
       </div>
     `;
   }).join('');
 
   container.innerHTML = html;
 
+  // Bind click handlers to open modal drawer or target link
   const cards = container.querySelectorAll('.polaroid-card');
-  cards.forEach(card => {
+  cards.forEach((card, index) => {
     card.addEventListener('click', () => {
-      const id = card.getAttribute('data-project-id');
-      modalController.openProjectModal(id);
+      const item = polaroids[index];
+      if (item) {
+        modalController.openDeskPolaroidModal(item);
+      }
     });
   });
 }
