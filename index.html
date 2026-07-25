@@ -10,6 +10,11 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%2319372d'/></svg>">
   
+  <!-- Preconnect & Image Preloads for Instant Speed -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preload" as="image" href="public/avatar-normal.webp">
+  <link rel="preload" as="image" href="public/avatar-wink.webp">
+
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/sidebar.css">
@@ -33,8 +38,8 @@
         <div class="sidebar-header-row">
           <!-- Interactive Profile Avatar Component (Normal <-> Wink Swap on Hover) -->
           <a href="/" class="avatar-container" data-tab-target="home" aria-label="Aditya Gupta Home">
-            <img src="public/avatar-normal.png" alt="Aditya Gupta Avatar" class="avatar-img avatar-img-normal">
-            <img src="public/avatar-wink.png" alt="Aditya Gupta Winking Avatar" class="avatar-img avatar-img-wink">
+            <img src="public/avatar-normal.webp" alt="Aditya Gupta Avatar" class="avatar-img avatar-img-normal" fetchpriority="high" decoding="async">
+            <img src="public/avatar-wink.webp" alt="Aditya Gupta Winking Avatar" class="avatar-img avatar-img-wink" decoding="async">
           </a>
         </div>
 
