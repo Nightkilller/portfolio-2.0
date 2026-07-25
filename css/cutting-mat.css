@@ -176,25 +176,29 @@
   filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.4));
 }
 
-/* Position logos nicely around the title area (inward from extreme borders) */
+/* Organic, asymmetric desk placement (naturally scattered around workspace) */
 .logo-pos-1 {
-  top: 18%;
-  left: 18%;
+  top: 22%;
+  left: 25%;
+  transform: rotate(-6deg);
 }
 
 .logo-pos-2 {
-  top: 18%;
-  right: 18%;
+  top: 14%;
+  right: 22%;
+  transform: rotate(8deg);
 }
 
 .logo-pos-3 {
-  bottom: 18%;
-  left: 20%;
+  bottom: 22%;
+  left: 32%;
+  transform: rotate(5deg);
 }
 
 .logo-pos-4 {
-  bottom: 18%;
-  right: 20%;
+  bottom: 16%;
+  right: 26%;
+  transform: rotate(-8deg);
 }
 
 /* ==========================================================================
