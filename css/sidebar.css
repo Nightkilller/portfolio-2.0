@@ -56,66 +56,59 @@
   width: 100%;
 }
 
-/* 3-Bar Hamburger Toggle Buttons */
-.sidebar-toggle-btn {
-  background: transparent;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  width: 36px;
-  height: 36px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  cursor: pointer;
-  padding: 0;
-  transition: background 0.2s ease, border-color 0.2s ease;
-  flex-shrink: 0;
-}
-
-.sidebar-toggle-btn span {
-  width: 18px;
-  height: 2px;
-  background-color: #334155;
-  border-radius: 2px;
-}
-
-.sidebar-toggle-btn:hover {
-  background: #f1f5f9;
-  border-color: #cbd5e1;
-}
-
-.mat-expand-sidebar-btn {
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+/* Permanent Fixed 3-Bar Hamburger Toggle Button */
+.permanent-sidebar-toggle {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 10000;
+  width: 42px;
+  height: 42px;
+  background: rgba(13, 31, 24, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 8px;
-  width: 36px;
-  height: 36px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 4.5px;
   cursor: pointer;
   padding: 0;
-  transition: background 0.2s ease, transform 0.2s ease;
-  flex-shrink: 0;
-  margin-right: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
 }
 
-.mat-expand-sidebar-btn span {
-  width: 18px;
-  height: 2px;
+.permanent-sidebar-toggle span {
+  width: 20px;
+  height: 2.2px;
   background-color: #ffffff;
   border-radius: 2px;
+  transition: all 0.25s ease;
 }
 
-.mat-expand-sidebar-btn:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: scale(1.05);
+.permanent-sidebar-toggle:hover {
+  background: rgba(13, 31, 24, 0.98);
+  transform: scale(1.06);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+.permanent-sidebar-toggle.sidebar-open {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.permanent-sidebar-toggle.sidebar-open span {
+  background-color: #0f172a;
+}
+
+.permanent-sidebar-toggle.sidebar-open:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
 }
 
 .btn-reset-color {

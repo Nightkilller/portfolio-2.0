@@ -53,32 +53,37 @@ function initApp() {
   bindActions(modalController, router);
 }
 
-/* Initialize Sidebar Collapse & Expand Toggle (3-Bar Hamburger) */
+/* Initialize Permanent Sidebar Collapse & Expand Toggle (3-Bar Hamburger) */
 function initSidebarToggle() {
   const sidebar = document.getElementById('app-sidebar');
-  const toggleBtn = document.getElementById('sidebar-toggle-btn');
-  const expandBtn = document.getElementById('mat-expand-sidebar-btn');
+  const toggleBtn = document.getElementById('permanent-sidebar-toggle');
 
   if (!sidebar || !toggleBtn) return;
 
-  const hideSidebar = () => {
-    sidebar.classList.add('collapsed');
-    if (expandBtn) expandBtn.style.display = 'flex';
-    localStorage.setItem('sidebar-collapsed', 'true');
+  const toggleSidebar = () => {
+    const isCollapsed = sidebar.classList.toggle('collapsed');
+    if (isCollapsed) {
+      toggleBtn.classList.remove('sidebar-open');
+      toggleBtn.title = "Show Sidebar";
+      localStorage.setItem('sidebar-collapsed', 'true');
+    } else {
+      toggleBtn.classList.add('sidebar-open');
+      toggleBtn.title = "Hide Sidebar (Full Screen Mat)";
+      localStorage.setItem('sidebar-collapsed', 'false');
+    }
   };
 
-  const showSidebar = () => {
-    sidebar.classList.remove('collapsed');
-    if (expandBtn) expandBtn.style.display = 'none';
-    localStorage.setItem('sidebar-collapsed', 'false');
-  };
-
-  toggleBtn.addEventListener('click', hideSidebar);
-  if (expandBtn) expandBtn.addEventListener('click', showSidebar);
+  toggleBtn.addEventListener('click', toggleSidebar);
 
   // Restore saved collapse state
   if (localStorage.getItem('sidebar-collapsed') === 'true') {
-    hideSidebar();
+    sidebar.classList.add('collapsed');
+    toggleBtn.classList.remove('sidebar-open');
+    toggleBtn.title = "Show Sidebar";
+  } else {
+    sidebar.classList.remove('collapsed');
+    toggleBtn.classList.add('sidebar-open');
+    toggleBtn.title = "Hide Sidebar (Full Screen Mat)";
   }
 }
 
