@@ -45,37 +45,43 @@ function renderPureDeskLogos(modalController) {
   container.innerHTML = html;
 }
 
-/* Render Work Showcase Grid View (Matching Image 2 /work layout) */
+/* Render Work Showcase Grid View (Projects + Apps I Created) */
 function renderWorkGrid(modalController) {
-  const container = document.getElementById('work-grid-container');
-  if (!container) return;
+  const projectsContainer = document.getElementById('work-grid-container');
+  const appsContainer = document.getElementById('apps-grid-container');
 
-  const html = PORTFOLIO_DATA.projects.map(project => {
-    return `
-      <div class="work-card-item" data-project-id="${project.id}">
-        <div class="work-card-preview" style="background: ${project.gradient};">
-          <div style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center;">
-            <div style="font-family: var(--font-serif); font-size: 2.4rem; color: #fff; font-style: italic;">${project.title}</div>
-            <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.8); margin-top: 6px;">${project.categoryLabel}</div>
+  const renderCardList = (list, targetEl) => {
+    if (!targetEl || !list) return;
+    const html = list.map(project => {
+      return `
+        <div class="work-card-item" data-project-id="${project.id}">
+          <div class="work-card-preview" style="background: ${project.gradient};">
+            <div style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center;">
+              <div style="font-family: var(--font-serif); font-size: 2.4rem; color: #fff; font-style: italic;">${project.title}</div>
+              <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.8); margin-top: 6px;">${project.categoryLabel}</div>
+            </div>
+          </div>
+          <div>
+            <div class="work-card-title">${project.title}</div>
+            <div class="work-card-tags">${project.tags.join(' • ')}</div>
           </div>
         </div>
-        <div>
-          <div class="work-card-title">${project.title}</div>
-          <div class="work-card-tags">${project.tags.join(' • ')}</div>
-        </div>
-      </div>
-    `;
-  }).join('');
+      `;
+    }).join('');
 
-  container.innerHTML = html;
+    targetEl.innerHTML = html;
 
-  const items = container.querySelectorAll('.work-card-item');
-  items.forEach(item => {
-    item.addEventListener('click', () => {
-      const id = item.getAttribute('data-project-id');
-      modalController.openProjectModal(id);
+    const items = targetEl.querySelectorAll('.work-card-item');
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        const id = item.getAttribute('data-project-id');
+        modalController.openProjectModal(id);
+      });
     });
-  });
+  };
+
+  renderCardList(PORTFOLIO_DATA.projects, projectsContainer);
+  renderCardList(PORTFOLIO_DATA.apps, appsContainer);
 }
 
 /* Render Education List on Desk Sheet */

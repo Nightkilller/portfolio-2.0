@@ -30,18 +30,17 @@ const PORTFOLIO_DATA = {
     ],
     tools: [
       "Figma",
-      "Adobe Photoshop",
       "Xcode",
+      "Python",
       "GitHub",
       "JavaScript / TypeScript",
       "React / Next.js",
-      "Python / FastAPI",
-      "C++ / Algorithms"
+      "Flutter / Dart",
+      "SwiftUI / C++"
     ]
   },
 
   // 4 Desk Floating Logos — REAL official icons via Devicon CDN
-  // CDN: https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/
   deskPolaroids: [
     {
       id: "desk-xcode",
@@ -93,167 +92,194 @@ const PORTFOLIO_DATA = {
     }
   ],
 
-  // Work Showcase Grid Projects
+  // Main Showcase Projects (6 Repos)
   projects: [
     {
-      id: "portfolio-2-0",
-      title: "Portfolio 2.0",
-      subtitle: "Interactive developer portfolio with cutting-mat desk grid, case study drawers, and winking SVG avatar.",
-      category: "web",
-      categoryLabel: "Web Engineering",
-      tags: ["HTML5", "CSS3", "JavaScript", "GSAP"],
-      role: "Lead Full-Stack Developer & Designer",
-      tools: "JavaScript, HTML5, CSS3, GSAP",
+      id: "peakprep",
+      title: "PeakPrep",
+      subtitle: "Intelligent Review & AI-Powered Voice Interview Platform tailored to roles, experience levels, and system design.",
+      category: "ai",
+      categoryLabel: "AI & Voice Platform",
+      tags: ["Next.js 15", "TypeScript", "Vapi AI", "GPT-4o", "Tailwind CSS"],
+      role: "Lead Developer & AI Architect",
+      tools: "Next.js 15, TypeScript, Vapi Voice AI, Excalidraw, Clerk, Docker",
       year: "2024",
-      gradient: "linear-gradient(135deg, #1f4337 0%, #163229 50%, #0d221b 100%)",
+      gradient: "linear-gradient(135deg, #0d3b66 0%, #001d3d 50%, #003566 100%)",
+      accentColor: "#5dfeca",
+      github: "https://github.com/Nightkilller/PeakPrep---Ai-Interviewer",
+      demo: "https://peak-prep-ai-interviewer.vercel.app/",
+      description: "PeakPrep is a modern web application leveraging cutting-edge voice AI agents (Vapi + GPT-4o) for realistic job interview practice. Features secure Clerk authentication, dynamic voice interview sessions, Excalidraw system design whiteboarding with AI vision critiques, ATS resume scoring, coding assessments, and ISRO/DRDO government internship discovery.",
+      usecase: "Interactive voice interview simulation, system design architecture whiteboarding, ATS resume optimization, and competitive coding evaluation.",
+      deliverables: [
+        "Real-Time Vapi AI Voice Agent Integration",
+        "System Design Whiteboarding with Vision Critique",
+        "ATS Resume Parser & Scoring Engine",
+        "Automated PDF Performance Analytics Reports"
+      ]
+    },
+    {
+      id: "echo",
+      title: "ECHO",
+      subtitle: "Glowing Agentic Voice Companion & Real-Time On-Screen Mentor for macOS.",
+      category: "ai",
+      categoryLabel: "macOS & Agentic AI",
+      tags: ["SwiftUI", "AppKit", "Groq Llama-4", "Apple Speech", "ScreenCaptureKit"],
+      role: "Creator & Native macOS Engineer",
+      tools: "SwiftUI, AppKit, Apple Speech API, Groq Llama-4 Scout, Vision",
+      year: "2024",
+      gradient: "linear-gradient(135deg, #1d3557 0%, #03045e 50%, #0077b6 100%)",
+      accentColor: "#00b4d8",
+      github: "https://github.com/Nightkilller/ECHO",
+      demo: "https://github.com/Nightkilller/ECHO",
+      description: "Echo is an always-on visual AI companion living in the macOS menu bar. Triggered via global keyboard shortcut (Control + Option), Echo captures screen buffers, transcribes voice locally offline via Apple Speech framework, and flies along parabolic Bezier curves to point out UI buttons, open local directories, or execute window actions.",
+      usecase: "Real-time on-screen interactive software tutoring, visual UI pointing, offline voice transcription, and agentic macOS window automation.",
+      deliverables: [
+        "Parabolic Bezier Flight & Animation Engine",
+        "Offline Native Speech Recognition (Hindi/Hinglish/English)",
+        "Circular Magnifying Lens Screen Overlay (1.3x)",
+        "Agentic Finder & Accessibility OS Automation"
+      ]
+    },
+    {
+      id: "rooms",
+      title: "ROOMS",
+      subtitle: "Secure real-time text messaging, high-quality audio & video calling platform.",
+      category: "web",
+      categoryLabel: "Real-Time Web Platform",
+      tags: ["React", "Vite", "Node.js", "Socket.io", "ZEGOCLOUD"],
+      role: "Full-Stack Web Engineer",
+      tools: "React, Vite, Node.js, Express, Socket.io, MongoDB, ZEGOCLOUD",
+      year: "2024",
+      gradient: "linear-gradient(135deg, #2b1e3a 0%, #150c21 50%, #4a2862 100%)",
+      accentColor: "#a855f7",
+      github: "https://github.com/Nightkilller/ROOMS",
+      demo: "https://rooms-amber.vercel.app",
+      description: "ROOMS is a secure, real-time private messaging and video calling web application. Built with React and Node.js, it features low-latency WebSockets messaging, ZEGOCLOUD audio/video calls, Firebase Auth, in-browser voice note recordings, and an admin dashboard.",
+      usecase: "Encrypted private group communication, peer-to-peer video conferencing, and instant media sharing.",
+      deliverables: [
+        "Scalable Socket.io WebSocket Chat Engine",
+        "ZEGOCLOUD Audio & Video Call Integration",
+        "In-Browser Voice Note Recording & Media Sharing",
+        "Admin Dashboard & Network Analytics"
+      ]
+    },
+    {
+      id: "noleaks",
+      title: "NOLEAKS",
+      subtitle: "Interactive Node.js CLI tool for secret scanning, git history audits, and .env validation.",
+      category: "cli",
+      categoryLabel: "DevSecOps CLI Tool",
+      tags: ["Node.js", "CLI", "npm", "Git Security", "DevSecOps"],
+      role: "Creator & Package Author",
+      tools: "Node.js, Commander, Inquirer, Git API, npm",
+      year: "2024",
+      gradient: "linear-gradient(135deg, #1e3a29 0%, #0a1f13 50%, #2e593e 100%)",
       accentColor: "#2ecc71",
-      github: "https://github.com/Nightkilller/portfolio-2.0",
-      demo: "http://localhost:8085",
-      description: "Designed to showcase full-stack projects in an unforgettable interactive desk environment. Recreates a self-healing green grid cutting mat with polaroid cards, push pins, winking vector avatar, case study drawer, and booking inquiry workflows.",
-      usecase: "Personal portfolio showcase for software engineering, design case studies, and client project booking inquiries.",
+      github: "https://github.com/Nightkilller/NOLEAKS",
+      demo: "https://www.npmjs.com/package/noleaks",
+      description: "Published npm CLI package (`npx noleaks`) preventing leaked secrets and API keys before pushing code. Provides an interactive terminal matrix menu for checking missing `.env` keys, scanning AWS/GitHub secret patterns, auditing Git commit history, and scaffolding `.env.example` files.",
+      usecase: "Pre-commit security scanning, API key leakage prevention, and automated repository secret remediation.",
       deliverables: [
-        "Interactive Cutting-Mat Grid Canvas",
-        "Winking Hover Avatar Component",
-        "Project Case Study Drawer",
-        "Work With Me Booking Form Modal"
+        "Published Global npm Package (`npx noleaks`)",
+        "Regex Secret Detection (AWS, RSA, Stripe, GitHub Tokens)",
+        "Deep Git History Audit Engine",
+        "Automated .env.example Scaffolding"
       ]
     },
     {
-      id: "legalease",
-      title: "LegalEase AI",
-      subtitle: "NLP-powered platform simplifying complex legal contracts into plain-English summaries & risk scores.",
+      id: "mandi-mitra",
+      title: "MANDI-MITRA XAI",
+      subtitle: "Explainable Agricultural Price Forecasting & Market Intelligence for farmers.",
       category: "ai",
-      categoryLabel: "AI & Full-Stack",
-      tags: ["React", "Next.js", "Python", "FastAPI", "OpenAI"],
-      role: "Full-Stack & AI Engineer",
-      tools: "Next.js, Python, OpenAI API, TailwindCSS",
-      year: "2024",
-      gradient: "linear-gradient(135deg, #1a2a40 0%, #0f1826 50%, #294066 100%)",
-      accentColor: "#4cc9f0",
-      github: "https://github.com/Nightkilller/LegalEase",
-      demo: "https://legalease-ai.vercel.app",
-      description: "Enables non-lawyers and small business owners to upload NDAs, Terms of Service, and contracts to receive instant risk analysis, key clause extractions, and plain-English summaries using GPT-4 LLM pipelines.",
-      usecase: "Automated legal document review, contract risk scoring, and clause translation for startups and freelancers.",
-      deliverables: [
-        "PDF Contract Parsing Pipeline",
-        "Real-Time Clause Risk Analyzer",
-        "Interactive Summary Dashboard",
-        "Exportable PDF Reports"
-      ]
-    },
-    {
-      id: "datalakeguard",
-      title: "DataLakeGuard",
-      subtitle: "Automated data governance and PII detection framework for enterprise data lakes.",
-      category: "data",
-      categoryLabel: "Data Engineering",
-      tags: ["Python", "PySpark", "Docker", "AWS S3"],
-      role: "Backend & Data Engineer",
-      tools: "Python, PySpark, Docker, AWS S3",
-      year: "2024",
-      gradient: "linear-gradient(135deg, #3d1225 0%, #1a0810 50%, #661f3e 100%)",
-      accentColor: "#f72585",
-      github: "https://github.com/Nightkilller/DataLakeGuard",
-      demo: "https://datalakeguard.org",
-      description: "Scans enterprise data streams in real time to detect, redact, and flag Sensitive Personally Identifiable Information (PII) before storage in cloud data lakes.",
-      usecase: "Automated compliance (GDPR/CCPA) enforcement and PII redaction for big data pipelines.",
-      deliverables: [
-        "PySpark Streaming Scanner",
-        "Regex & Machine Learning PII Detector",
-        "Automated Redaction Engine",
-        "AWS S3 Integration Plugin"
-      ]
-    },
-    {
-      id: "gitverse",
-      title: "GitVerse Analytics",
-      subtitle: "Visual analytics platform for GitHub repository contributions, commit velocity, and team metrics.",
-      category: "web",
-      categoryLabel: "Web Engineering",
-      tags: ["Next.js", "TypeScript", "GraphQL", "Chart.js"],
-      role: "Frontend Engineer",
-      tools: "Next.js, TypeScript, GraphQL, Chart.js",
-      year: "2024",
-      gradient: "linear-gradient(135deg, #2b1f40 0%, #120c1d 50%, #48336b 100%)",
-      accentColor: "#9d4edd",
-      github: "https://github.com/Nightkilller/GitVerse",
-      demo: "https://gitverse.dev",
-      description: "Provides deep visual insights into open-source repository activity, contributor leaderboards, code churn statistics, and automated dependency health audits.",
-      usecase: "Engineering team productivity analytics, repo health monitoring, and open-source contribution tracking.",
-      deliverables: [
-        "GitHub GraphQL API Integration",
-        "Interactive Churn & Velocity Charts",
-        "Contributor Leaderboard Module",
-        "Dependency Health Score Engine"
-      ]
-    },
-    {
-      id: "flashy-ui",
-      title: "Flashy UI System",
-      subtitle: "Modern glassmorphism UI component library built for rapid web app prototyping.",
-      category: "design",
-      categoryLabel: "UI & Design System",
-      tags: ["React", "TailwindCSS", "Storybook", "Framer Motion"],
-      role: "Design System Architect",
-      tools: "React, TailwindCSS, Storybook",
-      year: "2024",
-      gradient: "linear-gradient(135deg, #123330 0%, #081a18 50%, #1f5752 100%)",
-      accentColor: "#52b788",
-      github: "https://github.com/Nightkilller/FlashyUI",
-      demo: "https://flashy-ui.lovable.app",
-      description: "A comprehensive library of 40+ accessible, production-ready UI components featuring smooth glassmorphism effects, fluid micro-interactions, and dark mode tokens.",
-      usecase: "Rapid UI prototyping for web applications requiring a high-end futuristic aesthetic.",
-      deliverables: [
-        "40+ Accessible React Components",
-        "Interactive Storybook Documentation",
-        "Custom TailwindCSS Design Tokens",
-        "Dark Mode Theme Manager"
-      ]
-    },
-    {
-      id: "smart-route-ai",
-      title: "Smart Route AI",
-      subtitle: "Dynamic graph algorithm and machine learning pathfinding engine for dynamic traffic routing.",
-      category: "ai",
-      categoryLabel: "Algorithms & AI",
-      tags: ["C++", "Python", "Graph Algorithms", "OpenCV"],
-      role: "Systems & Algorithm Developer",
-      tools: "C++, Python, NetworkX, OpenCV",
+      categoryLabel: "Explainable AI & AgriTech",
+      tags: ["Python", "PyTorch", "SHAP", "FastAPI", "React"],
+      role: "AI & Full-Stack Developer",
+      tools: "PyTorch (LSTM), SHAP XAI, FastAPI, React, MongoDB, Open-Meteo",
       year: "2024",
       gradient: "linear-gradient(135deg, #3d2b12 0%, #1a1208 50%, #66491f 100%)",
       accentColor: "#ffb703",
-      github: "https://github.com/Nightkilller/SmartRouteAI",
-      demo: "https://smartroute.ai",
-      description: "Calculates optimal real-time travel routes by processing live camera feeds, road network graphs, weather hazards, and historical traffic congestion patterns.",
-      usecase: "Autonomous vehicle path planning, logistics fleet dispatching, and dynamic urban traffic routing.",
+      github: "https://github.com/Nightkilller/MANDI-MITRA",
+      demo: "https://github.com/Nightkilller/MANDI-MITRA",
+      description: "MandiMitra XAI is a full-stack Explainable AI platform built for farmers in Madhya Pradesh. It uses a PyTorch LSTM with Bahdanau attention for 14-day crop price forecasting across 10 districts, combined with SHAP explanations, a Sell vs. Store optimizer, and live weather-based harvest advice in Hindi and English.",
+      usecase: "Predictive agricultural commodity pricing, SHAP transparent AI reasoning, and storage vs. sale optimization.",
       deliverables: [
-        "A* & Dijkstra Graph Optimizer in C++",
-        "OpenCV Live Traffic Density Analyzer",
-        "Interactive Route Visualizer",
-        "Real-Time Hazard Re-Routing Module"
+        "14-Day PyTorch LSTM Price Forecasting Engine",
+        "SHAP Transparent AI Explanation Layer",
+        "Sell vs. Store Spoilage Optimizer",
+        "Bilingual Hindi/English React Dashboard"
       ]
     },
     {
-      id: "united-we-dance",
-      title: "United We Dance",
-      subtitle: "Nationwide touring rave experience visual identity and event graphics refresh.",
-      category: "design",
-      categoryLabel: "Branding & Media",
-      tags: ["Brand Identity", "Event Poster", "Typography"],
-      role: "Brand Designer & Creative Director",
-      tools: "Adobe Illustrator, Photoshop",
+      id: "meetmind",
+      title: "MeetMind",
+      subtitle: "AI Meeting Intelligence Copilot — Groq Whisper transcription, Llama 3.3 summaries & Azure health scoring.",
+      category: "ai",
+      categoryLabel: "AI Productivity Platform",
+      tags: ["Next.js 16", "Groq Whisper", "Llama 3.3 70B", "Azure AI", "MongoDB"],
+      role: "Lead Full-Stack AI Engineer",
+      tools: "Next.js 16, Groq Whisper V3, Groq Llama 3.3, Azure AI (GPT-4o), Clerk",
       year: "2024",
-      gradient: "linear-gradient(135deg, #431259 0%, #170d30 50%, #082446 100%)",
-      accentColor: "#9d4edd",
-      github: "https://github.com/Nightkilller/united-we-dance",
-      demo: "https://unitedwedance.com",
-      description: "Re-envisioned graphic identity system for a 20+ city touring electronic music event group including custom logotype, poster series, and social media media assets.",
-      usecase: "Touring event brand promotion, digital poster marketing, and stage visuals.",
+      gradient: "linear-gradient(135deg, #1b263b 0%, #0d1b2a 50%, #415a77 100%)",
+      accentColor: "#00f5d4",
+      github: "https://github.com/Nightkilller/MeetMind",
+      demo: "https://meet-mind-bay.vercel.app",
+      description: "Built for Microsoft Build AI Hackathon 2026. MeetMind records and transcribes meetings with Groq Whisper Large V3, analyzes meeting transcripts using Groq Llama 3.3 70B, extracts action items with priorities and due dates, calculates a Meeting Health Score via Azure AI (GPT-4o), and generates follow-up email drafts.",
+      usecase: "Automated meeting transcription, AI action item extraction, meeting health analysis, and follow-up email generation.",
       deliverables: [
-        "Custom Logotype & Brand Refresh",
-        "Tour Announcement Poster Series",
-        "Social Media Campaign Kit",
-        "On-Stage Video Loop Graphics"
+        "Real-Time Audio Transcription (Groq Whisper Large V3)",
+        "Automated Action Items & Priority Extractor (Llama 3.3 70B)",
+        "Azure AI GPT-4o Meeting Health Sentiment Score",
+        "One-Click Follow-up Email Generator"
+      ]
+    }
+  ],
+
+  // Apps I Created Section (2 Repos)
+  apps: [
+    {
+      id: "flashyyy",
+      title: "Flashyyy",
+      subtitle: "High-speed cross-platform P2P file transfer app over local network TLS sockets & UDP multicast discovery.",
+      category: "apps",
+      categoryLabel: "Mobile & Desktop App",
+      tags: ["Flutter", "Dart", "Node.js", "TLS Sockets", "Ed25519"],
+      role: "Creator & Mobile Architect",
+      tools: "Flutter, Dart, Node.js, UDP Multicast, SQLite, Ed25519",
+      year: "2024",
+      gradient: "linear-gradient(135deg, #3a1c1c 0%, #1c0a0a 50%, #632424 100%)",
+      accentColor: "#ff4d4d",
+      github: "https://github.com/Nightkilller/Flashyyy",
+      demo: "https://github.com/Nightkilller/Flashyyy",
+      description: "Flashy is a secure, high-speed cross-platform peer-to-peer (P2P) file transfer app built with Flutter and Node.js. It features automatic UDP multicast LAN peer discovery, mutual Ed25519 cryptographic handshakes over direct TLS sockets, resumable chunk-based streaming (512KB chunks) with SHA-256 integrity, and multi-device trust syncing.",
+      usecase: "High-speed offline file sharing across mobile and desktop without internet or cloud bandwidth limits.",
+      deliverables: [
+        "UDP Multicast LAN Peer Discovery Engine (`224.0.2.51`)",
+        "Mutual Ed25519 Self-Signed TLS Handshake Protocol",
+        "Resumable Chunk Streaming (512KB) with SHA-256 Integrity",
+        "Cross-Platform Flutter Desktop & Mobile UI"
+      ]
+    },
+    {
+      id: "datalakeguardv2",
+      title: "DataLake Guard v2.0",
+      subtitle: "Offline biometric face recognition & active liveness anti-spoofing attendance system for NHAI.",
+      category: "apps",
+      categoryLabel: "Mobile & Edge AI App",
+      tags: ["Flutter", "MobileFaceNet TFLite", "Apple Vision", "MLKit", "SQLite"],
+      role: "Mobile AI Engineer",
+      tools: "Flutter, MobileFaceNet TFLite (INT8), Apple Vision, Google MLKit, AWS REST",
+      year: "2024",
+      gradient: "linear-gradient(135deg, #1c2b36 0%, #0b151b 50%, #2e4758 100%)",
+      accentColor: "#00b4d8",
+      github: "https://github.com/Nightkilller/DataLakeGuardv2",
+      demo: "https://youtube.com/shorts/qW0SuQdo5aQ?feature=share",
+      description: "Built for NHAI Hackathon 7.0. A production-grade mobile app for 100% offline facial recognition and active liveness detection (blink + head turn anti-spoofing) in zero-network zones, automatically syncing records to AWS REST endpoints when internet connectivity is restored.",
+      usecase: "Field personnel authentication, offline-first biometric attendance, and anti-spoofing liveness verification.",
+      deliverables: [
+        "MobileFaceNet INT8 Quantized Face Embedding Engine (~1.2MB)",
+        "Native Platform Liveness Bridge (Apple Vision iOS + Google MLKit Android)",
+        "Active Anti-Spoofing Challenge (Blink EAR + Euler Yaw Head Turn)",
+        "Offline SQLite Encrypted Storage with Automated AWS Sync"
       ]
     }
   ]

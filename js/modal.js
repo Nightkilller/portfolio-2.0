@@ -59,7 +59,7 @@ class ModalController {
 
   // Populate & Open Project Case Study Drawer Modal
   openProjectModal(projectId) {
-    const project = PORTFOLIO_DATA.projects.find(p => p.id === projectId) || PORTFOLIO_DATA.projects[0];
+    const project = PORTFOLIO_DATA.projects.find(p => p.id === projectId) || PORTFOLIO_DATA.apps.find(p => p.id === projectId) || PORTFOLIO_DATA.projects[0];
     if (!project) return;
 
     this.populateModalData(project);
