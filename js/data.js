@@ -116,6 +116,20 @@ const PORTFOLIO_DATA = {
       logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original.svg",
       accentColor: "#F05138",
       glowColor: "rgba(240, 81, 56, 0.55)"
+    },
+    {
+      id: "desk-instagram",
+      title: "Instagram",
+      logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/instagram/instagram-original.svg",
+      accentColor: "#E4405F",
+      glowColor: "rgba(228, 64, 95, 0.55)"
+    },
+    {
+      id: "desk-codeforces",
+      title: "Codeforces",
+      logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/codeforces/codeforces-original.svg",
+      accentColor: "#1F8ACB",
+      glowColor: "rgba(31, 138, 203, 0.55)"
     }
   ],
 

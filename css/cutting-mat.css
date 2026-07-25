@@ -226,6 +226,18 @@
   transform: rotate(-10deg);
 }
 
+.logo-pos-8 {
+  top: 66%;
+  right: 18%;
+  transform: rotate(7deg);
+}
+
+.logo-pos-9 {
+  top: 36%;
+  left: 32%;
+  transform: rotate(-6deg);
+}
+
 /* ==========================================================================
    Work Showcase Grid View
    ========================================================================== */
