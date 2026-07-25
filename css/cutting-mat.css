@@ -89,7 +89,7 @@
   line-height: 1;
   letter-spacing: -0.01em;
   text-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
-  margin-bottom: 24px;
+  margin-bottom: 14px;
   pointer-events: auto;
 }
 
@@ -97,7 +97,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 4px;
   pointer-events: auto;
 }
 
@@ -178,23 +178,23 @@
 
 /* Spread logos further apart from center title with generous margins */
 .logo-pos-1 {
-  top: 80px;
-  left: 6%;
+  top: 100px;
+  left: 14%;
 }
 
 .logo-pos-2 {
-  top: 75px;
-  right: 6%;
+  top: 95px;
+  right: 14%;
 }
 
 .logo-pos-3 {
-  bottom: 80px;
-  left: 8%;
+  bottom: 110px;
+  left: 16%;
 }
 
 .logo-pos-4 {
-  bottom: 75px;
-  right: 7%;
+  bottom: 105px;
+  right: 15%;
 }
 
 /* ==========================================================================
