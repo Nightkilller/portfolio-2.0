@@ -69,8 +69,15 @@
 
 /* ===== TABLET & MOBILE SWITCH (max-width: 960px) ===== */
 @media screen and (max-width: 960px) {
+  html, body {
+    overflow: auto;
+  }
+
   .app-viewport {
     flex-direction: column-reverse;
+    height: auto;
+    max-height: none;
+    overflow: visible;
   }
 
   /* Sidebar transforms into vertical card on mobile/tablet */
