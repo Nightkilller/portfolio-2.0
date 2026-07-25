@@ -297,31 +297,34 @@
     display: none;
   }
 
+  .mat-tab-btn .tab-text {
+    display: none !important;
+  }
+
   .mat-tab-btn {
-    font-size: 0.78rem;
+    font-size: 0.85rem;
     font-weight: 600;
-    padding: 6px 12px;
-    border-radius: 16px;
-    white-space: nowrap;
+    padding: 8px 16px !important;
+    border-radius: 12px !important;
     flex-shrink: 0;
     color: rgba(255, 255, 255, 0.85);
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.14);
-    min-height: 36px;
+    min-height: 38px !important;
+    min-width: 44px !important;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 5px;
     transition: all 0.2s ease;
     opacity: 1 !important;
   }
 
   .tab-icon-mobile {
-    display: inline-block !important;
+    display: block !important;
     vertical-align: middle;
     flex-shrink: 0;
-    width: 14px;
-    height: 14px;
+    width: 18px !important;
+    height: 18px !important;
   }
 
   .mat-tab-btn.active {
