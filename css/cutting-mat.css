@@ -305,6 +305,41 @@
   transform: rotate(-1deg);
 }
 
+/* Glassmorphism Transparent Sheet for Work With Me */
+.desk-glass-sheet {
+  background: rgba(18, 42, 34, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: #ffffff;
+  padding: 44px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+.desk-glass-sheet .form-label {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.desk-glass-sheet .form-input,
+.desk-glass-sheet .form-textarea {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+}
+
+.desk-glass-sheet .form-input::placeholder,
+.desk-glass-sheet .form-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.desk-glass-sheet .form-input:focus,
+.desk-glass-sheet .form-textarea:focus {
+  border-color: #2ecc71;
+  background: rgba(255, 255, 255, 0.16);
+  outline: none;
+}
+
 /* ==========================================================================
    Inline Project Detail View (expands inside green cutting mat canvas)
    ========================================================================== */
