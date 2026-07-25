@@ -12,11 +12,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.modalController = modalController;
 
-  // Bind Back Button for Project Detail view
+  // Bind Back Buttons for inline mat views
   const backBtn = document.getElementById('project-detail-back-btn');
   if (backBtn) {
     backBtn.addEventListener('click', () => {
       router.switchTab('work');
+    });
+  }
+
+  const connectBackBtn = document.getElementById('connect-detail-back-btn');
+  if (connectBackBtn) {
+    connectBackBtn.addEventListener('click', () => {
+      router.switchTab('home');
     });
   }
 

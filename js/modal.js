@@ -122,9 +122,11 @@ class ModalController {
     }
   }
 
-  // Open Connect Profiles Modal
+  // Open Connect Profiles (inline mat view)
   openConnectModal() {
-    this.openModal(this.connectModal);
+    if (window.portfolioRouter) {
+      window.portfolioRouter.switchTab('connect');
+    }
   }
 
   // Open "Work With Me" Form Modal

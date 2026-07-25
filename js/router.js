@@ -39,6 +39,7 @@ class PortfolioRouter {
     const homeView = document.getElementById('mat-work-view');
     const workGridView = document.getElementById('mat-work-grid-view');
     const projectDetailView = document.getElementById('mat-project-detail-view');
+    const connectView = document.getElementById('mat-connect-view');
     const aboutSection = document.getElementById('mat-about-view');
     const educationSection = document.getElementById('mat-education-view');
     const polaroids = document.getElementById('polaroids-container');
@@ -47,6 +48,7 @@ class PortfolioRouter {
     if (homeView) homeView.style.display = 'none';
     if (workGridView) workGridView.classList.remove('active');
     if (projectDetailView) projectDetailView.classList.remove('active');
+    if (connectView) connectView.classList.remove('active');
     if (aboutSection) aboutSection.classList.remove('active');
     if (educationSection) educationSection.classList.remove('active');
     if (polaroids) polaroids.style.display = 'none';
@@ -58,6 +60,8 @@ class PortfolioRouter {
       if (workGridView) workGridView.classList.add('active');
     } else if (tabId === 'project-detail') {
       if (projectDetailView) projectDetailView.classList.add('active');
+    } else if (tabId === 'connect') {
+      if (connectView) connectView.classList.add('active');
     } else if (tabId === 'education') {
       if (educationSection) educationSection.classList.add('active');
     } else if (tabId === 'about') {
