@@ -103,6 +103,13 @@ const PORTFOLIO_DATA = {
       logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg",
       accentColor: "#FFCA28",
       glowColor: "rgba(255, 202, 40, 0.55)"
+    },
+    {
+      id: "desk-swift",
+      title: "Swift",
+      logoUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original.svg",
+      accentColor: "#F05138",
+      glowColor: "rgba(240, 81, 56, 0.55)"
     }
   ],
 

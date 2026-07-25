@@ -40,7 +40,7 @@ function renderPureDeskLogos(modalController) {
   const container = document.getElementById('polaroids-container');
   if (!container) return;
 
-  const positions = ['logo-pos-1', 'logo-pos-2', 'logo-pos-3', 'logo-pos-4', 'logo-pos-5', 'logo-pos-6'];
+  const positions = ['logo-pos-1', 'logo-pos-2', 'logo-pos-3', 'logo-pos-4', 'logo-pos-5', 'logo-pos-6', 'logo-pos-7'];
   const deskItems = PORTFOLIO_DATA.deskPolaroids || [];
 
   const html = deskItems.map((item, index) => {
