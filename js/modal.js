@@ -7,7 +7,6 @@ class ModalController {
     this.projectModal = document.getElementById('project-modal');
     this.bookingModal = document.getElementById('booking-modal');
     this.connectModal = document.getElementById('connect-modal');
-    this.resumeModal = document.getElementById('resume-modal');
     this.activeModal = null;
   }
 
@@ -16,17 +15,6 @@ class ModalController {
     this.bindBackdropClicks();
     this.bindEscKey();
     this.bindBookingForm();
-    this.bindResumeLink();
-  }
-
-  bindResumeLink() {
-    const resumeLink = document.getElementById('sidebar-resume-link');
-    if (resumeLink) {
-      resumeLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        this.openModal(this.resumeModal);
-      });
-    }
   }
 
   bindCloseButtons() {
