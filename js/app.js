@@ -48,7 +48,79 @@ function initApp() {
   renderToolsDesk();
   renderCertificationsGrid(modalController);
   initMatColorPicker();
+  initSidebarToggle();
+  initSidebarResizer();
   bindActions(modalController, router);
+}
+
+/* Initialize Sidebar Collapse & Expand Toggle (3-Bar Hamburger) */
+function initSidebarToggle() {
+  const sidebar = document.getElementById('app-sidebar');
+  const toggleBtn = document.getElementById('sidebar-toggle-btn');
+  const expandBtn = document.getElementById('mat-expand-sidebar-btn');
+
+  if (!sidebar || !toggleBtn) return;
+
+  const hideSidebar = () => {
+    sidebar.classList.add('collapsed');
+    if (expandBtn) expandBtn.style.display = 'flex';
+    localStorage.setItem('sidebar-collapsed', 'true');
+  };
+
+  const showSidebar = () => {
+    sidebar.classList.remove('collapsed');
+    if (expandBtn) expandBtn.style.display = 'none';
+    localStorage.setItem('sidebar-collapsed', 'false');
+  };
+
+  toggleBtn.addEventListener('click', hideSidebar);
+  if (expandBtn) expandBtn.addEventListener('click', showSidebar);
+
+  // Restore saved collapse state
+  if (localStorage.getItem('sidebar-collapsed') === 'true') {
+    hideSidebar();
+  }
+}
+
+/* Initialize Sidebar Resizer Drag Handle */
+function initSidebarResizer() {
+  const sidebar = document.getElementById('app-sidebar');
+  const resizer = document.getElementById('sidebar-resizer');
+  if (!sidebar || !resizer) return;
+
+  let isDragging = false;
+
+  // Restore saved width
+  const savedWidth = localStorage.getItem('sidebar-width');
+  if (savedWidth) {
+    document.documentElement.style.setProperty('--sidebar-width', savedWidth + 'px');
+  }
+
+  resizer.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    resizer.classList.add('dragging');
+    document.body.style.cursor = 'col-resize';
+    document.body.style.userSelect = 'none';
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    let newWidth = e.clientX;
+    if (newWidth < 220) newWidth = 220;
+    if (newWidth > 500) newWidth = 500;
+
+    document.documentElement.style.setProperty('--sidebar-width', newWidth + 'px');
+    localStorage.setItem('sidebar-width', newWidth);
+  });
+
+  document.addEventListener('mouseup', () => {
+    if (isDragging) {
+      isDragging = false;
+      resizer.classList.remove('dragging');
+      document.body.style.cursor = '';
+      document.body.style.userSelect = '';
+    }
+  });
 }
 
 /* Initialize Mat Color Wheel Picker */

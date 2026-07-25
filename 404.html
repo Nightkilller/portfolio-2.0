@@ -25,14 +25,25 @@
   <div class="app-viewport">
     
     <!-- LEFT SIDEBAR (WHITE BACKGROUND) -->
-    <aside class="app-sidebar">
+    <aside class="app-sidebar" id="app-sidebar">
+      <!-- Drag Resizer Handle -->
+      <div id="sidebar-resizer" class="sidebar-resizer" title="Drag to resize sidebar width"></div>
+
       <div class="sidebar-top">
-        
-        <!-- Interactive Profile Avatar Component (Normal <-> Wink Swap on Hover) -->
-        <a href="/" class="avatar-container" data-tab-target="home" aria-label="Aditya Gupta Home">
-          <img src="public/avatar-normal.svg" alt="Aditya Gupta Avatar" class="avatar-img avatar-img-normal">
-          <img src="public/avatar-wink.svg" alt="Aditya Gupta Winking Avatar" class="avatar-img avatar-img-wink">
-        </a>
+        <div class="sidebar-header-row">
+          <!-- Interactive Profile Avatar Component (Normal <-> Wink Swap on Hover) -->
+          <a href="/" class="avatar-container" data-tab-target="home" aria-label="Aditya Gupta Home">
+            <img src="public/avatar-normal.svg" alt="Aditya Gupta Avatar" class="avatar-img avatar-img-normal">
+            <img src="public/avatar-wink.svg" alt="Aditya Gupta Winking Avatar" class="avatar-img avatar-img-wink">
+          </a>
+
+          <!-- 3-Bar Hamburger Collapse Sidebar Button -->
+          <button id="sidebar-toggle-btn" class="sidebar-toggle-btn" title="Hide Sidebar (Full Screen Canvas)" aria-label="Hide Sidebar">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
 
         <!-- Bio Statement -->
         <p class="sidebar-bio">
@@ -65,6 +76,13 @@
       
       <!-- Top Workspace Nav Bar (Education Left, About Center, Work With Me Right) -->
       <header class="mat-header">
+        <!-- 3-Bar Hamburger Expand Sidebar Button (Shown when sidebar is hidden) -->
+        <button id="mat-expand-sidebar-btn" class="mat-expand-sidebar-btn" title="Show Sidebar" aria-label="Show Sidebar" style="display: none;">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
         <nav class="mat-nav-tabs" aria-label="Desktop Workspace Tabs">
           <button class="mat-tab-btn" data-tab-target="education">
             <span>Education</span>
