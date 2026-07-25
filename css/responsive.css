@@ -465,23 +465,10 @@
     padding: 12px 18px;
   }
 
-  /* Cutting Mat */
+  /* Cutting Mat Canvas on small mobile screens */
   .cutting-mat-canvas {
-    padding: 16px 12px 32px 12px;
-    min-height: 80vh;
-  }
-
-  /* Sticky Header */
-  .mat-header {
-    margin: -16px -12px 16px -12px;
-    padding: 10px 12px;
-    width: calc(100% + 24px);
-  }
-
-  .mat-tab-btn {
-    font-size: 0.8rem;
-    padding: 7px 14px;
-    min-height: 36px;
+    min-height: 100vh !important;
+    background-color: var(--bg-mat) !important;
   }
 
   /* Main Title */
