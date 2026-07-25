@@ -234,18 +234,19 @@
     position: sticky;
     top: 0;
     z-index: 999;
-    background: rgba(13, 31, 24, 0.95);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: rgba(13, 31, 24, 0.96);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     margin: -16px -14px 16px -14px;
-    padding: 8px 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
     width: calc(100% + 28px);
     box-sizing: border-box;
     display: flex;
     align-items: center;
     gap: 8px;
+    overflow: hidden;
   }
 
   /* Mobile 3-Bar Hamburger Button */
@@ -284,13 +285,12 @@
     align-items: center;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
     scrollbar-width: none;
-    padding: 2px 2px;
+    padding: 2px 8px 2px 2px;
     width: 100%;
     flex-grow: 1;
-    mask-image: linear-gradient(to right, black 85%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
   }
 
   .mat-nav-tabs::-webkit-scrollbar {
@@ -300,19 +300,20 @@
   .mat-tab-btn {
     font-size: 0.78rem;
     font-weight: 600;
-    padding: 6px 11px;
+    padding: 6px 12px;
     border-radius: 16px;
     white-space: nowrap;
     flex-shrink: 0;
-    scroll-snap-align: start;
     color: rgba(255, 255, 255, 0.85);
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.14);
-    min-height: 34px;
+    min-height: 36px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
+    transition: all 0.2s ease;
+    opacity: 1 !important;
   }
 
   .tab-icon-mobile {
@@ -324,11 +325,12 @@
   }
 
   .mat-tab-btn.active {
-    background: #ffffff;
-    color: #0d1f18;
-    font-weight: 700;
-    border-color: #ffffff;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+    background: #ffffff !important;
+    color: #0d1f18 !important;
+    font-weight: 700 !important;
+    border-color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35) !important;
+    opacity: 1 !important;
   }
 
   /* Mobile Software Floating Logos — Properly Scaled & Framed */
