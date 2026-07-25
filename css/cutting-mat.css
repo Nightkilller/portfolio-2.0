@@ -28,22 +28,22 @@
 /* Top Nav Bar — Authentic Apple iOS 18 Liquid Glass Floating Capsule Bar */
 .mat-header {
   position: sticky;
-  top: 12px;
+  top: 16px;
   z-index: 999;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 24px auto;
-  padding: 6px 12px;
+  margin: 0 auto 32px auto;
+  padding: 8px 16px;
   width: fit-content;
-  max-width: min(92vw, 680px);
+  max-width: min(94vw, 760px);
   background: rgba(255, 255, 255, 0.14);
   backdrop-filter: blur(28px) saturate(200%);
   -webkit-backdrop-filter: blur(28px) saturate(200%);
   border: 1px solid rgba(255, 255, 255, 0.32);
   border-radius: 9999px;
   box-shadow: 
-    0 12px 36px rgba(0, 0, 0, 0.35),
+    0 14px 40px rgba(0, 0, 0, 0.35),
     inset 0 1.5px 0.5px rgba(255, 255, 255, 0.6),
     inset 0 -1px 0.5px rgba(255, 255, 255, 0.2);
   box-sizing: border-box;
@@ -54,7 +54,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 10px;
   width: 100%;
 }
 
@@ -62,11 +62,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  font-size: 0.9rem;
+  gap: 8px;
+  font-size: 0.95rem;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.9);
-  padding: 8px 18px;
+  padding: 10px 24px;
   border-radius: 9999px;
   background: transparent;
   border: 1px solid transparent;
