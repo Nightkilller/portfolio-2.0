@@ -2,7 +2,7 @@
    App Orchestrator — Cutting Mat Rendering & Interactive Elements
    ========================================================================== */
 
-document.addEventListener('DOMContentLoaded', () => {
+function initApp() {
   const router = new PortfolioRouter();
   router.init();
   window.portfolioRouter = router;
@@ -40,7 +40,13 @@ document.addEventListener('DOMContentLoaded', () => {
   renderEducationDesk();
   renderToolsDesk();
   bindActions(modalController, router);
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}
 
 /* Render Pure Clearbit API Logos — Pure Logos Only, Zero Description */
 function renderPureDeskLogos(modalController) {
