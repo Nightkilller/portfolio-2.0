@@ -26,19 +26,21 @@
 .mat-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
   box-sizing: border-box;
-  padding: 0 56px; /* Symmetric left & right padding to fit all tabs inside viewport */
   z-index: 10;
   position: relative;
+  padding: 0 20px;
 }
 
 .mat-nav-tabs {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
 }
 
 .mat-tab-btn {
