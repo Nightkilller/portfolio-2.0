@@ -2,7 +2,7 @@
 
 Aditya Gupta — Multi-Disciplinary Creative Portfolio Website.
 
-🔗 **Live:** [https://portfolio-2-0-mu-dun.vercel.app/](https://portfolio-2-0-mu-dun.vercel.app/)
+🔗 **Live:** [https://adityagupta-web.vercel.app/](https://adityagupta-web.vercel.app/)
 
 Built with clean HTML5, Vanilla CSS3 (Custom Variables, Cutting-Mat Desktop Grid, Glassmorphism), and Vanilla JavaScript (ES6 Modules).
 
